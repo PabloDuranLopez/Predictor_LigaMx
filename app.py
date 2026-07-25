@@ -109,7 +109,9 @@ st.set_page_config(
 
 st.markdown("""
 ### Acerca del proyecto
-Este proyecto implementa desde cero el modelo **Dixon-Coles con decaimiento temporal** para la predicción de partidos de la Liga MX.
+Soy Pablo Duran estudiante de Actuaria y Matematicas en la FC UNAM, con profundo interes en Machine/Deep Learning, Finanzas Cuantitativas, Procesos y Simulacion Estocastica, 
+Estadistica Bayesiana y Probabilidad.
+Este proyecto tiene como fin la predicción de partidos de la Liga MX.
 
 El desarrollo fue realizado como proyecto personal con fin educativo para profundizar en:
 
