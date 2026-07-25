@@ -221,7 +221,7 @@ def mostrar_partido(local, visitante, modelo, goles_max, fecha):
         visitante,
         goles_max
     )
-
+    st.markdown("### Probabilidades y momios")
     c1, c2, c3 = st.columns(3) 
     
     with c1: 
