@@ -92,8 +92,8 @@ def score_matrix(prob,
                  fontweight="bold")
 
     plt.tight_layout()
-
-    return fig
+    plt.show()
+plt.show()
 
 class DixonColes:
 
@@ -403,3 +403,72 @@ class DixonColes:
         f" | partidos={self.n_partidos}"
         f" | logLik={self.logLik:.2f}>"
     )
+  
+#%%
+def plot_score_matrix(
+    prob,
+    equipo_local="Local",
+    equipo_visitante="Visitante",
+    mostrar_porcentaje=True,
+    cmap="Greens"):
+
+    n = prob.shape[0]
+
+    fig, ax = plt.subplots(figsize=(8, 8))
+
+    # Heatmap
+    im = ax.imshow(prob, cmap=cmap)
+
+    # Barra de color
+    cbar = plt.colorbar(im)
+    cbar.set_label("Probabilidad")
+
+    # Diagonal
+    ax.plot(
+        [-0.5, n - 0.5],
+        [-0.5, n - 0.5],
+        color="black",
+        linewidth=2
+    )
+
+    # Probabilidades
+    for i in range(n):
+        for j in range(n):
+
+            if i > j:
+                color = "green"
+            elif i == j:
+                color = "black"
+            else:
+                color = "red"
+
+            if mostrar_porcentaje:
+                texto = f"{100 * prob[i, j]:.1f}%"
+            else:
+                texto = f"{prob[i, j]:.3f}"
+
+            ax.text(
+                j,
+                i,
+                texto,
+                ha="center",
+                va="center",
+                color=color,
+                fontsize=8
+            )
+
+    ax.set_xticks(range(n))
+    ax.set_yticks(range(n))
+
+    ax.set_xlabel(f"Goles {equipo_visitante}", fontsize=12)
+    ax.set_ylabel(f"Goles {equipo_local}", fontsize=12)
+
+    ax.set_title(
+        f"{equipo_local} vs {equipo_visitante}",
+        fontsize=16,
+        fontweight="bold"
+    )
+
+    plt.tight_layout()
+
+    return fig
