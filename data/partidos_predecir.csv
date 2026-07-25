@@ -1,46 +1,46 @@
 jornada,dia,fecha,hora,local,Score,visitante,Venue
 2,Martes,2026-07-21,19:00,Cruz Azul,2–1,Puebla,Estadio Banorte
 2,Martes,2026-07-21,21:05,Toluca,1–2,UNAM,Estadio Nemesio Díez
-2,Viernes,2026-07-24,20:00 (21:00),Tijuana,,León,Estadio Caliente
-2,Viernes,2026-07-24,21:00,Atlante,,América,Estadio Banorte
+2,Viernes,2026-07-24,20:00 (21:00),Tijuana,,Leon,Estadio Caliente
+2,Viernes,2026-07-24,21:00,Atlante,,America,Estadio Banorte
 2,Sabado,2026-07-25,17:07,Guadalajara,,FC Juárez,Estadio Akron
 2,Sabado,2026-07-25,21:00,Santos Laguna,,Atlas,Estadio Nuevo Corona
-2,Sabado,2026-07-25,21:00,UANL,,Atlético San Luis,Estadio Universitario de Nuevo León
+2,Sabado,2026-07-25,21:00,UANL,,Atlético San Luis,Estadio Universitario de Nuevo Leon
 2,Domingo,2026-07-26,17:00,Necaxa,,Monterrey,Estadio Victoria de Aguascalientes
 2,Domingo,2026-07-26,19:06,Pachuca,,Querétaro,Estadio Hidalgo
 3,Viernes,2026-07-31,19:00,Puebla,,Guadalajara,Estadio Cuauhtémoc
 3,Viernes,2026-07-31,21:00,FC Juárez,,UNAM,Estadio Olímpico Benito Juárez
 3,Viernes,2026-07-31,21:00,Atlético San Luis,,Tijuana,Estadio Alfonso Lastras Ramírez
 3,Sabado,2026-08-01,17:00,Querétaro,,UANL,Estadio La Corregidora
-3,Sabado,2026-08-01,19:00,León,,Pachuca,Estadio León
+3,Sabado,2026-08-01,19:00,Leon,,Pachuca,Estadio Leon
 3,Sabado,2026-08-01,19:00,Atlas,,Monterrey,Estadio Jalisco
 3,Sabado,2026-08-01,21:00,Cruz Azul,,Atlante,Estadio Banorte
-3,Domingo,2026-08-02,17:00,América,,Santos Laguna,Estadio Banorte
+3,Domingo,2026-08-02,17:00,America,,Santos Laguna,Estadio Banorte
 3,Domingo,2026-08-02,19:00,Toluca,,Necaxa,Estadio Nemesio Díez
 4,Sabado,2026-08-15,17:00,Atlante,,Toluca,Estadio Banorte
 4,Sabado,2026-08-15,19:00,Monterrey,,FC Juárez,Estadio BBVA
 4,Sabado,2026-08-15,21:00,Atlas,,UANL,Estadio Jalisco
 4,Domingo,2026-08-16,12:00,UNAM,,Querétaro,Estadio Olímpico de Universitario
-4,Domingo,2026-08-16,17:00,América,,Atlético San Luis,Estadio Banorte
+4,Domingo,2026-08-16,17:00,America,,Atlético San Luis,Estadio Banorte
 4,Domingo,2026-08-16,19:00,Santos Laguna,,Guadalajara,Estadio Nuevo Corona
 4,Domingo,2026-08-16,20:00 (21:00),Tijuana,,Cruz Azul,Estadio Caliente
-4,Mon,2026-08-17,19:00,Necaxa,,León,Estadio Victoria de Aguascalientes
+4,Mon,2026-08-17,19:00,Necaxa,,Leon,Estadio Victoria de Aguascalientes
 4,Mon,2026-08-17,21:00,Pachuca,,Puebla,Estadio Hidalgo
-5,Viernes,2026-08-21,19:00,UANL,,Atlante,Estadio Universitario de Nuevo León
-5,Viernes,2026-08-21,21:00,FC Juárez,,América,Estadio Olímpico Benito Juárez
+5,Viernes,2026-08-21,19:00,UANL,,Atlante,Estadio Universitario de Nuevo Leon
+5,Viernes,2026-08-21,21:00,FC Juárez,,America,Estadio Olímpico Benito Juárez
 5,Sabado,2026-08-22,17:00,Querétaro,,Toluca,Estadio La Corregidora
 5,Sabado,2026-08-22,17:07,Guadalajara,,Tijuana,Estadio Akron
-5,Sabado,2026-08-22,19:00,León,,Monterrey,Estadio León
+5,Sabado,2026-08-22,19:00,Leon,,Monterrey,Estadio Leon
 5,Sabado,2026-08-22,19:00,Puebla,,Santos Laguna,Estadio Cuauhtémoc
 5,Sabado,2026-08-22,21:00,Cruz Azul,,Atlas,Estadio Banorte
 5,Domingo,2026-08-23,17:00,Atlético San Luis,,Pachuca,Estadio Alfonso Lastras Ramírez
 5,Domingo,2026-08-23,19:00,UNAM,,Necaxa,Estadio Olímpico de Universitario
-6,Viernes,2026-08-28,19:00,Atlante,,León,Estadio Banorte
+6,Viernes,2026-08-28,19:00,Atlante,,Leon,Estadio Banorte
 6,Viernes,2026-08-28,19:00,Necaxa,,Cruz Azul,Estadio Victoria de Aguascalientes
 6,Viernes,2026-08-28,20:00 (21:00),Tijuana,,UNAM,Estadio Caliente
 6,Sabado,2026-08-29,17:00,Pachuca,,Guadalajara,Estadio Hidalgo
 6,Sabado,2026-08-29,17:00,Atlas,,Querétaro,Estadio Jalisco
-6,Sabado,2026-08-29,19:00,América,,Puebla,Estadio Banorte
+6,Sabado,2026-08-29,19:00,America,,Puebla,Estadio Banorte
 6,Sabado,2026-08-29,21:00,Santos Laguna,,UANL,Estadio Nuevo Corona
 6,Domingo,2026-08-30,18:00,Toluca,,FC Juárez,Estadio Nemesio Díez
 6,Domingo,2026-08-30,20:00,Monterrey,,Atlético San Luis,Estadio BBVA
@@ -48,17 +48,17 @@ jornada,dia,fecha,hora,local,Score,visitante,Venue
 7,Viernes,2026-09-04,21:00,FC Juárez,,Pachuca,Estadio Olímpico Benito Juárez
 7,Sabado,2026-09-05,17:00,Atlético San Luis,,Guadalajara,Estadio Alfonso Lastras Ramírez
 7,Sabado,2026-09-05,17:00,Querétaro,,Monterrey,Estadio La Corregidora
-7,Sabado,2026-09-05,19:00,América,,Tijuana,Estadio Banorte
-7,Sabado,2026-09-05,19:00,UANL,,Necaxa,Estadio Universitario de Nuevo León
+7,Sabado,2026-09-05,19:00,America,,Tijuana,Estadio Banorte
+7,Sabado,2026-09-05,19:00,UANL,,Necaxa,Estadio Universitario de Nuevo Leon
 7,Sabado,2026-09-05,21:00,Atlas,,Atlante,Estadio Jalisco
-7,Domingo,2026-09-06,12:00,UNAM,,León,Estadio Olímpico de Universitario
+7,Domingo,2026-09-06,12:00,UNAM,,Leon,Estadio Olímpico de Universitario
 7,Domingo,2026-09-06,20:00,Cruz Azul,,Santos Laguna,Estadio Banorte
 8,Viernes,2026-09-11,19:00,Necaxa,,Puebla,Estadio Victoria de Aguascalientes
 8,Viernes,2026-09-11,20:00 (21:00),Tijuana,,Querétaro,Estadio Caliente
 8,Viernes,2026-09-11,21:00,Atlante,,Pachuca,Estadio Banorte
 8,Sabado,2026-09-12,,Toluca,,Atlas,Estadio Nemesio Díez
-8,Sabado,2026-09-12,17:00,León,,Atlético San Luis,Estadio León
-8,Domingo,2026-09-13,,Cruz Azul,,América,Estadio Banorte
+8,Sabado,2026-09-12,17:00,Leon,,Atlético San Luis,Estadio Leon
+8,Domingo,2026-09-13,,Cruz Azul,,America,Estadio Banorte
 8,Domingo,2026-09-13,18:00,Guadalajara,,UNAM,Estadio Akron
 8,Domingo,2026-09-13,18:00,Santos Laguna,,FC Juárez,Estadio Nuevo Corona
 8,Domingo,2026-09-13,20:00,Monterrey,,UANL,Estadio BBVA
@@ -67,25 +67,25 @@ jornada,dia,fecha,hora,local,Score,visitante,Venue
 9,Sabado,2026-09-19,17:00,Atlas,,UNAM,Estadio Jalisco
 9,Sabado,2026-09-19,17:00,Atlético San Luis,,Necaxa,Estadio Alfonso Lastras Ramírez
 9,Sabado,2026-09-19,19:00,Monterrey,,Cruz Azul,Estadio BBVA
-9,Sabado,2026-09-19,21:00,América,,Guadalajara,Estadio Banorte
+9,Sabado,2026-09-19,21:00,America,,Guadalajara,Estadio Banorte
 9,Domingo,2026-09-20,18:00,Pachuca,,Tijuana,Estadio Hidalgo
 9,Domingo,2026-09-20,18:00,Toluca,,Santos Laguna,Estadio Nemesio Díez
-9,Domingo,2026-09-20,20:00,Querétaro,,León,Estadio La Corregidora
+9,Domingo,2026-09-20,20:00,Querétaro,,Leon,Estadio La Corregidora
 10,Viernes,2026-09-25,19:00,Atlante,,Monterrey,Estadio Banorte
 10,Viernes,2026-09-25,20:00 (21:00),Tijuana,,Atlas,Estadio Caliente
 10,Sabado,2026-09-26,17:00,Guadalajara,,Querétaro,Estadio Akron
 10,Sabado,2026-09-26,19:00,Santos Laguna,,Pachuca,Estadio Nuevo Corona
-10,Sabado,2026-09-26,19:00,UANL,,Puebla,Estadio Universitario de Nuevo León
+10,Sabado,2026-09-26,19:00,UANL,,Puebla,Estadio Universitario de Nuevo Leon
 10,Sabado,2026-09-26,21:00,Cruz Azul,,Toluca,Estadio Banorte
 10,Domingo,2026-09-27,12:00,UNAM,,Atlético San Luis,Estadio Olímpico de Universitario
-10,Domingo,2026-09-27,19:00,León,,FC Juárez,Estadio León
-10,Domingo,2026-09-27,21:00,Necaxa,,América,Estadio Victoria de Aguascalientes
+10,Domingo,2026-09-27,19:00,Leon,,FC Juárez,Estadio Leon
+10,Domingo,2026-09-27,21:00,Necaxa,,America,Estadio Victoria de Aguascalientes
 11,Viernes,2026-10-09,19:00,Querétaro,,Atlante,Estadio La Corregidora
-11,Viernes,2026-10-09,19:00,Puebla,,León,Estadio Cuauhtémoc
-11,Viernes,2026-10-09,21:00,UANL,,Toluca,Estadio Universitario de Nuevo León
+11,Viernes,2026-10-09,19:00,Puebla,,Leon,Estadio Cuauhtémoc
+11,Viernes,2026-10-09,21:00,UANL,,Toluca,Estadio Universitario de Nuevo Leon
 11,Sabado,2026-10-10,17:00,FC Juárez,,Tijuana,Estadio Olímpico Benito Juárez
 11,Sabado,2026-10-10,19:00,Atlas,,Guadalajara,Estadio Jalisco
-11,Sabado,2026-10-10,21:00,América,,Monterrey,Estadio Banorte
+11,Sabado,2026-10-10,21:00,America,,Monterrey,Estadio Banorte
 11,Domingo,2026-10-11,17:00,Atlético San Luis,,Santos Laguna,Estadio Alfonso Lastras Ramírez
 11,Domingo,2026-10-11,17:00,Pachuca,,Necaxa,Estadio Hidalgo
 11,Domingo,2026-10-11,19:00,UNAM,,Cruz Azul,Estadio Olímpico de Universitario
@@ -94,26 +94,26 @@ jornada,dia,fecha,hora,local,Score,visitante,Venue
 12,Viernes,2026-10-16,21:00,Atlante,,UNAM,Estadio Banorte
 12,Sabado,2026-10-17,17:00,Guadalajara,,UANL,Estadio Akron
 12,Sabado,2026-10-17,17:00,Santos Laguna,,Querétaro,Estadio Nuevo Corona
-12,Sabado,2026-10-17,19:00,León,,América,Estadio León
+12,Sabado,2026-10-17,19:00,Leon,,America,Estadio Leon
 12,Sabado,2026-10-17,19:00,Toluca,,Atlético San Luis,Estadio Nemesio Díez
 12,Sabado,2026-10-17,21:00,Cruz Azul,,FC Juárez,Estadio Banorte
 12,Domingo,2026-10-18,19:00,Monterrey,,Pachuca,Estadio BBVA
 13,Martes,2026-10-20,19:00,FC Juárez,,Atlante,Estadio Olímpico Benito Juárez
 13,Martes,2026-10-20,19:00,Atlético San Luis,,Querétaro,Estadio Alfonso Lastras Ramírez
 13,Martes,2026-10-20,21:00,Guadalajara,,Necaxa,Estadio Akron
-13,Martes,2026-10-20,21:00,UANL,,León,Estadio Universitario de Nuevo León
-13,Miercoles,2026-10-21,19:00,Atlas,,América,Estadio Jalisco
+13,Martes,2026-10-20,21:00,UANL,,Leon,Estadio Universitario de Nuevo Leon
+13,Miercoles,2026-10-21,19:00,Atlas,,America,Estadio Jalisco
 13,Miercoles,2026-10-21,19:00,Puebla,,Monterrey,Estadio Cuauhtémoc
 13,Miercoles,2026-10-21,19:00,Toluca,,Tijuana,Estadio Nemesio Díez
 13,Miercoles,2026-10-21,21:00,Santos Laguna,,UNAM,Estadio Nuevo Corona
 13,Miercoles,2026-10-21,21:00,Pachuca,,Cruz Azul,Estadio Hidalgo
 14,Viernes,2026-10-23,19:00,Necaxa,,FC Juárez,Estadio Victoria de Aguascalientes
 14,Viernes,2026-10-23,21:00,Atlante,,Atlético San Luis,Estadio Banorte
-14,Sabado,2026-10-24,17:00,León,,Toluca,Estadio León
+14,Sabado,2026-10-24,17:00,Leon,,Toluca,Estadio Leon
 14,Sabado,2026-10-24,19:00,Monterrey,,Guadalajara,Estadio BBVA
 14,Sabado,2026-10-24,21:00,UNAM,,UANL,Estadio Olímpico de Universitario
 14,Domingo,2026-10-25,17:00,Atlas,,Puebla,Estadio Jalisco
-14,Domingo,2026-10-25,17:00,América,,Pachuca,Estadio Banorte
+14,Domingo,2026-10-25,17:00,America,,Pachuca,Estadio Banorte
 14,Domingo,2026-10-25,19:00,Querétaro,,Cruz Azul,Estadio La Corregidora
 14,Domingo,2026-10-25,20:00 (21:00),Tijuana,,Santos Laguna,Estadio Caliente
 15,Viernes,2026-10-30,19:00,Atlético San Luis,,Atlas,Estadio Alfonso Lastras Ramírez
@@ -122,24 +122,24 @@ jornada,dia,fecha,hora,local,Score,visitante,Venue
 15,Sabado,2026-10-31,17:00,Pachuca,,UANL,Estadio Hidalgo
 15,Sabado,2026-10-31,19:00,Monterrey,,Tijuana,Estadio BBVA
 15,Sabado,2026-10-31,19:00,Guadalajara,,Atlante,Estadio Akron
-15,Sabado,2026-10-31,21:00,América,,Toluca,Estadio Banorte
+15,Sabado,2026-10-31,21:00,America,,Toluca,Estadio Banorte
 15,Domingo,2026-11-01,17:00,Santos Laguna,,Necaxa,Estadio Nuevo Corona
-15,Domingo,2026-11-01,19:00,Cruz Azul,,León,Estadio Banorte
+15,Domingo,2026-11-01,19:00,Cruz Azul,,Leon,Estadio Banorte
 16,Viernes,2026-11-06,19:00,Necaxa,,Tijuana,Estadio Victoria de Aguascalientes
 16,Viernes,2026-11-06,19:00,Atlético San Luis,,FC Juárez,Estadio Alfonso Lastras Ramírez
 16,Viernes,2026-11-06,21:00,Atlante,,Santos Laguna,Estadio Banorte
-16,Sabado,2026-11-07,17:00,UANL,,Cruz Azul,Estadio Universitario de Nuevo León
+16,Sabado,2026-11-07,17:00,UANL,,Cruz Azul,Estadio Universitario de Nuevo Leon
 16,Sabado,2026-11-07,17:00,Atlas,,Pachuca,Estadio Jalisco
 16,Sabado,2026-11-07,19:00,Toluca,,Monterrey,Estadio Nemesio Díez
-16,Sabado,2026-11-07,21:00,UNAM,,América,Estadio Olímpico de Universitario
+16,Sabado,2026-11-07,21:00,UNAM,,America,Estadio Olímpico de Universitario
 16,Domingo,2026-11-08,18:00,Querétaro,,Puebla,Estadio La Corregidora
-16,Domingo,2026-11-08,19:00,León,,Guadalajara,Estadio León
+16,Domingo,2026-11-08,19:00,Leon,,Guadalajara,Estadio Leon
 17,Viernes,2026-11-20,19:00 (21:00),Tijuana,,Atlante,Estadio Caliente
 17,Viernes,2026-11-20,19:00,Puebla,,Atlético San Luis,Estadio Cuauhtémoc
 17,Viernes,2026-11-20,20:00 (21:00),FC Juárez,,Atlas,Estadio Olímpico Benito Juárez
-17,Sabado,2026-11-21,17:00,Santos Laguna,,León,Estadio Nuevo Corona
+17,Sabado,2026-11-21,17:00,Santos Laguna,,Leon,Estadio Nuevo Corona
 17,Sabado,2026-11-21,17:00,Pachuca,,Toluca,Estadio Hidalgo
 17,Sabado,2026-11-21,19:00,UNAM,,Monterrey,Estadio Olímpico de Universitario
-17,Sabado,2026-11-21,21:00,UANL,,América,Estadio Universitario de Nuevo León
+17,Sabado,2026-11-21,21:00,UANL,,America,Estadio Universitario de Nuevo Leon
 17,Domingo,2026-11-22,17:00,Guadalajara,,Cruz Azul,Estadio Akron
 17,Domingo,2026-11-22,19:00,Querétaro,,Necaxa,Estadio La Corregidora
