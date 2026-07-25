@@ -110,7 +110,7 @@ st.set_page_config(
 st.write("Hola soy Pablo Duran, soy estudiante de Actuaría y Matemáticas en la Universidad Nacional Autónoma de México (UNAM), con profundo interes en Machine Learning,Deep Learning,Procesos y Simulación Estocastica , Probabilidad, Estadística Bayesiana y las Finanzas Cuantitativas. Me gusta construir modelos desde cero para entender a profundidad cómo funcionan. He desarrollado implementaciones propias de prediccion (tradicional y enfoque bayesiano) de despacho en incidentes viales del C5, prediccion de tumores malignos, diabetes, asi como el pricing de derivados financieros")
 st.write("Este es un proyecto mas, siendo compartido con ustedes de forma educativa, y que claro este proyecto no es una sugerencia de apuestas")
 st.write("Aun faltas cosas como la implementacion bayesiana, Under/Over, top marcadores probables, ¿Ambos equipos anotan?, las agregaré pronto")
-
+st.write("Las probabilidades y momios pueden diferir ligeramente de las casas de apuestas ya que estas consideran probabilidades totales mayores a 1 para asegurar su ganancia")
 c1, c2, c3 = st.columns([1,2,1])
 
 with c2:
