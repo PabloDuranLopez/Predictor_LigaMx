@@ -1,6 +1,6 @@
-=========================================================== FLUJO DE
+FLUJO DE
 ACTUALIZACIÓN DEL PROYECTO LIGA MX
-===========================================================
+
 
 ANTES DE INICIAR EL TORNEO
 
@@ -24,7 +24,7 @@ ANTES DE INICIAR EL TORNEO
 
 4.  Se genera: predicciones.csv
 
-===========================================================
+
 
 CUANDO TERMINA UNA JORNADA (Ejemplo: Jornada 2)
 
@@ -33,7 +33,7 @@ PASO 1 Actualizar ligamx.csv
 -   Agregar TODOS los partidos de la Jornada 2 con sus resultados
     oficiales.
 
-------------------------------------------------------------------------
+
 
 PASO 2 Actualizar partidos_predecir.csv
 
@@ -46,7 +46,7 @@ Antes: J2 J3 … J17
 
 Después: J3 J4 … J17
 
-------------------------------------------------------------------------
+
 
 PASO 3 Actualizar predicciones.csv
 
@@ -69,7 +69,6 @@ NO modificar:
 
 con los resultados oficiales.
 
-------------------------------------------------------------------------
 
 PASO 4
 
@@ -85,7 +84,7 @@ El script hará automáticamente:
 -   Generar nuevas predicciones únicamente para esos partidos.
 -   Conservar intactas las predicciones de las jornadas ya jugadas.
 
-===========================================================
+
 
 REPETIR ESTE PROCEDIMIENTO DESPUÉS DE CADA JORNADA
 
@@ -93,8 +92,6 @@ REPETIR ESTE PROCEDIMIENTO DESPUÉS DE CADA JORNADA
 2.  Eliminar la jornada de partidos_predecir.csv
 3.  Actualizar resultados en predicciones.csv
 4.  Ejecutar generar_predicciones.py
-
-===========================================================
 
 REGLA DE ORO
 
