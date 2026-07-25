@@ -226,31 +226,34 @@ def mostrar_partido(local, visitante, modelo, goles_max, fecha):
         goles_max
     )
 
-    c1, c2, c3 = st.columns(3)
-   
-    with c1:
-        st.metric(
-        "🏠 Local",
-        f"{probs.iloc[0][local]:.1%}"
-    )
-    st.caption(f"Momio: {probs.iloc[0][f'Momio {local}']}")
+    c1, c2, c3 = st.columns(3) 
     
-    with c2:
-        st.metric(
-        "🤝 Empate",
-        f"{probs.iloc[0]['Empate']:.1%}"
-    )
-    st.caption(f"Momio: {probs.iloc[0]['Momio Empate']}") 
-    
-    with c3:
-        st.metric(
-        "✈️ Visitante",
-        f"{probs.iloc[0][visitante]:.1%}"
-    )
-    st.caption(f"Momio: {probs.iloc[0][f'Momio {visitante}']}")
-    st.success(
-    f"{nombre_equipo(local)} {marcador[0]} - {marcador[1]} {nombre_equipo(visitante)}")
+    with c1: 
+        st.markdown(f"""
+    <div style="text-align:center;">
+        <h3> Local</h3>
+        <h1>{probs.iloc[0][local]:.1%}</h1>
+        <h2>{probs.iloc[0][f'Momio {local}']:+.0f}</h2>
+    </div>
+    """, unsafe_allow_html=True)
 
+    with c2:
+        st.markdown(f"""
+    <div style="text-align:center;">
+        <h3> Empate</h3>
+        <h1>{probs.iloc[0]['Empate']:.1%}</h1>
+        <h2>{probs.iloc[0]['Momio Empate']:+.0f}</h2>
+    </div>
+    """, unsafe_allow_html=True)
+
+    with c3: 
+        st.markdown(f"""
+    <div style="text-align:center;">
+        <h3> Visitante</h3>
+        <h1>{probs.iloc[0][visitante]:.1%}</h1>
+        <h2>{probs.iloc[0][f'Momio {visitante}']:+.0f}</h2>
+    </div>
+    """, unsafe_allow_html=True)
     with st.expander("Ver detalles"):
 
         c1, c2 = st.columns(2)
