@@ -192,7 +192,7 @@ def mostrar_partido(local, visitante, modelo, goles_max, fecha):
             f"<h3 style='text-align:center'>{nombre_equipo(visitante)}</h3>",
             unsafe_allow_html=True
         )
-
+    
     lam, mu = modelo.expected_goals(local, visitante)
 
     marcador = modelo.predict_score(
@@ -248,13 +248,10 @@ partidos = jornadas[
     jornadas["jornada"] == jornada
 ]
 
-st.header(f"Jornada {jornada}")
-
-st.write(
-    f"Partidos: {len(partidos)}"
-)
-
 for _, partido in partidos.iterrows():
+    st.write(
+        f"{partido['local']} vs {partido['visitante']}"
+    )
 
     mostrar_partido(
         partido["local"],
