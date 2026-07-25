@@ -124,88 +124,35 @@ def cargar_datos():
     return df
 
 
-df = cargar_datos()
 
+@st.cache_data
+def cargar_jornadas():
+
+    return pd.read_csv("data/partidos_predecir.csv")
 
 
 @st.cache_resource
 def entrenar_modelo(df):
 
     modelo = DixonColes(xi=0.0065)
-
     modelo.fit(df)
-
     return modelo
 
-
+df = cargar_datos()
+jornadas = cargar_jornadas()
 
 with st.spinner("Entrenando modelo..."):
 
     modelo = entrenar_modelo(df)
 
-st.success("Modelo entrenado")
 
-equipos_disponibles = [equipo for equipo in modelo.teams
-    if obtener_escudo(equipo) is not None
-]
 
-equipos_disponibles = sorted(equipos_disponibles)
-
-col1, col2 = st.columns(2)
-
-with col1:
-
-    local = st.selectbox(
-    "Equipo local",
-    equipos_disponibles)
-
-with col2:
-
-    visitante = st.selectbox(
-    "Equipo visitante",
-    equipos_disponibles)
-    
 st.divider()
 
-col1, col2, col3 = st.columns([3,1,3])
-
-
-with col1:
-
-    c = st.columns([1,2,1])
-
-    with c[1]:
-        st.image(
-            obtener_escudo(local),
-            width=170
-        )
-
-    st.markdown(
-        f"<h2 style='text-align:center'>{nombre_equipo(local)}</h2>",
-        unsafe_allow_html=True
-    )
-
-with col2:
-
-    st.markdown(
-        "<h1 style='text-align:center; margin-top:90px;'>VS</h1>",
-        unsafe_allow_html=True
-    )
-
-with col3:
-
-    c = st.columns([1,2,1])
-
-    with c[1]:
-        st.image(
-            obtener_escudo(visitante),
-            width=170
-        )
-
-    st.markdown(
-        f"<h2 style='text-align:center'>{nombre_equipo(visitante)}</h2>",
-        unsafe_allow_html=True
-    )
+jornada = st.selectbox(
+    "Selecciona la jornada",
+    sorted(jornadas["jornada"].unique())
+)
 st.divider()
 
 goles_max = st.slider(
@@ -215,34 +162,38 @@ goles_max = st.slider(
     7
 )
 
+def mostrar_partido(local, visitante, modelo, goles_max, fecha):
+    st.caption(f"📅 {fecha}")
 
 
-if st.button("Predecir partido"):
+    col1, col2, col3 = st.columns([2,1,2])
 
-    st.header("Resumen del modelo")
+    with col1:
 
-    st.dataframe(modelo.summary())
+        st.image(obtener_escudo(local), width=170)
 
-    st.header("Goles esperados")
+        st.markdown(
+            f"<h3 style='text-align:center'>{nombre_equipo(local)}</h3>",
+            unsafe_allow_html=True
+        )
 
-    lam, mu = modelo.expected_goals(
-        local,
-        visitante
-    )
+    with col2:
 
-    c1, c2 = st.columns(2)
+        st.markdown(
+            "<h1 style='text-align:center;margin-top:70px'>VS</h1>",
+            unsafe_allow_html=True
+        )
 
-    c1.metric(
-        "λ Local",
-        f"{lam:.3f}"
-    )
+    with col3:
 
-    c2.metric(
-        "μ Visitante",
-        f"{mu:.3f}"
-    )
+        st.image(obtener_escudo(visitante), width=170)
 
-    st.header("Marcador más probable")
+        st.markdown(
+            f"<h3 style='text-align:center'>{nombre_equipo(visitante)}</h3>",
+            unsafe_allow_html=True
+        )
+
+    lam, mu = modelo.expected_goals(local, visitante)
 
     marcador = modelo.predict_score(
         local,
@@ -250,29 +201,68 @@ if st.button("Predecir partido"):
         goles_max
     )
 
-    st.success(
-        f"{local} {marcador[0]} - {marcador[1]} {visitante}"
-    )
-
-    st.header("Probabilidades")
-
-    st.dataframe(
-        modelo.win_prob(
-            local,
-            visitante,
-            goles_max
-        )
-    )
-
-    st.header("Matriz de probabilidades")
-
-    modelo.score_matrix(
+    probs = modelo.win_prob(
         local,
         visitante,
         goles_max
     )
 
-    st.pyplot()
+    c1, c2, c3 = st.columns(3)
+
+    c1.metric(
+        "Local",
+        f"{probs.iloc[0][local]:.1%}"
+    )
+
+    c2.metric(
+        "Empate",
+        f"{probs.iloc[0]['Empate']:.1%}"
+    )
+
+    c3.metric(
+        "Visitante",
+        f"{probs.iloc[0][visitante]:.1%}"
+    )
+
+    st.success(
+    f"{nombre_equipo(local)} {marcador[0]} - {marcador[1]} {nombre_equipo(visitante)}")
+
+    with st.expander("Ver detalles"):
+
+        c1, c2 = st.columns(2)
+
+        c1.metric("λ Local", f"{lam:.2f}")
+        c2.metric("μ Visitante", f"{mu:.2f}")
+
+        fig = modelo.score_matrix(
+            local,
+            visitante,
+            goles_max
+        )
+
+        st.pyplot(fig)
+
+    st.divider()
+
+partidos = jornadas[
+    jornadas["jornada"] == jornada
+]
+
+st.header(f"Jornada {jornada}")
+
+st.write(
+    f"Partidos: {len(partidos)}"
+)
+
+for _, partido in partidos.iterrows():
+
+    mostrar_partido(
+        partido["local"],
+        partido["visitante"],
+        modelo,
+        goles_max,
+        partido["fecha"]
+    )
     
 
 
