@@ -117,7 +117,6 @@ with c2:
     st.image("escudos/ligamx.png", width=250)
 
 st.title("⚽ Predicción de partidos Liga MX")
-st.write("Modelo Dixon-Coles con Decaimiento Temporal")
 @st.cache_data
 def cargar_datos():
 
