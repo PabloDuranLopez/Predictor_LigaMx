@@ -227,22 +227,27 @@ def mostrar_partido(local, visitante, modelo, goles_max, fecha):
     )
 
     c1, c2, c3 = st.columns(3)
-
-    c1.metric(
-        "Local",
+   
+    with c1:
+        st.metric(
+        "🏠 Local",
         f"{probs.iloc[0][local]:.1%}"
     )
-
-    c2.metric(
-        "Empate",
+    st.caption(f"Momio: {probs.iloc[0][f'Momio {local}']}")
+    
+    with c2:
+        st.metric(
+        "🤝 Empate",
         f"{probs.iloc[0]['Empate']:.1%}"
     )
-
-    c3.metric(
-        "Visitante",
+    st.caption(f"Momio: {probs.iloc[0]['Momio Empate']}") 
+    
+    with c3:
+        st.metric(
+        "✈️ Visitante",
         f"{probs.iloc[0][visitante]:.1%}"
     )
-
+    st.caption(f"Momio: {probs.iloc[0][f'Momio {visitante}']}")
     st.success(
     f"{nombre_equipo(local)} {marcador[0]} - {marcador[1]} {nombre_equipo(visitante)}")
 
