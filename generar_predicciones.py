@@ -2,7 +2,7 @@ import os
 import json
 import numpy as np
 import pandas as pd
-
+import sys
 from clases_funciones import DixonColes
 
 
@@ -10,8 +10,12 @@ from clases_funciones import DixonColes
 df = pd.read_csv("data/ligamx.csv")
 df["fecha"] = pd.to_datetime(df["fecha"])
 
+
+
 partidos = pd.read_csv("data/partidos_predecir.csv")
+
 partidos["fecha"] = pd.to_datetime(partidos["fecha"])
+
 
 
 
@@ -46,9 +50,20 @@ else:
 
     historial = pd.DataFrame()
 
+if not historial.empty:
+
+    historial = historial[
+        ~historial.set_index(["fecha", "local", "visitante"]).index.isin(
+            partidos.set_index(["fecha", "local", "visitante"]).index
+        )
+    ]
 
 nuevas_predicciones = []
 
+if partidos.empty:
+    print("No hay partidos pendientes para predecir.")
+    sys.exit()
+    
 for _, partido in partidos.iterrows():
 
     fecha = partido["fecha"]
@@ -56,26 +71,7 @@ for _, partido in partidos.iterrows():
     local = partido["local"]
     visitante = partido["visitante"]
 
-    # ¿Ya existe?
-
-    if not historial.empty:
-
-        existe = (
-
-            (historial["fecha"]==fecha) &
-            (historial["local"]==local) &
-            (historial["visitante"]==visitante)
-
-        ).any()
-
-        if existe:
-
-            print(f"Ya existe: {local} vs {visitante}")
-
-            continue
-
-
-
+    
     lam, mu = modelo.expected_goals(
         local,
         visitante
@@ -151,7 +147,8 @@ else:
         [historial,nuevas],
         ignore_index=True
     )
-
+salida = salida.sort_values(["jornada", "fecha"]).reset_index(drop=True)
+    
 salida.to_csv(
     ruta,
     index=False
