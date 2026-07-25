@@ -253,6 +253,12 @@ for _, partido in partidos.iterrows():
     st.write(
         f"{partido['local']} vs {partido['visitante']}"
     )
+    # PRUEBA
+    st.write("Local:", repr(partido["local"]))
+    st.write("Visitante:", repr(partido["visitante"]))
+    st.write("¿Local existe?:", partido["local"] in modelo.ataque)
+    st.write("¿Visitante existe?:", partido["visitante"] in modelo.ataque)
+
 
     mostrar_partido(
         partido["local"],
