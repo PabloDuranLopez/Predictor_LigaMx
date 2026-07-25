@@ -1,145 +1,338 @@
-jornada,dia,fecha,hora,local,Score,visitante,Venue
-2,Martes,2026-07-21,19:00,Cruz Azul,2–1,Puebla,Estadio Banorte
-2,Martes,2026-07-21,21:05,Toluca,1–2,UNAM,Estadio Nemesio Díez
-2,Viernes,2026-07-24,20:00 (21:00),Tijuana,,León,Estadio Caliente
-2,Viernes,2026-07-24,21:00,Atlante,,América,Estadio Banorte
-2,Sabado,2026-07-25,17:07,Guadalajara,,FC Juárez,Estadio Akron
-2,Sabado,2026-07-25,21:00,Santos Laguna,,Atlas,Estadio Nuevo Corona
-2,Sabado,2026-07-25,21:00,UANL,,Atlético San Luis,Estadio Universitario de Nuevo León
-2,Domingo,2026-07-26,17:00,Necaxa,,Monterrey,Estadio Victoria de Aguascalientes
-2,Domingo,2026-07-26,19:06,Pachuca,,Querétaro,Estadio Hidalgo
-3,Viernes,2026-07-31,19:00,Puebla,,Guadalajara,Estadio Cuauhtémoc
-3,Viernes,2026-07-31,21:00,FC Juárez,,UNAM,Estadio Olímpico Benito Juárez
-3,Viernes,2026-07-31,21:00,Atlético San Luis,,Tijuana,Estadio Alfonso Lastras Ramírez
-3,Sabado,2026-08-01,17:00,Querétaro,,UANL,Estadio La Corregidora
-3,Sabado,2026-08-01,19:00,León,,Pachuca,Estadio León
-3,Sabado,2026-08-01,19:00,Atlas,,Monterrey,Estadio Jalisco
-3,Sabado,2026-08-01,21:00,Cruz Azul,,Atlante,Estadio Banorte
-3,Domingo,2026-08-02,17:00,América,,Santos Laguna,Estadio Banorte
-3,Domingo,2026-08-02,19:00,Toluca,,Necaxa,Estadio Nemesio Díez
-4,Sabado,2026-08-15,17:00,Atlante,,Toluca,Estadio Banorte
-4,Sabado,2026-08-15,19:00,Monterrey,,FC Juárez,Estadio BBVA
-4,Sabado,2026-08-15,21:00,Atlas,,UANL,Estadio Jalisco
-4,Domingo,2026-08-16,12:00,UNAM,,Querétaro,Estadio Olímpico de Universitario
-4,Domingo,2026-08-16,17:00,América,,Atlético San Luis,Estadio Banorte
-4,Domingo,2026-08-16,19:00,Santos Laguna,,Guadalajara,Estadio Nuevo Corona
-4,Domingo,2026-08-16,20:00 (21:00),Tijuana,,Cruz Azul,Estadio Caliente
-4,Mon,2026-08-17,19:00,Necaxa,,León,Estadio Victoria de Aguascalientes
-4,Mon,2026-08-17,21:00,Pachuca,,Puebla,Estadio Hidalgo
-5,Viernes,2026-08-21,19:00,UANL,,Atlante,Estadio Universitario de Nuevo León
-5,Viernes,2026-08-21,21:00,FC Juárez,,América,Estadio Olímpico Benito Juárez
-5,Sabado,2026-08-22,17:00,Querétaro,,Toluca,Estadio La Corregidora
-5,Sabado,2026-08-22,17:07,Guadalajara,,Tijuana,Estadio Akron
-5,Sabado,2026-08-22,19:00,León,,Monterrey,Estadio León
-5,Sabado,2026-08-22,19:00,Puebla,,Santos Laguna,Estadio Cuauhtémoc
-5,Sabado,2026-08-22,21:00,Cruz Azul,,Atlas,Estadio Banorte
-5,Domingo,2026-08-23,17:00,Atlético San Luis,,Pachuca,Estadio Alfonso Lastras Ramírez
-5,Domingo,2026-08-23,19:00,UNAM,,Necaxa,Estadio Olímpico de Universitario
-6,Viernes,2026-08-28,19:00,Atlante,,León,Estadio Banorte
-6,Viernes,2026-08-28,19:00,Necaxa,,Cruz Azul,Estadio Victoria de Aguascalientes
-6,Viernes,2026-08-28,20:00 (21:00),Tijuana,,UNAM,Estadio Caliente
-6,Sabado,2026-08-29,17:00,Pachuca,,Guadalajara,Estadio Hidalgo
-6,Sabado,2026-08-29,17:00,Atlas,,Querétaro,Estadio Jalisco
-6,Sabado,2026-08-29,19:00,América,,Puebla,Estadio Banorte
-6,Sabado,2026-08-29,21:00,Santos Laguna,,UANL,Estadio Nuevo Corona
-6,Domingo,2026-08-30,18:00,Toluca,,FC Juárez,Estadio Nemesio Díez
-6,Domingo,2026-08-30,20:00,Monterrey,,Atlético San Luis,Estadio BBVA
-7,Viernes,2026-09-04,19:00,Puebla,,Toluca,Estadio Cuauhtémoc
-7,Viernes,2026-09-04,21:00,FC Juárez,,Pachuca,Estadio Olímpico Benito Juárez
-7,Sabado,2026-09-05,17:00,Atlético San Luis,,Guadalajara,Estadio Alfonso Lastras Ramírez
-7,Sabado,2026-09-05,17:00,Querétaro,,Monterrey,Estadio La Corregidora
-7,Sabado,2026-09-05,19:00,América,,Tijuana,Estadio Banorte
-7,Sabado,2026-09-05,19:00,UANL,,Necaxa,Estadio Universitario de Nuevo León
-7,Sabado,2026-09-05,21:00,Atlas,,Atlante,Estadio Jalisco
-7,Domingo,2026-09-06,12:00,UNAM,,León,Estadio Olímpico de Universitario
-7,Domingo,2026-09-06,20:00,Cruz Azul,,Santos Laguna,Estadio Banorte
-8,Viernes,2026-09-11,19:00,Necaxa,,Puebla,Estadio Victoria de Aguascalientes
-8,Viernes,2026-09-11,20:00 (21:00),Tijuana,,Querétaro,Estadio Caliente
-8,Viernes,2026-09-11,21:00,Atlante,,Pachuca,Estadio Banorte
-8,Sabado,2026-09-12,,Toluca,,Atlas,Estadio Nemesio Díez
-8,Sabado,2026-09-12,17:00,León,,Atlético San Luis,Estadio León
-8,Domingo,2026-09-13,,Cruz Azul,,América,Estadio Banorte
-8,Domingo,2026-09-13,18:00,Guadalajara,,UNAM,Estadio Akron
-8,Domingo,2026-09-13,18:00,Santos Laguna,,FC Juárez,Estadio Nuevo Corona
-8,Domingo,2026-09-13,20:00,Monterrey,,UANL,Estadio BBVA
-9,Viernes,2026-09-18,19:00,Puebla,,Atlante,Estadio Cuauhtémoc
-9,Viernes,2026-09-18,21:00,FC Juárez,,UANL,Estadio Olímpico Benito Juárez
-9,Sabado,2026-09-19,17:00,Atlas,,UNAM,Estadio Jalisco
-9,Sabado,2026-09-19,17:00,Atlético San Luis,,Necaxa,Estadio Alfonso Lastras Ramírez
-9,Sabado,2026-09-19,19:00,Monterrey,,Cruz Azul,Estadio BBVA
-9,Sabado,2026-09-19,21:00,América,,Guadalajara,Estadio Banorte
-9,Domingo,2026-09-20,18:00,Pachuca,,Tijuana,Estadio Hidalgo
-9,Domingo,2026-09-20,18:00,Toluca,,Santos Laguna,Estadio Nemesio Díez
-9,Domingo,2026-09-20,20:00,Querétaro,,León,Estadio La Corregidora
-10,Viernes,2026-09-25,19:00,Atlante,,Monterrey,Estadio Banorte
-10,Viernes,2026-09-25,20:00 (21:00),Tijuana,,Atlas,Estadio Caliente
-10,Sabado,2026-09-26,17:00,Guadalajara,,Querétaro,Estadio Akron
-10,Sabado,2026-09-26,19:00,Santos Laguna,,Pachuca,Estadio Nuevo Corona
-10,Sabado,2026-09-26,19:00,UANL,,Puebla,Estadio Universitario de Nuevo León
-10,Sabado,2026-09-26,21:00,Cruz Azul,,Toluca,Estadio Banorte
-10,Domingo,2026-09-27,12:00,UNAM,,Atlético San Luis,Estadio Olímpico de Universitario
-10,Domingo,2026-09-27,19:00,León,,FC Juárez,Estadio León
-10,Domingo,2026-09-27,21:00,Necaxa,,América,Estadio Victoria de Aguascalientes
-11,Viernes,2026-10-09,19:00,Querétaro,,Atlante,Estadio La Corregidora
-11,Viernes,2026-10-09,19:00,Puebla,,León,Estadio Cuauhtémoc
-11,Viernes,2026-10-09,21:00,UANL,,Toluca,Estadio Universitario de Nuevo León
-11,Sabado,2026-10-10,17:00,FC Juárez,,Tijuana,Estadio Olímpico Benito Juárez
-11,Sabado,2026-10-10,19:00,Atlas,,Guadalajara,Estadio Jalisco
-11,Sabado,2026-10-10,21:00,América,,Monterrey,Estadio Banorte
-11,Domingo,2026-10-11,17:00,Atlético San Luis,,Santos Laguna,Estadio Alfonso Lastras Ramírez
-11,Domingo,2026-10-11,17:00,Pachuca,,Necaxa,Estadio Hidalgo
-11,Domingo,2026-10-11,19:00,UNAM,,Cruz Azul,Estadio Olímpico de Universitario
-12,Viernes,2026-10-16,19:00,Necaxa,,Atlas,Estadio Victoria de Aguascalientes
-12,Viernes,2026-10-16,20:00 (21:00),Tijuana,,Puebla,Estadio Caliente
-12,Viernes,2026-10-16,21:00,Atlante,,UNAM,Estadio Banorte
-12,Sabado,2026-10-17,17:00,Guadalajara,,UANL,Estadio Akron
-12,Sabado,2026-10-17,17:00,Santos Laguna,,Querétaro,Estadio Nuevo Corona
-12,Sabado,2026-10-17,19:00,León,,América,Estadio León
-12,Sabado,2026-10-17,19:00,Toluca,,Atlético San Luis,Estadio Nemesio Díez
-12,Sabado,2026-10-17,21:00,Cruz Azul,,FC Juárez,Estadio Banorte
-12,Domingo,2026-10-18,19:00,Monterrey,,Pachuca,Estadio BBVA
-13,Martes,2026-10-20,19:00,FC Juárez,,Atlante,Estadio Olímpico Benito Juárez
-13,Martes,2026-10-20,19:00,Atlético San Luis,,Querétaro,Estadio Alfonso Lastras Ramírez
-13,Martes,2026-10-20,21:00,Guadalajara,,Necaxa,Estadio Akron
-13,Martes,2026-10-20,21:00,UANL,,León,Estadio Universitario de Nuevo León
-13,Miercoles,2026-10-21,19:00,Atlas,,América,Estadio Jalisco
-13,Miercoles,2026-10-21,19:00,Puebla,,Monterrey,Estadio Cuauhtémoc
-13,Miercoles,2026-10-21,19:00,Toluca,,Tijuana,Estadio Nemesio Díez
-13,Miercoles,2026-10-21,21:00,Santos Laguna,,UNAM,Estadio Nuevo Corona
-13,Miercoles,2026-10-21,21:00,Pachuca,,Cruz Azul,Estadio Hidalgo
-14,Viernes,2026-10-23,19:00,Necaxa,,FC Juárez,Estadio Victoria de Aguascalientes
-14,Viernes,2026-10-23,21:00,Atlante,,Atlético San Luis,Estadio Banorte
-14,Sabado,2026-10-24,17:00,León,,Toluca,Estadio León
-14,Sabado,2026-10-24,19:00,Monterrey,,Guadalajara,Estadio BBVA
-14,Sabado,2026-10-24,21:00,UNAM,,UANL,Estadio Olímpico de Universitario
-14,Domingo,2026-10-25,17:00,Atlas,,Puebla,Estadio Jalisco
-14,Domingo,2026-10-25,17:00,América,,Pachuca,Estadio Banorte
-14,Domingo,2026-10-25,19:00,Querétaro,,Cruz Azul,Estadio La Corregidora
-14,Domingo,2026-10-25,20:00 (21:00),Tijuana,,Santos Laguna,Estadio Caliente
-15,Viernes,2026-10-30,19:00,Atlético San Luis,,Atlas,Estadio Alfonso Lastras Ramírez
-15,Viernes,2026-10-30,19:00,FC Juárez,,Querétaro,Estadio Olímpico Benito Juárez
-15,Viernes,2026-10-30,21:00,Puebla,,UNAM,Estadio Cuauhtémoc
-15,Sabado,2026-10-31,17:00,Pachuca,,UANL,Estadio Hidalgo
-15,Sabado,2026-10-31,19:00,Monterrey,,Tijuana,Estadio BBVA
-15,Sabado,2026-10-31,19:00,Guadalajara,,Atlante,Estadio Akron
-15,Sabado,2026-10-31,21:00,América,,Toluca,Estadio Banorte
-15,Domingo,2026-11-01,17:00,Santos Laguna,,Necaxa,Estadio Nuevo Corona
-15,Domingo,2026-11-01,19:00,Cruz Azul,,León,Estadio Banorte
-16,Viernes,2026-11-06,19:00,Necaxa,,Tijuana,Estadio Victoria de Aguascalientes
-16,Viernes,2026-11-06,19:00,Atlético San Luis,,FC Juárez,Estadio Alfonso Lastras Ramírez
-16,Viernes,2026-11-06,21:00,Atlante,,Santos Laguna,Estadio Banorte
-16,Sabado,2026-11-07,17:00,UANL,,Cruz Azul,Estadio Universitario de Nuevo León
-16,Sabado,2026-11-07,17:00,Atlas,,Pachuca,Estadio Jalisco
-16,Sabado,2026-11-07,19:00,Toluca,,Monterrey,Estadio Nemesio Díez
-16,Sabado,2026-11-07,21:00,UNAM,,América,Estadio Olímpico de Universitario
-16,Domingo,2026-11-08,18:00,Querétaro,,Puebla,Estadio La Corregidora
-16,Domingo,2026-11-08,19:00,León,,Guadalajara,Estadio León
-17,Viernes,2026-11-20,19:00 (21:00),Tijuana,,Atlante,Estadio Caliente
-17,Viernes,2026-11-20,19:00,Puebla,,Atlético San Luis,Estadio Cuauhtémoc
-17,Viernes,2026-11-20,20:00 (21:00),FC Juárez,,Atlas,Estadio Olímpico Benito Juárez
-17,Sabado,2026-11-21,17:00,Santos Laguna,,León,Estadio Nuevo Corona
-17,Sabado,2026-11-21,17:00,Pachuca,,Toluca,Estadio Hidalgo
-17,Sabado,2026-11-21,19:00,UNAM,,Monterrey,Estadio Olímpico de Universitario
-17,Sabado,2026-11-21,21:00,UANL,,América,Estadio Universitario de Nuevo León
-17,Domingo,2026-11-22,17:00,Guadalajara,,Cruz Azul,Estadio Akron
-17,Domingo,2026-11-22,19:00,Querétaro,,Necaxa,Estadio La Corregidora
+temporada,torneo,jornada,fecha,hora,local,visitante,goles_local,goles_visitante,penales,pen_local,,pen_visitante,Score,,,,,,,
+2025/26,Apertura,1,2025-07-11,19:00,Puebla,Atlas,2,3,FALSE,,,,2–3,,,,"11,433",Estadio Cuauhtémoc,Charles Terrazas,Match Report
+2025/26,Apertura,1,2025-07-11,21:05,Tijuana,Queretaro,1,0,FALSE,,,,1–0,,,,"18,333",Estadio Caliente,Vicente Arce,Match Report
+2025/26,Apertura,1,2025-07-11,21:00,FC Juárez,America,1,1,FALSE,,,,1–1,,,,"18,098",Estadio Olímpico Benito Juárez,Ismael Lopez,Match Report
+2025/26,Apertura,1,2025-07-12,19:00,Santos Laguna,UNAM,3,0,FALSE,,,,3–0,,,,"11,508",Estadio Nuevo Corona,Yonatan Peinado Aguirre,Match Report
+2025/26,Apertura,1,2025-07-12,19:00,Toluca,Necaxa,3,1,FALSE,,,,3–1,,,,"20,273",Estadio Nemesio Díez,Fernando Hernández,Match Report
+2025/26,Apertura,1,2025-07-12,21:05,Cruz Azul,Mazatlan,0,0,FALSE,,,,0–0,,,,"20,098",Estadio Olímpico de Universitario,Maximiliano Quintero,Match Report
+2025/26,Apertura,1,2025-07-13,17:00,Pachuca,Monterrey,3,0,FALSE,,,,3–0,,,,"13,915",Estadio Hidalgo,Víctor Cáceres,Match Report
+2025/26,Apertura,1,2025-07-13,19:00,Leon,Atlético San Luis,0,1,FALSE,,,,0–1,,,,"21,957",Estadio Leon,Abraham Quirarte,Match Report
+2025/26,Apertura,2,2025-07-16,19:00,America,Tijuana,3,1,FALSE,,,,3–1,,,,"30,247",Estadio de la Ciudad de los Deportes,Marco Antonio Ortíz,Match Report
+2025/26,Apertura,2,2025-07-16,21:05,Santos Laguna,Toluca,2,4,FALSE,,,,2–4,,,,"29,101",Estadio Nuevo Corona,Salvador Pérez Villalobos,Match Report
+2025/26,Apertura,2,2025-07-18,19:00,Necaxa,Queretaro,3,1,FALSE,,,,3–1,,,,"19,100",Estadio Victoria de Aguascalientes,Martín Molina,Match Report
+2025/26,Apertura,2,2025-07-18,21:05,Mazatlan,Puebla,2,1,FALSE,,,,2–1,,,,"8,703",Estadio El Encanto,Katia García,Match Report
+2025/26,Apertura,2,2025-07-18,21:00,Atlético San Luis,Monterrey,0,1,FALSE,,,,0–1,,,,"16,930",Estadio Alfonso Lastras Ramírez,Joaquín Vizcarra Armenta,Match Report
+2025/26,Apertura,2,2025-07-19,19:00,UANL,FC Juárez,1,0,FALSE,,,,1–0,,,,"41,615",Estadio Universitario de Nuevo Leon,Iván López,Match Report
+2025/26,Apertura,2,2025-07-19,19:00,Leon,Guadalajara,1,0,FALSE,,,,1–0,,,,"22,185",Estadio Leon,Adonai Escobedo,Match Report
+2025/26,Apertura,2,2025-07-19,21:05,Atlas,Cruz Azul,3,3,FALSE,,,,3–3,,,,"25,098",Estadio Jalisco,Luis Enrique Santander,Match Report
+2025/26,Apertura,2,2025-07-20,12:00,UNAM,Pachuca,2,3,FALSE,,,,2–3,,,,"24,277",Estadio Olímpico de Universitario,Luis García,Match Report
+2025/26,Apertura,3,2025-07-25,19:00,Puebla,Santos Laguna,1,0,FALSE,,,,1–0,,,,"13,250",Estadio Cuauhtémoc,Jorge Camacho,Match Report
+2025/26,Apertura,3,2025-07-25,19:00,Queretaro,UNAM,0,2,FALSE,,,,0–2,,,,"23,432",Estadio La Corregidora,Charles Terrazas,Match Report
+2025/26,Apertura,3,2025-07-25,21:00,Tijuana,FC Juárez,1,1,FALSE,,,,1–1,,,,"18,133",Estadio Caliente,Joaquín Vizcarra Armenta,Match Report
+2025/26,Apertura,3,2025-07-26,17:00,Pachuca,Mazatlan,1,0,FALSE,,,,1–0,,,,"11,747",Estadio Hidalgo,Karen Hernández,Match Report
+2025/26,Apertura,3,2025-07-26,17:07,Guadalajara,Atlético San Luis,4,3,FALSE,,,,4–3,,,,"38,832",Estadio Akron,César Arturo Ramos,Match Report
+2025/26,Apertura,3,2025-07-26,19:00,Monterrey,Atlas,3,1,FALSE,,,,3–1,,,,"41,160",Estadio BBVA,Fernando Hernández,Match Report
+2025/26,Apertura,3,2025-07-26,19:00,Cruz Azul,Leon,4,1,FALSE,,,,4–1,,,,"20,094",Estadio Olímpico de Universitario,Daniel Quintero,Match Report
+2025/26,Apertura,3,2025-07-26,19:00,Toluca,UANL,3,4,FALSE,,,,3–4,,,,"27,273",Estadio Nemesio Díez,Marco Antonio Ortíz,Match Report
+2025/26,Apertura,3,2025-07-26,21:05,Necaxa,America,1,1,FALSE,,,,1–1,,,,"20,586",Estadio Victoria de Aguascalientes,Jesús López,Match Report
+2025/26,Apertura,4,2025-08-08,21:00,UANL,Puebla,7,0,FALSE,,,,7–0,,,,"10,023",Estadio Universitario de Nuevo Leon,Yonatan Peinado Aguirre,Match Report
+2025/26,Apertura,4,2025-08-09,19:00,America,Queretaro,1,0,FALSE,,,,1–0,,,,"23,701",Estadio de la Ciudad de los Deportes,Adonai Escobedo,Match Report
+2025/26,Apertura,4,2025-08-09,21:00,Mazatlan,Tijuana,2,2,FALSE,,,,2–2,,,,"9,747",Estadio El Encanto,Maximiliano Quintero,Match Report
+2025/26,Apertura,4,2025-08-09,21:05,Atlas,Pachuca,0,3,FALSE,,,,0–3,,,,"16,773",Estadio Jalisco,Daniel Quintero,Match Report
+2025/26,Apertura,4,2025-08-10,18:00,UNAM,Necaxa,1,1,FALSE,,,,1–1,,,,"34,108",Estadio Olímpico de Universitario,Guillermo Pacheco,Match Report
+2025/26,Apertura,4,2025-08-10,20:05,Santos Laguna,Guadalajara,1,0,FALSE,,,,1–0,,,,"16,155",Estadio Nuevo Corona,Ismael López,Match Report
+2025/26,Apertura,4,2025-08-11,19:00,Leon,Monterrey,1,3,FALSE,,,,1–3,,,,"23,057",Estadio Leon,Luis Enrique Santander,Match Report
+2025/26,Apertura,4,2025-08-11,21:00,FC Juárez,Toluca,0,2,FALSE,,,,0–2,,,,"7,793",Estadio Olímpico Benito Juárez,Katia García,Match Report
+2025/26,Apertura,4,2025-08-11,21:05,Atlético San Luis,Cruz Azul,1,2,FALSE,,,,1–2,,,,"19,335",Estadio Alfonso Lastras Ramírez,Vicente Arce,Match Report
+2025/26,Apertura,5,2025-08-15,19:00,Puebla,Atlético San Luis,0,2,FALSE,,,,0–2,,,,"10,978",Estadio Cuauhtémoc,Luis García,Match Report
+2025/26,Apertura,5,2025-08-15,21:05,Necaxa,Leon,0,1,FALSE,,,,0–1,,,,"19,588",Estadio Victoria de Aguascalientes,Oscar Mejía,Match Report
+2025/26,Apertura,5,2025-08-16,17:07,Guadalajara,FC Juárez,1,2,FALSE,,,,1–2,,,,"33,176",Estadio Akron,Marco Antonio Ortíz,Match Report
+2025/26,Apertura,5,2025-08-16,19:00,Cruz Azul,Santos Laguna,3,2,FALSE,,,,3–2,,,,"14,101",Estadio Olímpico de Universitario,Fernando Hernández,Match Report
+2025/26,Apertura,5,2025-08-16,19:00,Pachuca,Tijuana,0,2,FALSE,,,,0–2,,,,"11,798",Estadio Hidalgo,Salvador Pérez Villalobos,Match Report
+2025/26,Apertura,5,2025-08-16,19:00,UANL,America,1,3,FALSE,,,,1–3,,,,"41,615",Estadio Universitario de Nuevo Leon,César Arturo Ramos,Match Report
+2025/26,Apertura,5,2025-08-16,21:10,Toluca,UNAM,1,1,FALSE,,,,1–1,,,,"27,273",Estadio Nemesio Díez,Víctor Cáceres,Match Report
+2025/26,Apertura,5,2025-08-17,16:00,Queretaro,Atlas,3,3,FALSE,,,,3–3,,,,"9,261",Estadio La Corregidora,Abraham Quirarte,Match Report
+2025/26,Apertura,5,2025-08-17,18:00,Monterrey,Mazatlan,3,2,FALSE,,,,3–2,,,,"45,894",Estadio BBVA,Martín Molina,Match Report
+2025/26,Apertura,6,2025-08-22,19:00,Queretaro,Atlético San Luis,3,2,FALSE,,,,3–2,,,,"8,159",Estadio La Corregidora,Oscar Mejía,Match Report
+2025/26,Apertura,6,2025-08-22,19:00,FC Juárez,Santos Laguna,2,1,FALSE,,,,2–1,,,,"7,518",Estadio Olímpico Benito Juárez,Jorge Camacho,Match Report
+2025/26,Apertura,6,2025-08-22,21:00,Tijuana,Guadalajara,3,3,FALSE,,,,3–3,,,,"28,553",Estadio Caliente,Katia García,Match Report
+2025/26,Apertura,6,2025-08-23,17:00,Leon,Pachuca,1,1,FALSE,,,,1–1,,,,"20,655",Estadio Leon,Jesús López,Match Report
+2025/26,Apertura,6,2025-08-23,19:00,Mazatlan,UANL,2,2,FALSE,,,,2–2,,,,"13,656",Estadio El Encanto,Joaquín Vizcarra Armenta,Match Report
+2025/26,Apertura,6,2025-08-23,19:00,Monterrey,Necaxa,3,0,FALSE,,,,3–0,,,,"45,032",Estadio BBVA,Yonatan Peinado Aguirre,Match Report
+2025/26,Apertura,6,2025-08-23,21:05,Cruz Azul,Toluca,1,0,FALSE,,,,1–0,,,,"22,867",Estadio Olímpico de Universitario,César Arturo Ramos,Match Report
+2025/26,Apertura,6,2025-08-24,17:00,UNAM,Puebla,0,0,FALSE,,,,0–0,,,,"18,450",Estadio Olímpico de Universitario,Iván López,Match Report
+2025/26,Apertura,6,2025-08-24,19:05,Atlas,America,2,4,FALSE,,,,2–4,,,,"35,588",Estadio Jalisco,Marco Antonio Ortíz,Match Report
+2025/26,Apertura,7,2025-08-29,19:00,FC Juárez,Mazatlan,1,0,FALSE,,,,1–0,,,,"6,822",Estadio Olímpico Benito Juárez,Luis Enrique Santander,Match Report
+2025/26,Apertura,7,2025-08-29,19:00,Atlético San Luis,Toluca,1,3,FALSE,,,,1–3,,,,"15,150",Estadio Alfonso Lastras Ramírez,Jorge Camacho,Match Report
+2025/26,Apertura,7,2025-08-29,21:05,Puebla,Monterrey,2,4,FALSE,,,,2–4,,,,"21,945",Estadio Cuauhtémoc,Jesús López,Match Report
+2025/26,Apertura,7,2025-08-30,17:00,Leon,Queretaro,3,0,FALSE,,,,3–0,,,,"21,351",Estadio Leon,Yonatan Peinado Aguirre,Match Report
+2025/26,Apertura,7,2025-08-30,19:00,Santos Laguna,UANL,0,1,FALSE,,,,0–1,,,,"15,457",Estadio Nuevo Corona,Marco Antonio Ortíz,Match Report
+2025/26,Apertura,7,2025-08-30,19:07,Guadalajara,Cruz Azul,1,2,FALSE,,,,1–2,,,,"40,170",Estadio Akron,Víctor Cáceres,Match Report
+2025/26,Apertura,7,2025-08-30,21:05,America,Pachuca,2,0,FALSE,,,,2–0,,,,,Estadio de la Ciudad de los Deportes,Ismael López,Match Report
+2025/26,Apertura,7,2025-08-31,16:00,UNAM,Atlas,1,0,FALSE,,,,1–0,,,,"17,195",Estadio Olímpico de Universitario,Martín Molina,Match Report
+2025/26,Apertura,7,2025-08-31,21:00,Tijuana,Necaxa,3,0,FALSE,,,,3–0,,,,"17,233",Estadio Caliente,César Arturo Ramos,Match Report
+2025/26,Apertura,8,2025-09-12,19:00,Necaxa,FC Juárez,1,1,FALSE,,,,1–1,,,,"10,987",Estadio Victoria de Aguascalientes,Maximiliano Quintero,Match Report
+2025/26,Apertura,8,2025-09-12,21:00,Mazatlan,UNAM,1,4,FALSE,,,,1–4,,,,"10,606",Estadio El Encanto,Adonai Escobedo,Match Report
+2025/26,Apertura,8,2025-09-13,17:00,Pachuca,Cruz Azul,0,1,FALSE,,,,0–1,,,,"19,479",Estadio Hidalgo,Joaquín Vizcarra Armenta,Match Report
+2025/26,Apertura,8,2025-09-13,19:00,Atlas,Santos Laguna,2,2,FALSE,,,,2–2,,,,"13,982",Estadio Jalisco,Guillermo Pacheco,Match Report
+2025/26,Apertura,8,2025-09-13,19:00,UANL,Leon,0,0,FALSE,,,,0–0,,,,"40,186",Estadio Universitario de Nuevo Leon,Daniel Quintero,Match Report
+2025/26,Apertura,8,2025-09-13,21:00,Toluca,Puebla,3,1,FALSE,,,,3–1,,,,"26,589",Estadio Nemesio Díez,Karen Hernández,Match Report
+2025/26,Apertura,8,2025-09-13,21:15,America,Guadalajara,1,2,FALSE,,,,1–2,,,,"30,247",Estadio de la Ciudad de los Deportes,Oscar Mejía,Match Report
+2025/26,Apertura,8,2025-09-14,17:00,Queretaro,Monterrey,0,1,FALSE,,,,0–1,,,,"15,673",Estadio La Corregidora,Katia García,Match Report
+2025/26,Apertura,8,2025-09-14,19:00,Atlético San Luis,Tijuana,1,1,FALSE,,,,1–1,,,,"13,178",Estadio Alfonso Lastras Ramírez,Charles Terrazas,Match Report
+2025/26,Apertura,1,2025-09-17,19:07,Guadalajara,UANL,0,0,FALSE,,,,0–0,,,,"29,297",Estadio Akron,César Arturo Ramos,Match Report
+2025/26,Apertura,9,2025-09-19,19:00,Necaxa,Puebla,1,0,FALSE,,,,1–0,,,,"11,490",Estadio Victoria de Aguascalientes,Jorge Camacho,Match Report
+2025/26,Apertura,9,2025-09-19,19:00,Cruz Azul,FC Juárez,3,2,FALSE,,,,3–2,,,,"15,815",Estadio Olímpico de Universitario,Ismael López,Match Report
+2025/26,Apertura,9,2025-09-19,21:00,Mazatlan,Atlas,1,1,FALSE,,,,1–1,,,,"9,962",Estadio El Encanto,Luis García,Match Report
+2025/26,Apertura,9,2025-09-19,21:05,Tijuana,Leon,5,0,FALSE,,,,5–0,,,,"18,333",Estadio Caliente,Vicente Arce,Match Report
+2025/26,Apertura,9,2025-09-20,17:00,Pachuca,Queretaro,0,2,FALSE,,,,0–2,,,,"6,942",Estadio Hidalgo,Fernando Hernández,Match Report
+2025/26,Apertura,9,2025-09-20,19:00,UNAM,UANL,1,1,FALSE,,,,1–1,,,,"25,935",Estadio Olímpico de Universitario,Oscar Mejía,Match Report
+2025/26,Apertura,9,2025-09-20,19:07,Guadalajara,Toluca,0,3,FALSE,,,,0–3,,,,"37,731",Estadio Akron,Marco Antonio Ortíz,Match Report
+2025/26,Apertura,9,2025-09-20,21:05,Monterrey,America,2,2,FALSE,,,,2–2,,,,"50,910",Estadio BBVA,Víctor Cáceres,Match Report
+2025/26,Apertura,9,2025-09-21,17:00,Santos Laguna,Atlético San Luis,1,4,FALSE,,,,1–4,,,,"9,032",Estadio Nuevo Corona,Abraham Quirarte,Match Report
+2025/26,Apertura,10,2025-09-23,19:00,Puebla,Pachuca,2,2,FALSE,,,,2–2,,,,"9,939",Estadio Cuauhtémoc,Yonatan Peinado Aguirre,Match Report
+2025/26,Apertura,10,2025-09-23,19:07,Guadalajara,Necaxa,3,1,FALSE,,,,3–1,,,,"25,130",Estadio Akron,Maximiliano Quintero,Match Report
+2025/26,Apertura,10,2025-09-23,21:00,FC Juárez,UNAM,3,1,FALSE,,,,3–1,,,,"10,090",Estadio Olímpico Benito Juárez,Salvador Pérez Villalobos,Match Report
+2025/26,Apertura,10,2025-09-23,21:05,Leon,Mazatlan,2,2,FALSE,,,,2–2,,,,"24,335",Estadio Leon,Martín Molina,Match Report
+2025/26,Apertura,10,2025-09-24,18:00,Cruz Azul,Queretaro,2,2,FALSE,,,,2–2,,,,"16,783",Estadio Olímpico de Universitario,Karen Hernández,Match Report
+2025/26,Apertura,10,2025-09-24,19:00,UANL,Atlas,2,0,FALSE,,,,2–0,,,,"36,168",Estadio Universitario de Nuevo Leon,Vicente Arce,Match Report
+2025/26,Apertura,10,2025-09-24,20:00,Toluca,Monterrey,6,2,FALSE,,,,6–2,,,,"25,772",Estadio Nemesio Díez,César Arturo Ramos,Match Report
+2025/26,Apertura,10,2025-09-24,21:00,Santos Laguna,Tijuana,1,0,FALSE,,,,1–0,,,,"7,154",Estadio Nuevo Corona,Iván López,Match Report
+2025/26,Apertura,10,2025-09-24,21:00,Atlético San Luis,America,0,1,FALSE,,,,0–1,,,,"22,841",Estadio Alfonso Lastras Ramírez,Fernando Hernández,Match Report
+2025/26,Apertura,11,2025-09-26,19:00,FC Juárez,Leon,2,0,FALSE,,,,2–0,,,,"7,008",Estadio Olímpico Benito Juárez,Charles Terrazas,Match Report
+2025/26,Apertura,11,2025-09-27,17:00,Pachuca,Atlético San Luis,2,1,FALSE,,,,2–1,,,,"10,450",Estadio Hidalgo,Marco Antonio Ortíz,Match Report
+2025/26,Apertura,11,2025-09-27,17:00,Puebla,Guadalajara,0,2,FALSE,,,,0–2,,,,"22,177",Estadio Cuauhtémoc,Ismael López,Match Report
+2025/26,Apertura,11,2025-09-27,17:00,Atlas,Necaxa,3,2,FALSE,,,,3–2,,,,"13,567",Estadio Jalisco,Víctor Cáceres,Match Report
+2025/26,Apertura,11,2025-09-27,19:00,Toluca,Mazatlan,3,1,FALSE,,,,3–1,,,,"22,273",Estadio Nemesio Díez,Abraham Quirarte,Match Report
+2025/26,Apertura,11,2025-09-27,19:00,Monterrey,Santos Laguna,1,0,FALSE,,,,1–0,,,,"46,290",Estadio BBVA,Luis Enrique Santander,Match Report
+2025/26,Apertura,11,2025-09-27,21:05,America,UNAM,4,1,FALSE,,,,4–1,,,,"26,387",Estadio de la Ciudad de los Deportes,César Arturo Ramos,Match Report
+2025/26,Apertura,11,2025-09-28,17:00,Queretaro,UANL,0,2,FALSE,,,,0–2,,,,"17,710",Estadio La Corregidora,Guillermo Pacheco,Match Report
+2025/26,Apertura,11,2025-09-28,21:05,Tijuana,Cruz Azul,2,0,FALSE,,,,2–0,,,,"29,333",Estadio Caliente,Jorge Camacho,Match Report
+2025/26,Apertura,12,2025-10-03,19:00,Necaxa,Pachuca,0,1,FALSE,,,,0–1,,,,"12,777",Estadio Victoria de Aguascalientes,Guillermo Pacheco,Match Report
+2025/26,Apertura,12,2025-10-03,21:00,Mazatlan,Atlético San Luis,2,1,FALSE,,,,2–1,,,,"7,993",Estadio El Encanto,Iván López,Match Report
+2025/26,Apertura,12,2025-10-03,21:05,Atlas,FC Juárez,3,1,FALSE,,,,3–1,,,,"13,504",Estadio Jalisco,Yonatan Peinado Aguirre,Match Report
+2025/26,Apertura,12,2025-10-04,17:00,Queretaro,Puebla,3,1,FALSE,,,,3–1,,,,"7,763",Estadio La Corregidora,Vicente Arce,Match Report
+2025/26,Apertura,12,2025-10-04,19:00,UANL,Cruz Azul,1,1,FALSE,,,,1–1,,,,"41,615",Estadio Universitario de Nuevo Leon,Ismael López,Match Report
+2025/26,Apertura,12,2025-10-04,19:00,Leon,Toluca,2,4,FALSE,,,,2–4,,,,"25,795",Estadio Leon,Jesús López,Match Report
+2025/26,Apertura,12,2025-10-04,21:05,America,Santos Laguna,3,0,FALSE,,,,3–0,,,,"21,870",Estadio de la Ciudad de los Deportes,Maximiliano Quintero,Match Report
+2025/26,Apertura,12,2025-10-05,19:35,UNAM,Guadalajara,1,2,FALSE,,,,1–2,,,,"41,350",Estadio Olímpico de Universitario,Daniel Quintero,Match Report
+2025/26,Apertura,12,2025-10-05,21:05,Tijuana,Monterrey,2,2,FALSE,,,,2–2,,,,"22,333",Estadio Caliente,Adonai Escobedo,Match Report
+2025/26,Apertura,13,2025-10-17,19:00,Puebla,Tijuana,4,3,FALSE,,,,4–3,,,,"6,955",Estadio Cuauhtémoc,Marco Antonio Ortíz,Match Report
+2025/26,Apertura,13,2025-10-17,21:00,Atlético San Luis,Atlas,2,0,FALSE,,,,2–0,,,,"13,534",Estadio Alfonso Lastras Ramírez,Joaquín Vizcarra Armenta,Match Report
+2025/26,Apertura,13,2025-10-17,21:00,UANL,Necaxa,5,3,FALSE,,,,5–3,,,,"41,615",Estadio Universitario de Nuevo Leon,Adonai Escobedo,Match Report
+2025/26,Apertura,13,2025-10-18,17:00,FC Juárez,Pachuca,2,2,FALSE,,,,2–2,,,,"6,053",Estadio Olímpico Benito Juárez,César Arturo Ramos,Match Report
+2025/26,Apertura,13,2025-10-18,17:00,Toluca,Queretaro,4,0,FALSE,,,,4–0,,,,"27,273",Estadio Nemesio Díez,Luis Enrique Santander,Match Report
+2025/26,Apertura,13,2025-10-18,17:00,Santos Laguna,Leon,2,0,FALSE,,,,2–0,,,,"8,217",Estadio Nuevo Corona,Daniel Quintero,Match Report
+2025/26,Apertura,13,2025-10-18,19:00,Monterrey,UNAM,1,1,FALSE,,,,1–1,,,,"47,706",Estadio BBVA,Víctor Cáceres,Match Report
+2025/26,Apertura,13,2025-10-18,19:07,Guadalajara,Mazatlan,2,0,FALSE,,,,2–0,,,,"34,478",Estadio Akron,Fernando Hernández,Match Report
+2025/26,Apertura,13,2025-10-18,21:05,Cruz Azul,America,2,1,FALSE,,,,2–1,,,,"40,237",Estadio Olímpico de Universitario,Jesús López,Match Report
+2025/26,Apertura,14,2025-10-21,19:00,Necaxa,Cruz Azul,1,1,FALSE,,,,1–1,,,,"17,523",Estadio Victoria de Aguascalientes,Vicente Arce,Match Report
+2025/26,Apertura,14,2025-10-21,19:00,America,Puebla,2,1,FALSE,,,,2–1,,,,"18,130",Estadio de la Ciudad de los Deportes,Martín Molina,Match Report
+2025/26,Apertura,14,2025-10-21,21:00,Mazatlan,Santos Laguna,2,2,FALSE,,,,2–2,,,,"6,528",Estadio El Encanto,Karen Hernández,Match Report
+2025/26,Apertura,14,2025-10-21,21:05,Monterrey,FC Juárez,4,2,FALSE,,,,4–2,,,,"38,734",Estadio BBVA,Iván López,Match Report
+2025/26,Apertura,14,2025-10-22,19:00,Queretaro,Guadalajara,1,0,FALSE,,,,1–0,,,,"27,712",Estadio La Corregidora,Maximiliano Quintero,Match Report
+2025/26,Apertura,14,2025-10-22,19:00,Pachuca,UANL,1,2,FALSE,,,,1–2,,,,"10,485",Estadio Hidalgo,Abraham Quirarte,Match Report
+2025/26,Apertura,14,2025-10-22,21:00,Tijuana,Toluca,0,0,FALSE,,,,0–0,,,,"23,333",Estadio Caliente,Oscar Mejía,Match Report
+2025/26,Apertura,14,2025-10-22,21:00,Atlas,Leon,2,0,FALSE,,,,2–0,,,,"16,256",Estadio Jalisco,Ismael López,Match Report
+2025/26,Apertura,14,2025-10-22,21:05,UNAM,Atlético San Luis,0,1,FALSE,,,,0–1,,,,"10,235",Estadio Olímpico de Universitario,Luis García,Match Report
+2025/26,Apertura,15,2025-10-24,19:00,FC Juárez,Puebla,4,4,FALSE,,,,4–4,,,,"7,006",Estadio Olímpico Benito Juárez,Fernando Hernández,Match Report
+2025/26,Apertura,15,2025-10-24,21:00,Mazatlan,America,2,2,FALSE,,,,2–2,,,,"18,660",Estadio El Encanto,Guillermo Pacheco,Match Report
+2025/26,Apertura,15,2025-10-25,17:00,UANL,Tijuana,2,0,FALSE,,,,2–0,,,,"41,615",Estadio Universitario de Nuevo Leon,Jorge Camacho,Match Report
+2025/26,Apertura,15,2025-10-25,19:00,Leon,UNAM,1,1,FALSE,,,,1–1,,,,"21,151",Estadio Leon,Adonai Escobedo,Match Report
+2025/26,Apertura,15,2025-10-25,19:07,Guadalajara,Atlas,4,1,FALSE,,,,4–1,,,,"40,699",Estadio Akron,Marco Antonio Ortíz,Match Report
+2025/26,Apertura,15,2025-10-25,21:05,Cruz Azul,Monterrey,2,0,FALSE,,,,2–0,,,,"18,406",Estadio Olímpico de Universitario,Daniel Quintero,Match Report
+2025/26,Apertura,15,2025-10-26,17:00,Santos Laguna,Queretaro,3,1,FALSE,,,,3–1,,,,"8,563",Estadio Nuevo Corona,Katia García,Match Report
+2025/26,Apertura,15,2025-10-26,19:00,Atlético San Luis,Necaxa,3,4,FALSE,,,,3–4,,,,"12,494",Estadio Alfonso Lastras Ramírez,Luis Enrique Santander,Match Report
+2025/26,Apertura,15,2025-10-26,19:00,Toluca,Pachuca,2,2,FALSE,,,,2–2,,,,"24,000",Estadio Nemesio Díez,Jesús López,Match Report
+2025/26,Apertura,16,2025-10-31,19:00,Necaxa,Santos Laguna,4,1,FALSE,,,,4–1,,,,"14,747",Estadio Victoria de Aguascalientes,Jesús López,Match Report
+2025/26,Apertura,16,2025-10-31,21:00,Atlético San Luis,FC Juárez,1,2,FALSE,,,,1–2,,,,"10,237",Estadio Alfonso Lastras Ramírez,Daniel Quintero,Match Report
+2025/26,Apertura,16,2025-10-31,21:05,Puebla,Cruz Azul,0,3,FALSE,,,,0–3,,,,"25,644",Estadio Cuauhtémoc,Guillermo Pacheco,Match Report
+2025/26,Apertura,16,2025-11-01,17:00,Atlas,Toluca,0,0,FALSE,,,,0–0,,,,"15,921",Estadio Jalisco,Fernando Hernández,Match Report
+2025/26,Apertura,16,2025-11-01,19:05,Monterrey,UANL,1,1,FALSE,,,,1–1,,,,"50,447",Estadio BBVA,César Arturo Ramos,Match Report
+2025/26,Apertura,16,2025-11-01,21:10,America,Leon,2,0,FALSE,,,,2–0,,,,"20,029",Estadio de la Ciudad de los Deportes,Víctor Cáceres,Match Report
+2025/26,Apertura,16,2025-11-02,12:00,UNAM,Tijuana,4,1,FALSE,,,,4–1,,,,"13,901",Estadio Olímpico de Universitario,Maximiliano Quintero,Match Report
+2025/26,Apertura,16,2025-11-02,17:00,Queretaro,Mazatlan,1,0,FALSE,,,,1–0,,,,"8,803",Estadio La Corregidora,Yonatan Peinado Aguirre,Match Report
+2025/26,Apertura,16,2025-11-02,19:00,Pachuca,Guadalajara,0,1,FALSE,,,,0–1,,,,"14,967",Estadio Hidalgo,Adonai Escobedo,Match Report
+2025/26,Apertura,17,2025-11-07,19:00,FC Juárez,Queretaro,1,2,FALSE,,,,1–2,,,,"8,556",Estadio Olímpico Benito Juárez,Vicente Arce,Match Report
+2025/26,Apertura,17,2025-11-07,21:00,Tijuana,Atlas,2,0,FALSE,,,,2–0,,,,"18,733",Estadio Caliente,Ismael López,Match Report
+2025/26,Apertura,17,2025-11-07,21:00,Mazatlan,Necaxa,1,1,FALSE,,,,1–1,,,,"9,546",Estadio El Encanto,Katia García,Match Report
+2025/26,Apertura,17,2025-11-08,17:00,UANL,Atlético San Luis,3,1,FALSE,,,,3–1,,,,"41,615",Estadio Universitario de Nuevo Leon,Iván López,Match Report
+2025/26,Apertura,17,2025-11-08,17:07,Guadalajara,Monterrey,4,2,FALSE,,,,4–2,,,,"40,396",Estadio Akron,Oscar Mejía,Match Report
+2025/26,Apertura,17,2025-11-08,19:00,Toluca,America,2,0,FALSE,,,,2–0,,,,"27,273",Estadio Nemesio Díez,Luis Enrique Santander,Match Report
+2025/26,Apertura,17,2025-11-08,19:00,Leon,Puebla,1,2,FALSE,,,,1–2,,,,"25,032",Estadio Leon,Karen Hernández,Match Report
+2025/26,Apertura,17,2025-11-08,21:05,Cruz Azul,UNAM,2,3,FALSE,,,,2–3,,,,"36,025",Estadio Cuauhtémoc,Fernando Hernández,Match Report
+2025/26,Apertura,17,2025-11-09,17:00,Santos Laguna,Pachuca,1,0,FALSE,,,,1–0,,,,"8,740",Estadio Nuevo Corona,Marco Antonio Ortíz,Match Report
+2025/26,Apertura,17,2025-11-20,21:00,Tijuana,FC Juárez,3,1,FALSE,,,,3–1,,,,"13,800",Estadio Caliente,Marco Antonio Ortíz,Match Report
+2025/26,Apertura,17,2025-11-20,19:00,Pachuca,UNAM,3,1,FALSE,,,,3–1,,,,"12,385",Estadio Hidalgo,Luis Enrique Santander,Match Report
+2025/26,Apertura,17,2025-11-23,19:00,FC Juárez,Pachuca,2,1,FALSE,,,,2–1,,,,"12,500",Estadio Olímpico Benito Juárez,Oscar Mejía,Match Report
+2025/26,Apertura,17,2025-11-26,19:00,FC Juárez,Toluca,1,2,FALSE,,,,1–2,,,,"14,500",Estadio Olímpico Benito Juárez,Maximiliano Quintero,Match Report
+2025/26,Apertura,17,2025-11-26,23:00,Tijuana,UANL,3,0,FALSE,,,,3–0,,,,"20,733",Estadio Caliente,Vicente Arce,Match Report
+2025/26,Apertura,17,2025-11-26,21:05,Monterrey,America,2,0,FALSE,,,,2–0,,,,"43,688",Estadio BBVA,Jesús López,Match Report
+2025/26,Apertura,17,2025-11-27,20:07,Guadalajara,Cruz Azul,0,0,FALSE,,,,0–0,,,,"41,476",Estadio Akron,Guillermo Pacheco,Match Report
+2025/26,Apertura,17,2025-11-29,17:00,America,Monterrey,2,1,FALSE,,,,2–1,,,,"30,681",Estadio de la Ciudad de los Deportes,César Arturo Ramos,Match Report
+2025/26,Apertura,17,2025-11-29,19:05,Toluca,FC Juárez,0,0,FALSE,,,,0–0,,,,"28,237",Estadio Nemesio Díez,Katia García,Match Report
+2025/26,Apertura,17,2025-11-29,21:10,UANL,Tijuana,5,0,FALSE,,,,5–0,,,,"41,615",Estadio Universitario de Nuevo Leon,Marco Antonio Ortíz,Match Report
+2025/26,Apertura,17,2025-11-30,19:00,Cruz Azul,Guadalajara,3,2,FALSE,,,,3–2,,,,"58,445",Estadio Olímpico de Universitario,Daniel Quintero,Match Report
+2025/26,Apertura,17,2025-12-03,19:00,Cruz Azul,UANL,1,1,FALSE,,,,1–1,,,,"58,445",Estadio Olímpico de Universitario,Ismael López,Match Report
+2025/26,Apertura,17,2025-12-03,21:10,Monterrey,Toluca,1,0,FALSE,,,,1–0,,,,"50,716",Estadio BBVA,Daniel Quintero,Match Report
+2025/26,Apertura,17,2025-12-06,19:00,Toluca,Monterrey,3,2,FALSE,,,,3–2,,,,"28,237",Estadio Nemesio Díez,Luis Enrique Santander,Match Report
+2025/26,Apertura,17,2025-12-06,21:10,UANL,Cruz Azul,1,1,FALSE,,,,1–1,,,,"41,615",Estadio Universitario de Nuevo Leon,Víctor Cáceres,Match Report
+2025/26,Apertura,17,2025-12-11,20:00,UANL,Toluca,1,0,FALSE,,,,1–0,,,,"41,000",Estadio Universitario de Nuevo Leon,Marco Antonio Ortíz,Match Report
+2025/26,Apertura,17,2025-12-14,19:00,Toluca,UANL,2,1,TRUE,9,,8,2–1 ,,,,"28,237",Estadio Nemesio Díez,César Arturo Ramos,Match Report
+2025/26,Clausura,1,2026-01-09,19:00,Mazatlan,FC Juárez,1,2,FALSE,,,,1–2,,,,"6,472",Estadio El Encanto,Iván López,Match Report
+2025/26,Clausura,1,2026-01-09,21:00,Tijuana,America,0,0,FALSE,,,,0–0,,,,"28,833",Estadio Caliente,Ismael López,Match Report
+2025/26,Clausura,1,2026-01-09,21:00,Atlas,Puebla,1,0,FALSE,,,,1–0,,,,"17,086",Estadio Jalisco,César Arturo Ramos,Match Report
+2025/26,Clausura,1,2026-01-10,17:07,Guadalajara,Pachuca,2,0,FALSE,,,,2–0,,,,"35,278",Estadio Akron,Marco Antonio Ortíz,Match Report
+2025/26,Clausura,1,2026-01-10,19:00,Santos Laguna,Necaxa,1,3,FALSE,,,,1–3,,,,"15,174",Estadio Nuevo Corona,Luis García,Match Report
+2025/26,Clausura,1,2026-01-10,19:00,Leon,Cruz Azul,2,1,FALSE,,,,2–1,,,,"18,694",Estadio Leon,Víctor Cáceres,Match Report
+2025/26,Clausura,1,2026-01-10,21:05,Monterrey,Toluca,0,1,FALSE,,,,0–1,,,,"45,238",Estadio BBVA,Luis Enrique Santander,Match Report
+2025/26,Clausura,1,2026-01-11,12:00,UNAM,Queretaro,1,1,FALSE,,,,1–1,,,,"22,135",Estadio Olímpico de Universitario,Maximiliano Quintero,Match Report
+2025/26,Clausura,1,2026-01-11,19:00,Atlético San Luis,UANL,1,2,FALSE,,,,1–2,,,,"16,900",Estadio Alfonso Lastras Ramírez,Daniel Quintero,Match Report
+2025/26,Clausura,2,2026-01-13,17:00,Puebla,Mazatlan,2,1,FALSE,,,,2–1,,,,"8,696",Estadio Cuauhtémoc,Joaquín Vizcarra Armenta,Match Report
+2025/26,Clausura,2,2026-01-13,19:00,Necaxa,Monterrey,0,2,FALSE,,,,0–2,,,,"12,638",Estadio Victoria de Aguascalientes,Fernando Hernández,Match Report
+2025/26,Clausura,2,2026-01-13,19:06,Pachuca,Leon,2,1,FALSE,,,,2–1,,,,"9,114",Estadio Hidalgo,Guillermo Pacheco,Match Report
+2025/26,Clausura,2,2026-01-13,21:10,FC Juárez,Guadalajara,0,1,FALSE,,,,0–1,,,,"14,558",Estadio Olímpico Benito Juárez,Adonai Escobedo,Match Report
+2025/26,Clausura,2,2026-01-14,17:00,Cruz Azul,Atlas,2,0,FALSE,,,,2–0,,,,"7,519",Estadio Cuauhtémoc,Yonatan Peinado Aguirre,Match Report
+2025/26,Clausura,2,2026-01-14,19:00,Queretaro,Tijuana,1,2,FALSE,,,,1–2,,,,"10,915",Estadio La Corregidora,Karen Hernández,Match Report
+2025/26,Clausura,2,2026-01-14,19:05,America,Atlético San Luis,0,2,FALSE,,,,0–2,,,,"15,331",Estadio de la Ciudad de los Deportes,Vicente Arce,Match Report
+2025/26,Clausura,2,2026-01-14,21:06,UANL,UNAM,0,1,FALSE,,,,0–1,,,,"40,074",Estadio Universitario de Nuevo Leon,Jesús López,Match Report
+2025/26,Clausura,2,2026-01-14,21:10,Toluca,Santos Laguna,3,1,FALSE,,,,3–1,,,,"26,513",Estadio Nemesio Díez,Martín Molina,Match Report
+2025/26,Clausura,3,2026-01-16,21:00,Mazatlan,Monterrey,1,5,FALSE,,,,1–5,,,,"9,411",Estadio El Encanto,Ismael López,Match Report
+2025/26,Clausura,3,2026-01-17,17:00,Necaxa,Atlas,0,1,FALSE,,,,0–1,,,,"17,557",Estadio Victoria de Aguascalientes,Maximiliano Quintero,Match Report
+2025/26,Clausura,3,2026-01-17,17:07,Guadalajara,Queretaro,2,1,FALSE,,,,2–1,,,,"34,839",Estadio Akron,Jorge Camacho,Match Report
+2025/26,Clausura,3,2026-01-17,19:00,UANL,Toluca,0,0,FALSE,,,,0–0,,,,"40,319",Estadio Universitario de Nuevo Leon,Oscar Mejía,Match Report
+2025/26,Clausura,3,2026-01-17,21:06,Tijuana,Atlético San Luis,1,1,FALSE,,,,1–1,,,,"17,733",Estadio Caliente,Víctor Cáceres,Match Report
+2025/26,Clausura,3,2026-01-17,21:05,Cruz Azul,Puebla,1,0,FALSE,,,,1–0,,,,"15,440",Estadio Cuauhtémoc,Charles Terrazas,Match Report
+2025/26,Clausura,3,2026-01-18,12:00,UNAM,Leon,1,1,FALSE,,,,1–1,,,,"21,487",Estadio Olímpico de Universitario,Daniel Quintero,Match Report
+2025/26,Clausura,3,2026-01-18,17:00,Santos Laguna,FC Juárez,2,2,FALSE,,,,2–2,,,,"11,746",Estadio Nuevo Corona,Marco Antonio Ortíz,Match Report
+2025/26,Clausura,3,2026-01-18,19:06,Pachuca,America,0,0,FALSE,,,,0–0,,,,"13,403",Estadio Hidalgo,Luis Enrique Santander,Match Report
+2025/26,Clausura,4,2026-01-30,19:00,Puebla,Toluca,0,0,FALSE,,,,0–0,,,,"20,503",Estadio Cuauhtémoc,Abraham Quirarte,Match Report
+2025/26,Clausura,4,2026-01-30,21:06,FC Juárez,Cruz Azul,3,4,FALSE,,,,3–4,,,,"14,124",Estadio Olímpico Benito Juárez,Jesús López,Match Report
+2025/26,Clausura,4,2026-01-30,21:00,UNAM,Santos Laguna,4,0,FALSE,,,,4–0,,,,"20,130",Estadio Olímpico de Universitario,Vicente Arce,Match Report
+2025/26,Clausura,4,2026-01-31,16:00,America,Necaxa,2,0,FALSE,,,,2–0,,,,"26,544",Estadio de la Ciudad de los Deportes,Ismael López,Match Report
+2025/26,Clausura,4,2026-01-31,17:00,Atlas,Mazatlan,1,0,FALSE,,,,1–0,,,,"19,723",Estadio Jalisco,Salvador Pérez Villalobos,Match Report
+2025/26,Clausura,4,2026-01-31,17:00,Atlético San Luis,Guadalajara,2,3,FALSE,,,,2–3,,,,"22,883",Estadio Alfonso Lastras Ramírez,Yonatan Peinado Aguirre,Match Report
+2025/26,Clausura,4,2026-01-31,19:00,Monterrey,Tijuana,2,2,FALSE,,,,2–2,,,,"44,748",Estadio BBVA,César Arturo Ramos,Match Report
+2025/26,Clausura,4,2026-01-31,19:10,Leon,UANL,1,2,FALSE,,,,1–2,,,,"22,565",Estadio Leon,Adonai Escobedo,Match Report
+2025/26,Clausura,4,2026-02-01,17:00,Queretaro,Pachuca,0,0,FALSE,,,,0–0,,,,"12,338",Estadio La Corregidora,Fernando Hernández,Match Report
+2025/26,Clausura,5,2026-02-06,19:00,Necaxa,Atlético San Luis,4,1,FALSE,,,,4–1,,,,"13,337",Estadio Victoria de Aguascalientes,Iván López,Match Report
+2025/26,Clausura,5,2026-02-06,19:00,UANL,Santos Laguna,5,1,FALSE,,,,5–1,,,,"38,487",Estadio Universitario de Nuevo Leon,Katia García,Match Report
+2025/26,Clausura,5,2026-02-06,21:06,Tijuana,Puebla,0,0,FALSE,,,,0–0,,,,"16,933",Estadio Caliente,Karen Hernández,Match Report
+2025/26,Clausura,5,2026-02-06,21:06,Mazatlan,Guadalajara,1,2,FALSE,,,,1–2,,,,"16,251",Estadio El Encanto,Vicente Arce,Match Report
+2025/26,Clausura,5,2026-02-07,17:00,Toluca,Cruz Azul,1,1,FALSE,,,,1–1,,,,"27,273",Estadio Nemesio Díez,Luis Enrique Santander,Match Report
+2025/26,Clausura,5,2026-02-07,17:00,Queretaro,Leon,2,0,FALSE,,,,2–0,,,,"11,333",Estadio La Corregidora,Marco Antonio Ortíz,Match Report
+2025/26,Clausura,5,2026-02-07,19:05,Atlas,UNAM,2,2,FALSE,,,,2–2,,,,"22,127",Estadio Jalisco,Jorge Camacho,Match Report
+2025/26,Clausura,5,2026-02-07,19:06,Pachuca,FC Juárez,2,0,FALSE,,,,2–0,,,,"7,112",Estadio Hidalgo,Daniel Quintero,Match Report
+2025/26,Clausura,5,2026-02-07,21:10,America,Monterrey,1,0,FALSE,,,,1–0,,,,"23,939",Estadio de la Ciudad de los Deportes,Oscar Mejía,Match Report
+2025/26,Clausura,6,2026-02-13,19:00,Puebla,UNAM,2,3,FALSE,,,,2–3,,,,"16,340",Estadio Cuauhtémoc,Ismael López,Match Report
+2025/26,Clausura,6,2026-02-13,21:05,Toluca,Tijuana,1,0,FALSE,,,,1–0,,,,"27,273",Estadio Nemesio Díez,Joaquín Vizcarra Armenta,Match Report
+2025/26,Clausura,6,2026-02-14,17:00,Pachuca,Atlas,3,1,FALSE,,,,3–1,,,,"10,627",Estadio Hidalgo,Víctor Cáceres,Match Report
+2025/26,Clausura,6,2026-02-14,17:00,Atlético San Luis,Queretaro,3,0,FALSE,,,,3–0,,,,"13,170",Estadio Alfonso Lastras Ramírez,Adonai Escobedo,Match Report
+2025/26,Clausura,6,2026-02-14,19:06,FC Juárez,Necaxa,1,2,FALSE,,,,1–2,,,,"6,796",Estadio Olímpico Benito Juárez,Oscar Mejía,Match Report
+2025/26,Clausura,6,2026-02-14,19:00,Monterrey,Leon,1,0,FALSE,,,,1–0,,,,"44,902",Estadio BBVA,Fernando Hernández,Match Report
+2025/26,Clausura,6,2026-02-14,21:07,Guadalajara,America,1,0,FALSE,,,,1–0,,,,"43,078",Estadio Akron,César Arturo Ramos,Match Report
+2025/26,Clausura,6,2026-02-15,16:30,Cruz Azul,UANL,2,1,FALSE,,,,2–1,,,,"16,419",Estadio Cuauhtémoc,Daniel Quintero,Match Report
+2025/26,Clausura,6,2026-02-15,17:00,Santos Laguna,Mazatlan,1,2,FALSE,,,,1–2,,,,"10,767",Estadio Nuevo Corona,Luis García,Match Report
+2025/26,Clausura,7,2026-02-20,19:00,UANL,Pachuca,1,2,FALSE,,,,1–2,,,,"41,615",Estadio Universitario de Nuevo Leon,Marco Antonio Ortíz,Match Report
+2025/26,Clausura,7,2026-02-20,21:06,Puebla,America,0,4,FALSE,,,,0–4,,,,"37,204",Estadio Cuauhtémoc,Katia García,Match Report
+2025/26,Clausura,7,2026-02-21,17:00,Atlas,Atlético San Luis,3,2,FALSE,,,,3–2,,,,"16,057",Estadio Jalisco,Fernando Hernández,Match Report
+2025/26,Clausura,7,2026-02-21,19:00,Necaxa,Toluca,0,3,FALSE,,,,0–3,,,,"20,013",Estadio Victoria de Aguascalientes,Yonatan Peinado Aguirre,Match Report
+2025/26,Clausura,7,2026-02-21,19:00,Leon,Santos Laguna,2,1,FALSE,,,,2–1,,,,"25,098",Estadio Leon,Salvador Pérez Villalobos,Match Report
+2025/26,Clausura,7,2026-02-21,21:05,Cruz Azul,Guadalajara,2,1,FALSE,,,,2–1,,,,"43,134",Estadio Cuauhtémoc,Maximiliano Quintero,Match Report
+2025/26,Clausura,7,2026-02-21,23:10,Tijuana,Mazatlan,1,1,FALSE,,,,1–1,,,,"15,333",Estadio Caliente,Martín Molina,Match Report
+2025/26,Clausura,7,2026-02-22,17:00,UNAM,Monterrey,2,0,FALSE,,,,2–0,,,,"21,867",Estadio Olímpico de Universitario,Vicente Arce,Match Report
+2025/26,Clausura,8,2026-02-27,19:00,Mazatlan,Pachuca,1,0,FALSE,,,,1–0,,,,"6,971",Estadio El Encanto,Charles Terrazas,Match Report
+2025/26,Clausura,8,2026-02-27,19:00,Queretaro,Santos Laguna,2,2,FALSE,,,,2–2,,,,"9,911",Estadio La Corregidora,Abraham Quirarte,Match Report
+2025/26,Clausura,8,2026-02-27,21:06,Tijuana,UNAM,1,1,FALSE,,,,1–1,,,,"21,333",Estadio Caliente,Luis Enrique Santander,Match Report
+2025/26,Clausura,8,2026-02-27,21:00,FC Juárez,Atlas,3,1,FALSE,,,,3–1,,,,"8,242",Estadio Olímpico Benito Juárez,Vicente Arce,Match Report
+2025/26,Clausura,8,2026-02-28,17:00,Atlético San Luis,Puebla,0,1,FALSE,,,,0–1,,,,"11,416",Estadio Alfonso Lastras Ramírez,Maximiliano Quintero,Match Report
+2025/26,Clausura,8,2026-02-28,17:00,Toluca,Guadalajara,2,0,FALSE,,,,2–0,,,,"27,273",Estadio Nemesio Díez,Oscar Mejía,Match Report
+2025/26,Clausura,8,2026-02-28,19:05,Monterrey,Cruz Azul,0,2,FALSE,,,,0–2,,,,"47,907",Estadio BBVA,Guillermo Pacheco,Match Report
+2025/26,Clausura,8,2026-02-28,19:06,Leon,Necaxa,2,1,FALSE,,,,2–1,,,,"24,456",Estadio Leon,Víctor Cáceres,Match Report
+2025/26,Clausura,8,2026-02-28,21:10,America,UANL,1,4,FALSE,,,,1–4,,,,"26,410",Estadio de la Ciudad de los Deportes,Jorge Camacho,Match Report
+2025/26,Clausura,9,2026-03-03,19:00,Santos Laguna,Cruz Azul,1,2,FALSE,,,,1–2,,,,"15,065",Estadio Nuevo Corona,Iván López,Match Report
+2025/26,Clausura,9,2026-03-03,19:00,Pachuca,Necaxa,2,1,FALSE,,,,2–1,,,,"8,601",Estadio Hidalgo,Katia García,Match Report
+2025/26,Clausura,9,2026-03-03,21:00,Atlético San Luis,Mazatlan,4,1,FALSE,,,,4–1,,,,"8,808",Estadio Alfonso Lastras Ramírez,Yonatan Peinado Aguirre,Match Report
+2025/26,Clausura,9,2026-03-03,21:10,UNAM,Toluca,2,3,FALSE,,,,2–3,,,,"29,068",Estadio Olímpico de Universitario,Marco Antonio Ortíz,Match Report
+2025/26,Clausura,9,2026-03-04,19:00,Puebla,UANL,3,1,FALSE,,,,3–1,,,,"15,661",Estadio Cuauhtémoc,Joaquín Vizcarra Armenta,Match Report
+2025/26,Clausura,9,2026-03-04,19:00,Monterrey,Queretaro,4,0,FALSE,,,,4–0,,,,"36,491",Estadio BBVA,Salvador Pérez Villalobos,Match Report
+2025/26,Clausura,9,2026-03-04,21:00,America,FC Juárez,1,2,FALSE,,,,1–2,,,,"12,560",Estadio de la Ciudad de los Deportes,Maximiliano Quintero,Match Report
+2025/26,Clausura,9,2026-03-04,21:00,Atlas,Tijuana,2,1,FALSE,,,,2–1,,,,"15,171",Estadio Jalisco,Adonai Escobedo,Match Report
+2025/26,Clausura,10,2026-03-06,19:00,Mazatlan,Leon,4,2,FALSE,,,,4–2,,,,"6,792",Estadio El Encanto,Daniel Quintero,Match Report
+2025/26,Clausura,10,2026-03-06,21:00,Necaxa,UNAM,0,1,FALSE,,,,0–1,,,,"18,290",Estadio Victoria de Aguascalientes,Jorge Camacho,Match Report
+2025/26,Clausura,10,2026-03-07,17:00,Queretaro,America,1,2,FALSE,,,,1–2,,,,"29,388",Estadio La Corregidora,Víctor Cáceres,Match Report
+2025/26,Clausura,10,2026-03-07,17:00,Cruz Azul,Atlético San Luis,3,0,FALSE,,,,3–0,,,,"10,090",Estadio Cuauhtémoc,Vicente Arce,Match Report
+2025/26,Clausura,10,2026-03-07,19:05,Atlas,Guadalajara,1,2,FALSE,,,,1–2,,,,"36,767",Estadio Jalisco,Marco Antonio Ortíz,Match Report
+2025/26,Clausura,10,2026-03-07,19:06,Pachuca,Puebla,2,1,FALSE,,,,2–1,,,,"10,893",Estadio Hidalgo,Jesús López,Match Report
+2025/26,Clausura,10,2026-03-07,21:00,UANL,Monterrey,1,0,FALSE,,,,1–0,,,,"41,615",Estadio Universitario de Nuevo Leon,Ismael López,Match Report
+2025/26,Clausura,10,2026-03-08,17:00,Toluca,FC Juárez,3,1,FALSE,,,,3–1,,,,"27,273",Estadio Nemesio Díez,Luis Enrique Santander,Match Report
+2025/26,Clausura,10,2026-03-08,21:06,Tijuana,Santos Laguna,1,2,FALSE,,,,1–2,,,,"14,833",Estadio Caliente,Guillermo Pacheco,Match Report
+2025/26,Clausura,11,2026-03-13,19:00,Puebla,Necaxa,0,0,FALSE,,,,0–0,,,,"12,190",Estadio Cuauhtémoc,Ismael López,Match Report
+2025/26,Clausura,11,2026-03-13,21:00,FC Juárez,Monterrey,2,2,FALSE,,,,2–2,,,,"9,425",Estadio Olímpico Benito Juárez,Marco Antonio Ortíz,Match Report
+2025/26,Clausura,11,2026-03-14,17:00,Atlético San Luis,Pachuca,1,1,FALSE,,,,1–1,,,,"11,096",Estadio Alfonso Lastras Ramírez,Jorge Camacho,Match Report
+2025/26,Clausura,11,2026-03-14,17:07,Guadalajara,Santos Laguna,3,0,FALSE,,,,3–0,,,,"36,263",Estadio Akron,Adonai Escobedo,Match Report
+2025/26,Clausura,11,2026-03-14,19:00,Leon,Tijuana,0,3,FALSE,,,,0–3,,,,"23,301",Estadio Leon,Katia García,Match Report
+2025/26,Clausura,11,2026-03-14,19:00,Toluca,Atlas,1,1,FALSE,,,,1–1,,,,"27,272",Estadio Nemesio Díez,César Arturo Ramos,Match Report
+2025/26,Clausura,11,2026-03-14,21:10,UNAM,Cruz Azul,2,2,FALSE,,,,2–2,,,,"42,223",Estadio Olímpico de Universitario,Daniel Quintero,Match Report
+2025/26,Clausura,11,2026-03-15,17:00,UANL,Queretaro,0,0,FALSE,,,,0–0,,,,"40,217",Estadio Universitario de Nuevo Leon,Oscar Mejía,Match Report
+2025/26,Clausura,11,2026-03-15,19:00,America,Mazatlan,2,0,FALSE,,,,2–0,,,,"24,786",Estadio de la Ciudad de los Deportes,Karen Hernández,Match Report
+2025/26,Clausura,9,2026-03-18,20:07,Guadalajara,Leon,5,0,FALSE,,,,5–0,,,,"35,150",Estadio Akron,Jorge Camacho,Match Report
+2025/26,Clausura,12,2026-03-20,19:00,Necaxa,Tijuana,3,0,FALSE,,,,3–0,,,,"14,840",Estadio Victoria de Aguascalientes,Martín Molina,Match Report
+2025/26,Clausura,12,2026-03-20,21:06,Mazatlan,Cruz Azul,1,1,FALSE,,,,1–1,,,,"13,746",Estadio El Encanto,Maximiliano Quintero,Match Report
+2025/26,Clausura,12,2026-03-21,17:00,Atlas,Queretaro,0,0,FALSE,,,,0–0,,,,"15,321",Estadio Jalisco,Luis García,Match Report
+2025/26,Clausura,12,2026-03-21,19:00,Atlético San Luis,Leon,1,2,FALSE,,,,1–2,,,,"10,659",Estadio Alfonso Lastras Ramírez,Luis Enrique Santander,Match Report
+2025/26,Clausura,12,2026-03-21,19:05,Monterrey,Guadalajara,2,3,FALSE,,,,2–3,,,,"48,853",Estadio BBVA,Víctor Cáceres,Match Report
+2025/26,Clausura,12,2026-03-21,21:10,UNAM,America,1,0,FALSE,,,,1–0,,,,"42,610",Estadio Olímpico de Universitario,César Arturo Ramos,Match Report
+2025/26,Clausura,12,2026-03-22,17:00,Pachuca,Toluca,1,1,FALSE,,,,1–1,,,,"18,509",Estadio Hidalgo,Vicente Arce,Match Report
+2025/26,Clausura,12,2026-03-22,17:00,Santos Laguna,Puebla,2,1,FALSE,,,,2–1,,,,"10,821",Estadio Nuevo Corona,Yonatan Peinado Aguirre,Match Report
+2025/26,Clausura,12,2026-03-22,19:06,FC Juárez,UANL,2,1,FALSE,,,,2–1,,,,"11,511",Estadio Olímpico Benito Juárez,Adonai Escobedo,Match Report
+2025/26,Clausura,13,2026-04-03,19:00,Puebla,FC Juárez,1,1,FALSE,,,,1–1,,,,"14,344",Estadio Cuauhtémoc,Charles Terrazas,Match Report
+2025/26,Clausura,13,2026-04-03,21:06,Tijuana,UANL,1,0,FALSE,,,,1–0,,,,"21,533",Estadio Caliente,Daniel Quintero,Match Report
+2025/26,Clausura,13,2026-04-03,21:00,Necaxa,Mazatlan,2,1,FALSE,,,,2–1,,,,"16,632",Estadio Victoria de Aguascalientes,César Arturo Ramos,Match Report
+2025/26,Clausura,13,2026-04-04,17:00,Monterrey,Atlético San Luis,1,2,FALSE,,,,1–2,,,,"41,467",Estadio BBVA,Joaquín Vizcarra Armenta,Match Report
+2025/26,Clausura,13,2026-04-04,17:00,Queretaro,Toluca,1,0,FALSE,,,,1–0,,,,"21,363",Estadio La Corregidora,Karen Hernández,Match Report
+2025/26,Clausura,13,2026-04-04,19:00,Leon,Atlas,2,0,FALSE,,,,2–0,,,,"22,437",Estadio Leon,Guillermo Pacheco,Match Report
+2025/26,Clausura,13,2026-04-04,19:05,Cruz Azul,Pachuca,1,2,FALSE,,,,1–2,,,,"14,726",Estadio Cuauhtémoc,Víctor Cáceres,Match Report
+2025/26,Clausura,13,2026-04-04,21:10,Santos Laguna,America,1,1,FALSE,,,,1–1,,,,"23,258",Estadio Nuevo Corona,Fernando Hernández,Match Report
+2025/26,Clausura,13,2026-04-05,20:07,Guadalajara,UNAM,2,2,FALSE,,,,2–2,,,,"40,907",Estadio Akron,Ismael López,Match Report
+2025/26,Clausura,7,2026-04-07,18:00,Queretaro,FC Juárez,1,1,FALSE,,,,1–1,,,,"7,593",Estadio La Corregidora,Jesús López,Match Report
+2025/26,Clausura,14,2026-04-10,19:00,Puebla,Leon,0,1,FALSE,,,,0–1,,,,"11,503",Estadio Cuauhtémoc,Fernando Hernández,Match Report
+2025/26,Clausura,14,2026-04-10,21:06,FC Juárez,Tijuana,1,2,FALSE,,,,1–2,,,,"8,752",Estadio Olímpico Benito Juárez,Jorge Camacho,Match Report
+2025/26,Clausura,14,2026-04-11,17:00,UANL,Guadalajara,4,1,FALSE,,,,4–1,,,,"41,615",Estadio Universitario de Nuevo Leon,Maximiliano Quintero,Match Report
+2025/26,Clausura,14,2026-04-11,17:00,Queretaro,Necaxa,3,1,FALSE,,,,3–1,,,,"9,663",Estadio La Corregidora,Marco Antonio Ortíz,Match Report
+2025/26,Clausura,14,2026-04-11,19:00,Atlas,Monterrey,0,0,FALSE,,,,0–0,,,,"19,217",Estadio Jalisco,Yonatan Peinado Aguirre,Match Report
+2025/26,Clausura,14,2026-04-11,19:00,Pachuca,Santos Laguna,4,2,FALSE,,,,4–2,,,,"9,365",Estadio Hidalgo,Martín Molina,Match Report
+2025/26,Clausura,14,2026-04-11,21:05,America,Cruz Azul,1,1,FALSE,,,,1–1,,,,"46,884",Estadio Banorte,Oscar Mejía,Match Report
+2025/26,Clausura,14,2026-04-12,12:00,UNAM,Mazatlan,3,1,FALSE,,,,3–1,,,,"25,820",Estadio Olímpico de Universitario,Katia García,Match Report
+2025/26,Clausura,14,2026-04-12,19:00,Toluca,Atlético San Luis,1,1,FALSE,,,,1–1,,,,"27,272",Estadio Nemesio Díez,Adonai Escobedo,Match Report
+2025/26,Clausura,15,2026-04-17,19:00,Mazatlan,Queretaro,1,1,FALSE,,,,1–1,,,,"11,581",Estadio El Encanto,Guillermo Pacheco,Match Report
+2025/26,Clausura,15,2026-04-17,19:00,Atlético San Luis,UNAM,0,2,FALSE,,,,0–2,,,,"21,016",Estadio Alfonso Lastras Ramírez,Luis García,Match Report
+2025/26,Clausura,15,2026-04-18,17:00,Cruz Azul,Tijuana,1,1,FALSE,,,,1–1,,,,"8,336",Estadio Cuauhtémoc,Luis Enrique Santander,Match Report
+2025/26,Clausura,15,2026-04-18,17:00,Necaxa,UANL,1,1,FALSE,,,,1–1,,,,"15,936",Estadio Victoria de Aguascalientes,Katia García,Match Report
+2025/26,Clausura,15,2026-04-18,19:05,Monterrey,Pachuca,1,3,FALSE,,,,1–3,,,,"39,138",Estadio BBVA,Daniel Quintero,Match Report
+2025/26,Clausura,15,2026-04-18,19:07,Guadalajara,Puebla,5,0,FALSE,,,,5–0,,,,"38,266",Estadio Akron,César Arturo Ramos,Match Report
+2025/26,Clausura,15,2026-04-18,21:06,Leon,FC Juárez,3,1,FALSE,,,,3–1,,,,"24,792",Estadio Leon,Víctor Cáceres,Match Report
+2025/26,Clausura,15,2026-04-18,21:10,America,Toluca,2,1,FALSE,,,,2–1,,,,"34,253",Estadio Banorte,Ismael López,Match Report
+2025/26,Clausura,15,2026-04-19,17:00,Santos Laguna,Atlas,0,1,FALSE,,,,0–1,,,,"12,312",Estadio Nuevo Corona,Jesús López,Match Report
+2025/26,Clausura,16,2026-04-21,19:00,Queretaro,Cruz Azul,1,1,FALSE,,,,1–1,,,,"29,822",Estadio La Corregidora,Vicente Arce,Match Report
+2025/26,Clausura,16,2026-04-21,19:00,UNAM,FC Juárez,4,2,FALSE,,,,4–2,,,,"19,156",Estadio Olímpico de Universitario,Oscar Mejía,Match Report
+2025/26,Clausura,16,2026-04-21,21:05,Monterrey,Puebla,2,1,FALSE,,,,2–1,,,,"28,391",Estadio BBVA,Luis Enrique Santander,Match Report
+2025/26,Clausura,16,2026-04-21,21:06,Leon,America,2,3,FALSE,,,,2–3,,,,"26,668",Estadio Leon,César Arturo Ramos,Match Report
+2025/26,Clausura,16,2026-04-22,19:00,Mazatlan,Toluca,4,3,FALSE,,,,4–3,,,,"19,384",Estadio El Encanto,Marco Antonio Ortíz,Match Report
+2025/26,Clausura,16,2026-04-22,19:00,Atlético San Luis,Santos Laguna,2,0,FALSE,,,,2–0,,,,"10,695",Estadio Alfonso Lastras Ramírez,Maximiliano Quintero,Match Report
+2025/26,Clausura,16,2026-04-22,19:00,Atlas,UANL,0,0,FALSE,,,,0–0,,,,"22,052",Estadio Jalisco,Fernando Hernández,Match Report
+2025/26,Clausura,16,2026-04-22,21:06,Tijuana,Pachuca,3,1,FALSE,,,,3–1,,,,"17,333",Estadio Caliente,Adonai Escobedo,Match Report
+2025/26,Clausura,16,2026-04-22,21:10,Necaxa,Guadalajara,0,0,FALSE,,,,0–0,,,,"20,598",Estadio Victoria de Aguascalientes,Joaquín Vizcarra Armenta,Match Report
+2025/26,Clausura,17,2026-04-24,21:00,Puebla,Queretaro,1,2,FALSE,,,,1–2,,,,"9,979",Estadio Cuauhtémoc,Salvador Pérez Villalobos,Match Report
+2025/26,Clausura,17,2026-04-25,17:00,UANL,Mazatlan,5,1,FALSE,,,,5–1,,,,"41,615",Estadio Universitario de Nuevo Leon,Ismael López,Match Report
+2025/26,Clausura,17,2026-04-25,17:00,Pachuca,UNAM,0,2,FALSE,,,,0–2,,,,"20,263",Estadio Hidalgo,Yonatan Peinado Aguirre,Match Report
+2025/26,Clausura,17,2026-04-25,19:05,Toluca,Leon,4,1,FALSE,,,,4–1,,,,"27,273",Estadio Nemesio Díez,Daniel Quintero,Match Report
+2025/26,Clausura,17,2026-04-25,19:07,Guadalajara,Tijuana,0,0,FALSE,,,,0–0,,,,"39,994",Estadio Akron,Katia García,Match Report
+2025/26,Clausura,17,2026-04-25,21:00,FC Juárez,Atlético San Luis,2,1,FALSE,,,,2–1,,,,"6,942",Estadio Olímpico Benito Juárez,Karen Hernández,Match Report
+2025/26,Clausura,17,2026-04-25,21:10,America,Atlas,0,1,FALSE,,,,0–1,,,,"37,516",Estadio Banorte,Víctor Cáceres,Match Report
+2025/26,Clausura,17,2026-04-26,17:00,Santos Laguna,Monterrey,3,0,FALSE,,,,3–0,,,,"11,568",Estadio Nuevo Corona,Abraham Quirarte,Match Report
+2025/26,Clausura,17,2026-04-26,19:05,Cruz Azul,Necaxa,4,1,FALSE,,,,4–1,,,,"20,448",Estadio Banorte,Iván López,Match Report
+2025/26,Clausura,17,2026-05-02,19:00,UANL,Guadalajara,3,1,FALSE,,,,3–1,,,,"42,392",Estadio Universitario de Nuevo Leon,Vicente Arce,Match Report
+2025/26,Clausura,17,2026-05-02,21:15,Atlas,Cruz Azul,2,3,FALSE,,,,2–3,,,,"29,514",Estadio Jalisco,Yonatan Peinado Aguirre,Match Report
+2025/26,Clausura,17,2026-05-03,17:00,America,UNAM,3,3,FALSE,,,,3–3,,,,"26,480",Estadio Banorte,Luis Enrique Santander,Match Report
+2025/26,Clausura,17,2026-05-03,19:15,Toluca,Pachuca,0,1,FALSE,,,,0–1,,,,"24,561",Estadio Nemesio Díez,Fernando Hernández,Match Report
+2025/26,Clausura,17,2026-05-09,19:07,Guadalajara,UANL,2,0,FALSE,,,,2–0,,,,"42,854",Estadio Akron,Marco Antonio Ortíz,Match Report
+2025/26,Clausura,17,2026-05-09,21:15,Cruz Azul,Atlas,1,0,FALSE,,,,1–0,,,,"32,840",Estadio Banorte,Katia García,Match Report
+2025/26,Clausura,17,2026-05-10,17:00,Pachuca,Toluca,2,0,FALSE,,,,2–0,,,,"21,880",Estadio Hidalgo,Adonai Escobedo,Match Report
+2025/26,Clausura,17,2026-05-10,19:15,UNAM,America,3,3,FALSE,,,,3–3,,,,"48,297",Estadio Olímpico de Universitario,César Arturo Ramos,Match Report
+2025/26,Clausura,17,2026-05-13,20:00,Cruz Azul,Guadalajara,2,2,FALSE,,,,2–2,,,,"63,375",Estadio Banorte,Maximiliano Quintero,Match Report
+2025/26,Clausura,17,2026-05-14,19:00,Pachuca,UNAM,1,0,FALSE,,,,1–0,,,,"25,920",Estadio Hidalgo,Ismael López,Match Report
+2025/26,Clausura,17,2026-05-16,19:07,Guadalajara,Cruz Azul,1,2,FALSE,,,,1–2,,,,"46,200",Estadio Jalisco,César Arturo Ramos,Match Report
+2025/26,Clausura,17,2026-05-17,19:00,UNAM,Pachuca,1,0,FALSE,,,,1–0,,,,"48,410",Estadio Olímpico de Universitario,Daniel Quintero,Match Report
+2025/26,Clausura,17,2026-05-21,20:00,Cruz Azul,UNAM,0,0,FALSE,,,,0–0,,,,"27,500",Estadio de la Ciudad de los Deportes,Ismael López,Match Report
+2025/26,Clausura,17,2026-05-24,19:00,UNAM,Cruz Azul,1,2,FALSE,,,,1–2,,,,"48,445",Estadio Olímpico de Universitario,Daniel Quintero,Match Report
