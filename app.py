@@ -144,6 +144,7 @@ jornadas = cargar_jornadas()
 with st.spinner("Entrenando modelo..."):
 
     modelo = entrenar_modelo(df)
+st.write(sorted(modelo.teams))
 
 
 
