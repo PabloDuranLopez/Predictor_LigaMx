@@ -211,6 +211,7 @@ def mostrar_partido(local, visitante, modelo, goles_max, fecha):
         visitante,
         goles_max
     )
+    st.markdown("### Marcador esperado")
     st.success(
     f"{nombre_equipo(local)} {marcador[0]} - {marcador[1]} {nombre_equipo(visitante)}"
 )
