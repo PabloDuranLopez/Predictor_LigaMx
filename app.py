@@ -254,8 +254,8 @@ def mostrar_partido(local, visitante, modelo, goles_max, fecha):
 
         c1, c2 = st.columns(2)
 
-        c1.metric("λ Local", f"{lam:.2f}")
-        c2.metric("μ Visitante", f"{mu:.2f}")
+        c1.metric("Goles esperados Local", f"{lam:.2f}")
+        c2.metric("Goles esperados Visitante", f"{mu:.2f}")
 
         fig = modelo.score_matrix(
             local,
