@@ -171,12 +171,7 @@ jornada = st.selectbox(
 )
 st.divider()
 
-goles_max = st.slider(
-    "Máximo de goles",
-    3,
-    10,
-    7
-)
+goles_max = 10
 
 def mostrar_partido(local, visitante, modelo, goles_max, fecha):
     st.caption(f"📅 {fecha}")
