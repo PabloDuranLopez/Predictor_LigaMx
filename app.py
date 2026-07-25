@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
 import os
-from clases_funciones import DixonColes
-
-
+import json
+import numpy as np
+from clases_funciones import plot_score_matrix
 def obtener_escudo(equipo):
 
     escudos = {
@@ -107,86 +107,80 @@ st.set_page_config(
     layout="wide"
 )
 
-st.write("Hola soy Pablo Duran, soy estudiante de Actuaría y Matemáticas en la Universidad Nacional Autónoma de México (UNAM), con profundo interes en Machine Learning,Deep Learning,Procesos y Simulación Estocastica , Probabilidad, Estadística Bayesiana y las Finanzas Cuantitativas. Me gusta construir modelos desde cero para entender a profundidad cómo funcionan. He desarrollado implementaciones propias de prediccion (tradicional y enfoque bayesiano) de despacho en incidentes viales del C5, prediccion de tumores malignos, diabetes, asi como el pricing de derivados financieros")
-st.write("Este es un proyecto mas, siendo compartido con ustedes de forma educativa, y que claro este proyecto no es una sugerencia de apuestas")
-st.write("Aun faltas cosas como la implementacion bayesiana, Under/Over, top marcadores probables, ¿Ambos equipos anotan?, las agregaré pronto")
-st.write("Las probabilidades y momios pueden diferir ligeramente de las casas de apuestas ya que estas consideran probabilidades totales mayores a 1 para asegurar su ganancia")
+st.markdown("""
+### Acerca del proyecto
+Este proyecto implementa desde cero el modelo **Dixon-Coles con decaimiento temporal** para la predicción de partidos de la Liga MX.
+
+El desarrollo fue realizado como proyecto personal con fin educativo para profundizar en:
+
+- Machine Learning
+- Modelos de Poisson
+- Inferencia Bayesiana
+- Optimización Numérica
+- Modelado Estadístico Deportivo
+
+**Las predicciones no constituyen recomendaciones de apuesta.**
+""")
+
 c1, c2, c3 = st.columns([1,2,1])
 
 with c2:
     st.image("escudos/ligamx.png", width=250)
 
 st.title("⚽ Predicción de partidos Liga MX")
-@st.cache_data
-def cargar_datos():
+st.write("Modelo Dixon-Coles con Decaimiento Temporal")
 
-    df = pd.read_csv("data/ligamx.csv")
-    df["fecha"] = pd.to_datetime(df["fecha"])
+predicciones = pd.read_csv(
+    "data/predicciones.csv"
+)
 
-    return df
-
-
-
-@st.cache_data
-def cargar_jornadas():
-
-    return pd.read_csv("data/partidos_predecir.csv")
+predicciones["fecha"] = pd.to_datetime(
+    predicciones["fecha"]
+)
 
 
-@st.cache_resource
-def entrenar_modelo(df):
-
-    modelo = DixonColes(xi=0.0065)
-    modelo.fit(df)
-    return modelo
-
-df = cargar_datos()
-jornadas = cargar_jornadas()
-
-
-# Normalizar nombres para que coincidan con el modelo
-jornadas["local"] = jornadas["local"].replace({
-    "América": "America",
-    "León": "Leon",
-    "Mazatlán": "Mazatlan"
-})
-
-jornadas["visitante"] = jornadas["visitante"].replace({
-    "América": "America",
-    "León": "Leon",
-    "Mazatlán": "Mazatlan"
-})
-
-with st.spinner("Entrenando modelo..."):
-
-    modelo = entrenar_modelo(df)
-
-
-
-st.divider()
 
 jornada = st.selectbox(
+
     "Selecciona la jornada",
-    sorted(jornadas["jornada"].unique())
-)
+
+    sorted(predicciones["jornada"].unique()))
+
+st.subheader(f"Jornada {jornada}")
+
 st.divider()
 
-goles_max = 10
 
-def mostrar_partido(local, visitante, modelo, goles_max, fecha):
-    st.caption(f"📅 {fecha}")
 
+
+
+def mostrar_partido(partido):
+    local = partido["local"]
+
+    visitante = partido["visitante"]
+
+    fecha = partido["fecha"]
+
+    st.caption(f" {fecha.strftime('%d/%m/%Y')}")
+
+
+    if pd.isna(partido["resultado_local"]):
+     st.caption("- Partido pendiente")
+    else:
+     st.caption("+ Partido finalizado")
 
     col1, col2, col3 = st.columns([2,1,2])
 
     with col1:
 
-        st.image(obtener_escudo(local), width=170)
+     escudo_local = obtener_escudo(local)
 
-        st.markdown(
-            f"<h3 style='text-align:center'>{nombre_equipo(local)}</h3>",
-            unsafe_allow_html=True
-        )
+     if escudo_local is not None:
+        st.image(escudo_local, width=170)
+
+     st.markdown(
+        f"<h3 style='text-align:center'>{nombre_equipo(local)}</h3>",
+        unsafe_allow_html=True)
 
     with col2:
 
@@ -197,30 +191,63 @@ def mostrar_partido(local, visitante, modelo, goles_max, fecha):
 
     with col3:
 
-        st.image(obtener_escudo(visitante), width=170)
+     escudo_visitante = obtener_escudo(visitante)
 
-        st.markdown(
-            f"<h3 style='text-align:center'>{nombre_equipo(visitante)}</h3>",
-            unsafe_allow_html=True
-        )
+     if escudo_visitante is not None:
+        st.image(escudo_visitante, width=170)
+
+     st.markdown(
+        f"<h3 style='text-align:center'>{nombre_equipo(visitante)}</h3>",
+        unsafe_allow_html=True)
+     
+    lam = partido["xg_local"]
+
+    mu = partido["xg_visitante"]
+
+    marcador = (int(partido["pred_local"]), int(partido["pred_visitante"]))
     
-    lam, mu = modelo.expected_goals(local, visitante)
-
-    marcador = modelo.predict_score(
-        local,
-        visitante,
-        goles_max
-    )
     st.markdown("### Marcador esperado")
-    st.success(
-    f"{nombre_equipo(local)} {marcador[0]} - {marcador[1]} {nombre_equipo(visitante)}"
-)
 
-    probs = modelo.win_prob(
-        local,
-        visitante,
-        goles_max
-    )
+    st.success(f"{nombre_equipo(local)} {marcador[0]} - {marcador[1]} {nombre_equipo(visitante)}")
+
+    if not pd.isna(partido["resultado_local"]):
+
+     rl = int(partido["resultado_local"])
+     rv = int(partido["resultado_visitante"])
+
+     st.markdown("### Resultado final")
+
+     st.info(
+        f"{nombre_equipo(local)} {rl} - {rv} {nombre_equipo(visitante)}")
+
+     pred_local = marcador[0]
+     pred_visitante = marcador[1]
+
+     if pred_local == rl and pred_visitante == rv:
+
+        st.success("✅ Marcador exacto")
+
+   
+     elif np.sign(pred_local - pred_visitante) == np.sign(rl - rv):
+
+        st.warning("🟡 Se acertó el ganador")
+
+     else:
+
+        st.error("❌ Predicción incorrecta")
+  
+    prob_local = partido["prob_local"]
+
+    prob_empate = partido["prob_empate"]
+
+    prob_visitante = partido["prob_visitante"]
+
+    momio_local = partido["momio_local"]
+
+    momio_empate = partido["momio_empate"]
+
+    momio_visitante = partido["momio_visitante"]
+    
     st.markdown("### Probabilidades y momios")
     c1, c2, c3 = st.columns(3) 
     
@@ -228,8 +255,8 @@ def mostrar_partido(local, visitante, modelo, goles_max, fecha):
         st.markdown(f"""
     <div style="text-align:center;">
         <h3> Local</h3>
-        <h1>{probs.iloc[0][local]:.1%}</h1>
-        <h2>{probs.iloc[0][f'Momio {local}']:+.0f}</h2>
+        <h1>{prob_local:.1%}</h1>
+        <h2>{momio_local:+.0f}</h2>
     </div>
     """, unsafe_allow_html=True)
 
@@ -237,8 +264,8 @@ def mostrar_partido(local, visitante, modelo, goles_max, fecha):
         st.markdown(f"""
     <div style="text-align:center;">
         <h3> Empate</h3>
-        <h1>{probs.iloc[0]['Empate']:.1%}</h1>
-        <h2>{probs.iloc[0]['Momio Empate']:+.0f}</h2>
+        <h1>{prob_empate:.1%}</h1>
+        <h2>{momio_empate:+.0f}</h2>
     </div>
     """, unsafe_allow_html=True)
 
@@ -246,10 +273,11 @@ def mostrar_partido(local, visitante, modelo, goles_max, fecha):
         st.markdown(f"""
     <div style="text-align:center;">
         <h3> Visitante</h3>
-        <h1>{probs.iloc[0][visitante]:.1%}</h1>
-        <h2>{probs.iloc[0][f'Momio {visitante}']:+.0f}</h2>
+        <h1>{prob_visitante:.1%}</h1>
+        <h2>{momio_visitante:+.0f}</h2>
     </div>
     """, unsafe_allow_html=True)
+    st.divider()
     with st.expander("Ver detalles"):
 
         c1, c2 = st.columns(2)
@@ -257,32 +285,20 @@ def mostrar_partido(local, visitante, modelo, goles_max, fecha):
         c1.metric("Goles esperados local", f"{lam:.2f}")
         c2.metric("Goles esperados visitante", f"{mu:.2f}")
 
-        fig = modelo.score_matrix(
-            local,
-            visitante,
-            goles_max
-        )
-
+        matriz = np.array(json.loads(partido["matriz"]))
+        fig = plot_score_matrix(matriz,local,visitante) 
         st.pyplot(fig)
 
     st.divider()
 
-partidos = jornadas[
-    jornadas["jornada"] == jornada
+
+partidos = predicciones[
+    predicciones["jornada"] == jornada
 ]
 
 for _, partido in partidos.iterrows():
-    st.write(
-        f"{partido['local']} vs {partido['visitante']}"
-    )
 
-    mostrar_partido(
-        partido["local"],
-        partido["visitante"],
-        modelo,
-        goles_max,
-        partido["fecha"]
-    )
+    mostrar_partido(partido)
     
 
 
