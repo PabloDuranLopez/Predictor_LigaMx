@@ -141,6 +141,24 @@ def entrenar_modelo(df):
 df = cargar_datos()
 jornadas = cargar_jornadas()
 
+
+# Normalizar nombres para que coincidan con el modelo
+jornadas["local"] = jornadas["local"].replace({
+    "América": "America",
+    "León": "Leon",
+    "Mazatlán": "Mazatlan"
+})
+
+jornadas["visitante"] = jornadas["visitante"].replace({
+    "América": "America",
+    "León": "Leon",
+    "Mazatlán": "Mazatlan"
+})
+
+with st.spinner("Entrenando modelo..."):
+
+    modelo = entrenar_modelo(df)
+
 with st.spinner("Entrenando modelo..."):
 
     modelo = entrenar_modelo(df)
@@ -253,12 +271,6 @@ for _, partido in partidos.iterrows():
     st.write(
         f"{partido['local']} vs {partido['visitante']}"
     )
-    # PRUEBA
-    st.write("Local:", repr(partido["local"]))
-    st.write("Visitante:", repr(partido["visitante"]))
-    st.write("¿Local existe?:", partido["local"] in modelo.ataque)
-    st.write("¿Visitante existe?:", partido["visitante"] in modelo.ataque)
-
 
     mostrar_partido(
         partido["local"],
