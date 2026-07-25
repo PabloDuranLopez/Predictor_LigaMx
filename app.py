@@ -17,7 +17,6 @@ def obtener_escudo(equipo):
 
         # Atlético San Luis
         "Atlético San Luis": "atleticosl",
-        "Club San Luis": "atleticosl",
 
         # Cruz Azul
         "Cruz Azul": "cruzazul",
