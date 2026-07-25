@@ -159,11 +159,6 @@ with st.spinner("Entrenando modelo..."):
 
     modelo = entrenar_modelo(df)
 
-with st.spinner("Entrenando modelo..."):
-
-    modelo = entrenar_modelo(df)
-st.write(sorted(modelo.teams))
-
 
 
 st.divider()
