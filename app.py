@@ -4,7 +4,11 @@ import os
 import json
 import numpy as np
 from clases_funciones import plot_score_matrix
-from api_live import buscar_partido
+from api_live import (
+    obtener_partidos_en_vivo,
+    buscar_partido,
+    obtener_estadisticas
+)
 @st.cache_data(ttl=30)
 def buscar_partido_cache(local, visitante):
     return buscar_partido(local, visitante)
@@ -163,6 +167,10 @@ def mostrar_partido(partido):
 
     visitante = partido["visitante"]
     live = buscar_partido_cache(local, visitante)
+    stats = None
+
+    if live is not None:
+        stats = obtener_estadisticas(live["fixture"])
 
     fecha = partido["fecha"]
 
@@ -242,6 +250,43 @@ def mostrar_partido(partido):
 
          st.divider() 
      
+     if stats is not None:
+         local_stats = {}
+         visitante_stats = {}
+
+    
+         for s in stats[0]["statistics"]:
+             local_stats[s["type"]] = s["value"]
+
+         for s in stats[1]["statistics"]:
+             visitante_stats[s["type"]] = s["value"]
+
+
+
+         st.markdown("### 📊 Estadísticas")
+
+         filas = [
+        ("Ball Possession","Posesión"),
+        ("Total Shots","Tiros"),
+        ("Shots on Goal","A puerta"),
+        ("Corner Kicks","Corners"),
+        ("Yellow Cards","Amarillas"),
+        ("Red Cards","Rojas"),
+        ("Offsides","Fuera de lugar"),
+        ("Goalkeeper Saves","Atajadas"),]
+
+         for api, nombre in filas:
+             c1, c2, c3 = st.columns([1,2,1])
+             with c1:
+                 st.metric("", local_stats.get(api, "-"))
+
+             with c2:
+                st.markdown(
+                f"<p style='text-align:center'>{nombre}</p>",
+                unsafe_allow_html=True)
+
+             with c3:
+                 st.metric("", visitante_stats.get(api, "-"))
      
      
     lam = partido["xg_local"]

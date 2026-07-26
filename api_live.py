@@ -69,17 +69,49 @@ def buscar_partido(local, visitante):
 
         if home == local and away == visitante:
 
-            return {
+           return {
+    "fixture":
+        partido["fixture"]["id"],
 
-                "minuto": partido["fixture"]["status"]["elapsed"],
+    "minuto":
+        partido["fixture"]["status"]["elapsed"],
 
-                "estado": partido["fixture"]["status"]["short"],
+    "estado":
+        partido["fixture"]["status"]["short"],
 
-                "goles_local": partido["goals"]["home"],
+    "goles_local":
+        partido["goals"]["home"],
 
-                "goles_visitante": partido["goals"]["away"]
+    "goles_visitante":
+        partido["goals"]["away"]
 
-            }
+}
 
     return None
 
+def obtener_estadisticas(fixture):
+
+    url = "https://v3.football.api-sports.io/fixtures/statistics"
+
+    r = requests.get(
+
+        url,
+
+        headers=HEADERS,
+
+        params={
+
+            "fixture": fixture
+
+        },
+
+        timeout=20
+
+    )
+
+    datos = r.json()
+
+    if len(datos["response"]) == 0:
+        return None
+
+    return datos["response"]
