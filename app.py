@@ -209,7 +209,17 @@ def mostrar_partido(partido):
     st.markdown("### Marcador esperado")
 
     st.success(f"{nombre_equipo(local)} {marcador[0]} - {marcador[1]} {nombre_equipo(visitante)}")
+    
+    prob_local = partido["prob_local"]
+    prob_empate = partido["prob_empate"]
+    prob_visitante = partido["prob_visitante"]
+    
+    momio_local = partido["momio_local"]
 
+    momio_empate = partido["momio_empate"]
+
+    momio_visitante = partido["momio_visitante"]
+    
     if not pd.isna(partido["resultado_local"]):
 
      rl = int(partido["resultado_local"])
@@ -223,33 +233,27 @@ def mostrar_partido(partido):
      pred_local = marcador[0]
      pred_visitante = marcador[1]
 
-     if pred_local == rl and pred_visitante == rv:
 
-        st.success("✅ Marcador exacto")
 
-   
+     if prob_local >= prob_empate and prob_local >= prob_visitante:
+        signo_pred = 1
+     elif prob_visitante >= prob_local and prob_visitante >= prob_empate:
+        signo_pred = -1
+     else:
+        signo_pred = 0
+
      signo_real = np.sign(rl - rv)
 
-    if pred_local == rl and pred_visitante == rv:
+     if pred_local == rl and pred_visitante == rv:
         st.success("✅ Marcador exacto")
 
-    elif partido["signo_pred"] == signo_real:
+     elif signo_pred == signo_real:
         st.warning("🟡 Se acertó el ganador")
 
-    else:
-        st.error("❌ Predicción incorrecta")
-     
-    prob_local = partido["prob_local"]
+     else:
+        st.error("❌ Predicción incorrecta") 
 
-    prob_empate = partido["prob_empate"]
 
-    prob_visitante = partido["prob_visitante"]
-
-    momio_local = partido["momio_local"]
-
-    momio_empate = partido["momio_empate"]
-
-    momio_visitante = partido["momio_visitante"]
     
     st.markdown("### Probabilidades y momios")
     c1, c2, c3 = st.columns(3) 
