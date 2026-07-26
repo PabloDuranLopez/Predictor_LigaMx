@@ -5,6 +5,9 @@ import json
 import numpy as np
 from clases_funciones import plot_score_matrix
 from api_live import buscar_partido
+@st.cache_data(ttl=30)
+def buscar_partido_cache(local, visitante):
+    return buscar_partido(local, visitante)
 def obtener_escudo(equipo):
 
     escudos = {
@@ -159,7 +162,7 @@ def mostrar_partido(partido):
     local = partido["local"]
 
     visitante = partido["visitante"]
-    live = buscar_partido(local, visitante)
+    live = buscar_partido_cache(local, visitante)
 
     fecha = partido["fecha"]
 
@@ -202,17 +205,42 @@ def mostrar_partido(partido):
         f"<h3 style='text-align:center'>{nombre_equipo(visitante)}</h3>",
         unsafe_allow_html=True)
     
-    if live is not None: 
-        st.markdown("## 🔴 EN VIVO") 
+     if live is not None:
+         estado = {
+        "NS": "No iniciado",
+        "1H": "Primer tiempo",
+        "HT": "Descanso",
+        "2H": "Segundo tiempo",
+        "ET": "Tiempo extra",
+        "BT": "Descanso TE",
+        "P": "Penales",
+        "FT": "Finalizado" }
         
-        st.success(
-        f"{nombre_equipo(local)} "
-        f"{live['goles_local']} - "
-        f"{live['goles_visitante']} "
-        f"{nombre_equipo(visitante)}") 
-        st.caption( f"Minuto {live['minuto']} | Estado: {live['estado']}")
+         st.markdown("## 🔴 EN VIVO")
 
-    st.divider() 
+         c1, c2, c3 = st.columns([3,1,3])
+
+         with c1:
+          st.markdown(
+            f"<h3 style='text-align:right'>{nombre_equipo(local)}</h3>",
+            unsafe_allow_html=True)
+
+         with c2:
+          st.markdown(
+            f"<h1 style='text-align:center'>{live['goles_local']} - {live['goles_visitante']}</h1>",
+            unsafe_allow_html=True)
+
+          st.caption(
+            f"{live['minuto']}'" )
+
+         with c3:
+          st.markdown(
+            f"<h3>{nombre_equipo(visitante)}</h3>",
+            unsafe_allow_html=True)
+
+         st.caption(estado.get(live["estado"], live["estado"]))
+
+         st.divider() 
      
      
      
