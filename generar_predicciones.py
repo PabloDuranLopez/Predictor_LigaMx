@@ -88,6 +88,18 @@ for _, partido in partidos.iterrows():
         visitante,
         goles_max=10
     )
+    
+    prob_local = probs.iloc[0][local]
+    prob_empate = probs.iloc[0]["Empate"]
+    prob_visitante = probs.iloc[0][visitante]
+
+    if prob_local >= prob_empate and prob_local >= prob_visitante:
+     signo_pred = 1          # gana local
+    
+    elif prob_visitante >= prob_local and prob_visitante >= prob_empate:
+      signo_pred = -1         # gana visitante
+    else:
+     signo_pred = 0          # empate
 
     matriz = modelo.predict(
         local,
@@ -108,6 +120,8 @@ for _, partido in partidos.iterrows():
         "pred_local":marcador[0],
 
         "pred_visitante":marcador[1],
+        
+        "signo_pred": signo_pred,
 
         "xg_local":lam,
 

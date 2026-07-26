@@ -109,9 +109,7 @@ st.set_page_config(
 
 st.markdown("""
 ### Acerca del proyecto
-Soy Pablo Duran estudiante de Actuaria y Matematicas en la FC UNAM, con profundo interes en Machine/Deep Learning, Finanzas Cuantitativas, Procesos y Simulacion Estocastica, 
-Estadistica Bayesiana y Probabilidad.
-Este proyecto tiene como fin la predicción de partidos de la Liga MX.
+Este proyecto implementa desde cero el modelo **Dixon-Coles con decaimiento temporal** para la predicción de partidos de la Liga MX.
 
 El desarrollo fue realizado como proyecto personal con fin educativo para profundizar en:
 
@@ -230,14 +228,17 @@ def mostrar_partido(partido):
         st.success("✅ Marcador exacto")
 
    
-     elif np.sign(pred_local - pred_visitante) == np.sign(rl - rv):
+     signo_real = np.sign(rl - rv)
 
+    if pred_local == rl and pred_visitante == rv:
+        st.success("✅ Marcador exacto")
+
+    elif partido["signo_pred"] == signo_real:
         st.warning("🟡 Se acertó el ganador")
 
-     else:
-
+    else:
         st.error("❌ Predicción incorrecta")
-  
+     
     prob_local = partido["prob_local"]
 
     prob_empate = partido["prob_empate"]
