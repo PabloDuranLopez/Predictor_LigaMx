@@ -4,6 +4,7 @@ import os
 import json
 import numpy as np
 from clases_funciones import plot_score_matrix
+from api_live import buscar_partido
 def obtener_escudo(equipo):
 
     escudos = {
@@ -158,6 +159,7 @@ def mostrar_partido(partido):
     local = partido["local"]
 
     visitante = partido["visitante"]
+    live = buscar_partido(local, visitante)
 
     fecha = partido["fecha"]
 
@@ -199,6 +201,20 @@ def mostrar_partido(partido):
      st.markdown(
         f"<h3 style='text-align:center'>{nombre_equipo(visitante)}</h3>",
         unsafe_allow_html=True)
+    
+    if live is not None: 
+        st.markdown("## 🔴 EN VIVO") 
+        
+        st.success(
+        f"{nombre_equipo(local)} "
+        f"{live['goles_local']} - "
+        f"{live['goles_visitante']} "
+        f"{nombre_equipo(visitante)}") 
+        st.caption( f"Minuto {live['minuto']} | Estado: {live['estado']}")
+
+    st.divider() 
+     
+     
      
     lam = partido["xg_local"]
 
