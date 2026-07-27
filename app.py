@@ -170,8 +170,7 @@ def mostrar_partido(partido, partidos_live):
 
     if live is not None:
         stats = obtener_estadisticas(live["fixture"])
-        st.write(stats)
-
+       
     fecha = partido["fecha"]
 
     st.caption(f" {fecha.strftime('%d/%m/%Y')}")
