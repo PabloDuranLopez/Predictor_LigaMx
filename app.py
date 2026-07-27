@@ -179,7 +179,7 @@ def mostrar_partido(partido, partidos_live):
     else:
      st.caption("+ Partido finalizado")
 
-    col1, col2, col3 = st.columns([2,1,2])
+    col1, col2, col3 = st.columns([1.2,1,1.2])
 
     with col1:
 
