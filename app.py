@@ -242,7 +242,7 @@ def mostrar_partido(partido, partidos_live):
 
 
 
-         st.markdown("### 📊 Estadísticas")
+         st.markdown("### Estadísticas")
 
          filas = [
         ("Ball Possession","Posesión"),
