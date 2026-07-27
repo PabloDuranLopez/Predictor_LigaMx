@@ -10,19 +10,17 @@ Original file is located at
 equipos = {
 
     "Club America":"America",
-
     "Toluca":"Toluca",
-
     "Pumas UNAM":"UNAM",
-
     "Tigres UANL":"UANL",
-
     "FC Juarez":"FC Juárez",
-
     "Club Leon":"Leon",
+    "Mazatlan FC":"Mazatlan",
 
-    "Mazatlan FC":"Mazatlan"
-
+    "CF Pachuca":"Pachuca",
+    "Club Queretaro":"Querétaro",
+    "Club Necaxa":"Necaxa",
+    "CF Monterrey":"Monterrey"
 }
 
 import requests
