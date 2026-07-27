@@ -198,7 +198,7 @@ def mostrar_partido(partido, partidos_live):
     )
 
      if escudo_local is not None:
-        st.image(escudo_local, width=150)
+        st.image(escudo_local, width=300)
 
      st.markdown("</div>", unsafe_allow_html=True)
 
@@ -236,7 +236,7 @@ def mostrar_partido(partido, partidos_live):
     )
 
      if escudo_visitante is not None:
-        st.image(escudo_visitante, width=150)
+        st.image(escudo_visitante, width=300)
 
      st.markdown("</div>", unsafe_allow_html=True)
 
