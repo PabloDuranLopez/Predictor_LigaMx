@@ -62,7 +62,8 @@ def buscar_partido(partidos, local, visitante):
 
         home = equipos.get(home, home)
         away = equipos.get(away, away)
-
+        print("API:", home, "-", away)
+        print("MODELO:", local, "-", visitante)
         if home == local and away == visitante:
 
             return {
