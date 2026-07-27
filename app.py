@@ -127,7 +127,7 @@ El desarrollo fue realizado como proyecto personal con fin educativo para profun
 **Las predicciones no constituyen recomendaciones de apuesta.**
 """)
 
-c1, c2, c3 = st.columns([1,2,1])
+c1, c2, c3 = st.columns([3,2,3])
 
 with c2:
     st.image("escudos/ligamx.png", width=250)
