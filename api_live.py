@@ -53,39 +53,31 @@ def obtener_partidos_en_vivo():
 
     return datos["response"]
 
-def buscar_partido(local, visitante):
-
-    partidos = obtener_partidos_en_vivo()
+def buscar_partido(partidos, local, visitante):
 
     for partido in partidos:
 
-
         home = partido["teams"]["home"]["name"]
         away = partido["teams"]["away"]["name"]
-
 
         home = equipos.get(home, home)
         away = equipos.get(away, away)
 
         if home == local and away == visitante:
 
-           return {
-    "fixture":
-        partido["fixture"]["id"],
+            return {
 
-    "minuto":
-        partido["fixture"]["status"]["elapsed"],
+                "fixture": partido["fixture"]["id"],
 
-    "estado":
-        partido["fixture"]["status"]["short"],
+                "minuto": partido["fixture"]["status"]["elapsed"],
 
-    "goles_local":
-        partido["goals"]["home"],
+                "estado": partido["fixture"]["status"]["short"],
 
-    "goles_visitante":
-        partido["goals"]["away"]
+                "goles_local": partido["goals"]["home"],
 
-}
+                "goles_visitante": partido["goals"]["away"]
+
+            }
 
     return None
 

@@ -9,9 +9,6 @@ from api_live import (
     buscar_partido,
     obtener_estadisticas
 )
-@st.cache_data(ttl=30)
-def buscar_partido_cache(local, visitante):
-    return buscar_partido(local, visitante)
 def obtener_escudo(equipo):
 
     escudos = {
@@ -162,11 +159,11 @@ st.divider()
 
 
 
-def mostrar_partido(partido):
+def mostrar_partido(partido, partidos_live):
     local = partido["local"]
 
     visitante = partido["visitante"]
-    live = buscar_partido_cache(local, visitante)
+    live = buscar_partido(partidos_live, local,visitante)
     stats = None
 
     if live is not None:
@@ -213,7 +210,7 @@ def mostrar_partido(partido):
         f"<h3 style='text-align:center'>{nombre_equipo(visitante)}</h3>",
         unsafe_allow_html=True)
     
-     if live is not None:
+    if live is not None:
          estado = {
         "NS": "No iniciado",
         "1H": "Primer tiempo",
@@ -250,7 +247,7 @@ def mostrar_partido(partido):
 
          st.divider() 
      
-     if stats is not None:
+    if stats is not None:
          local_stats = {}
          visitante_stats = {}
 
@@ -388,13 +385,17 @@ def mostrar_partido(partido):
     st.divider()
 
 
+partidos_live = obtener_partidos_en_vivo()
+
 partidos = predicciones[
     predicciones["jornada"] == jornada
 ]
 
 for _, partido in partidos.iterrows():
 
-    mostrar_partido(partido)
-    
+    mostrar_partido(
+        partido,
+        partidos_live
+    )
 
 
