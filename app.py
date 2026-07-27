@@ -210,7 +210,7 @@ def mostrar_partido(partido, partidos_live):
         f"<h3 style='text-align:center'>{nombre_equipo(visitante)}</h3>",
         unsafe_allow_html=True)
     
-     if live is not None:
+    if live is not None:
 
         estado = {
         "NS": "No iniciado",
@@ -222,41 +222,10 @@ def mostrar_partido(partido, partidos_live):
         "P": "Penales",
         "FT": "Finalizado"}
 
-        st.markdown("""<h2 style="
-        text-align:center;
-        color:#ff4b4b;
-        margin-bottom:25px;">
-        🔴 EN VIVO</h2>""", unsafe_allow_html=True)
+        st.markdown("""
+         <h2 style="text-align:center;color:#ff4b4b">🔴 EN VIVO</h2>""", unsafe_allow_html=True)
 
-        st.markdown(f"""<div style="text-align:center;"><div style="
-            font-size:64px;
-            font-weight:bold;
-            color:white;
-            margin-bottom:10px;">
-
-            {live['goles_local']} &nbsp;&nbsp;-&nbsp;&nbsp; {live['goles_visitante']}
-
-        </div>
-
-        <div style="
-            font-size:22px;
-            color:#BBBBBB;
-            margin-bottom:8px;">
-
-            {live['minuto']}'
-
-        </div>
-
-        <div style="
-            font-size:18px;
-            color:#AAAAAA;">
-
-            {estado.get(live["estado"], live["estado"])}
-
-        </div>
-
-    </div>
-    """, unsafe_allow_html=True)
+        st.markdown(f"""<div style="text-align:center"><h1 style="font-size:70px;margin-bottom:0;margin-top:0;">{live["goles_local"]} - {live["goles_visitante"]}</h1><h3 style="color:#BBBBBB">{live["minuto"]}'</h3><p style="color:#999999;font-size:18px;">{estado.get(live["estado"],live["estado"])}</p></div>""", unsafe_allow_html=True)
 
         st.divider() 
      
