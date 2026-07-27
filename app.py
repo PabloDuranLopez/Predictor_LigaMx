@@ -275,38 +275,8 @@ def mostrar_partido(partido, partidos_live):
     </h2>
     """, unsafe_allow_html=True)
 
-     st.markdown(f"""
-    <div style="text-align:center">
-
-        <h1 style="
-            font-size:70px;
-            margin:0;
-            color:white;">
-
-            {live["goles_local"]} - {live["goles_visitante"]}
-
-        </h1>
-
-        <h3 style="
-            color:#BBBBBB;
-            margin-top:8px;">
-
-            {live["minuto"]}'
-
-        </h3>
-
-        <p style="
-            color:#999999;
-            font-size:18px;
-            margin-top:0;">
-
-            {estado.get(live["estado"], live["estado"])}
-
-        </p>
-
-    </div>
-    """, unsafe_allow_html=True)
-
+     st.markdown(
+    f"""<div style="text-align:center;"><h1 style="font-size:70px; margin:0; color:white;">{live['goles_local']} - {live['goles_visitante']}</h1><h3 style="color:#BBBBBB; margin-top:8px;">{live['minuto']}'</h3><p style="color:#999999; font-size:18px; margin-top:0;">{estado.get(live['estado'], live['estado'])}</p></div>""",unsafe_allow_html=True)
      st.divider()
     
     
