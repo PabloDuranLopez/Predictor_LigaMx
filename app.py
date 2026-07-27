@@ -164,7 +164,7 @@ def mostrar_partido(partido, partidos_live):
 
     visitante = partido["visitante"]
     live = buscar_partido(partidos_live, local,visitante)
-    st.write(live)
+   
     
     stats = None
 
