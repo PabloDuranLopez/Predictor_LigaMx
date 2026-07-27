@@ -127,7 +127,7 @@ El desarrollo fue realizado como proyecto personal con fin educativo para profun
 **Las predicciones no constituyen recomendaciones de apuesta.**
 """)
 
-c1, c2, c3 = st.columns([3,2,3])
+c1, c2, c3 = st.columns([1,2,1])
 
 with c2:
     st.image("escudos/ligamx.png", width=250)
@@ -210,42 +210,55 @@ def mostrar_partido(partido, partidos_live):
         f"<h3 style='text-align:center'>{nombre_equipo(visitante)}</h3>",
         unsafe_allow_html=True)
     
-    if live is not None:
-         estado = {
+     if live is not None:
+
+        estado = {
         "NS": "No iniciado",
         "1H": "Primer tiempo",
         "HT": "Descanso",
         "2H": "Segundo tiempo",
         "ET": "Tiempo extra",
-        "BT": "Descanso TE",
+        "BT": "Descanso T.E.",
         "P": "Penales",
-        "FT": "Finalizado" }
-        
-         st.markdown("## 🔴 EN VIVO")
+        "FT": "Finalizado"}
 
-         c1, c2, c3 = st.columns([3,1,3])
+        st.markdown("""<h2 style="
+        text-align:center;
+        color:#ff4b4b;
+        margin-bottom:25px;">
+        🔴 EN VIVO</h2>""", unsafe_allow_html=True)
 
-         with c1:
-          st.markdown(
-            f"<h3 style='text-align:right'>{nombre_equipo(local)}</h3>",
-            unsafe_allow_html=True)
+        st.markdown(f"""<div style="text-align:center;"><div style="
+            font-size:64px;
+            font-weight:bold;
+            color:white;
+            margin-bottom:10px;">
 
-         with c2:
-          st.markdown(
-            f"<h1 style='text-align:center'>{live['goles_local']} - {live['goles_visitante']}</h1>",
-            unsafe_allow_html=True)
+            {live['goles_local']} &nbsp;&nbsp;-&nbsp;&nbsp; {live['goles_visitante']}
 
-          st.caption(
-            f"{live['minuto']}'" )
+        </div>
 
-         with c3:
-          st.markdown(
-            f"<h3>{nombre_equipo(visitante)}</h3>",
-            unsafe_allow_html=True)
+        <div style="
+            font-size:22px;
+            color:#BBBBBB;
+            margin-bottom:8px;">
 
-         st.caption(estado.get(live["estado"], live["estado"]))
+            {live['minuto']}'
 
-         st.divider() 
+        </div>
+
+        <div style="
+            font-size:18px;
+            color:#AAAAAA;">
+
+            {estado.get(live["estado"], live["estado"])}
+
+        </div>
+
+    </div>
+    """, unsafe_allow_html=True)
+
+        st.divider() 
      
     if stats is not None:
          local_stats = {}
@@ -260,7 +273,7 @@ def mostrar_partido(partido, partidos_live):
 
 
 
-         st.markdown("### Estadísticas")
+         st.markdown("### 📊 Estadísticas")
 
          filas = [
         ("Ball Possession","Posesión"),
@@ -275,15 +288,32 @@ def mostrar_partido(partido, partidos_live):
          for api, nombre in filas:
              c1, c2, c3 = st.columns([2,2,2])
              with c1:
-                 st.metric("", local_stats.get(api, "-"))
+                 st.markdown(f"""
+                             <h3 style="text-align:right">{local_stats.get(api,'-')}</h3>""",
+                             unsafe_allow_html=True)
 
              with c2:
                 st.markdown(
-                f"<p style='text-align:center'>{nombre}</p>",
-                unsafe_allow_html=True)
+        f"""
+        <div style="
+            text-align:center;
+            color:#BBBBBB;
+            font-size:18px;">
+            {nombre}
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
 
              with c3:
-                 st.metric("", visitante_stats.get(api, "-"))
+                 st.markdown(
+        f"""
+        <h3 style="text-align:left">
+        {visitante_stats.get(api,'-')}
+        </h3>
+        """,
+        unsafe_allow_html=True
+    )
      
      
     lam = partido["xg_local"]
