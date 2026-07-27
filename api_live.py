@@ -9,18 +9,25 @@ Original file is located at
 
 equipos = {
 
-    "Club America":"America",
-    "Toluca":"Toluca",
-    "Pumas UNAM":"UNAM",
-    "Tigres UANL":"UANL",
-    "FC Juarez":"FC Juárez",
-    "Club Leon":"Leon",
-    "Mazatlan FC":"Mazatlan",
+    "Club America": "America",
+    "Atlas": "Atlas",
+    "Atletico San Luis": "Atlético San Luis",
+    "Cruz Azul": "Cruz Azul",
+    "Guadalajara Chivas": "Guadalajara",
+    "FC Juarez": "FC Juárez",
+    "Leon": "Leon",
+    "Mazatlán": "Mazatlan",
+    "Monterrey": "Monterrey",
+    "Necaxa": "Necaxa",
+    "CF Pachuca": "Pachuca",
+    "Puebla": "Puebla",
+    "U.N.A.M. - Pumas": "UNAM",
+    "Club Queretaro": "Querétaro",
+    "Santos Laguna": "Santos Laguna",
+    "Tigres UANL": "UANL",
+    "Club Tijuana": "Tijuana",
+    "Toluca": "Toluca"
 
-    "CF Pachuca":"Pachuca",
-    "Club Queretaro":"Querétaro",
-    "Club Necaxa":"Necaxa",
-    "CF Monterrey":"Monterrey"
 }
 
 import requests
