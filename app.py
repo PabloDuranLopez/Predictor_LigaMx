@@ -164,10 +164,13 @@ def mostrar_partido(partido, partidos_live):
 
     visitante = partido["visitante"]
     live = buscar_partido(partidos_live, local,visitante)
+    st.write(live)
+    
     stats = None
 
     if live is not None:
         stats = obtener_estadisticas(live["fixture"])
+        st.write(stats)
 
     fecha = partido["fecha"]
 
