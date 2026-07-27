@@ -273,7 +273,7 @@ def mostrar_partido(partido, partidos_live):
         ("Goalkeeper Saves","Atajadas"),]
 
          for api, nombre in filas:
-             c1, c2, c3 = st.columns([3,2,3])
+             c1, c2, c3 = st.columns([2,2,2])
              with c1:
                  st.metric("", local_stats.get(api, "-"))
 
