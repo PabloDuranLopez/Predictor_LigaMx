@@ -215,7 +215,7 @@ def mostrar_partido(partido, partidos_live):
     with col2:
 
         st.markdown(
-            "<h1 style='text-align:center;margin-top:140px'>VS</h1>",
+            "<h1 style='text-align:center;margin-top:180px'>VS</h1>",
             unsafe_allow_html=True
         )
 
