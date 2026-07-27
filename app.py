@@ -188,7 +188,7 @@ def mostrar_partido(partido, partidos_live):
      st.markdown(
         """
         <div style="
-            height:130px;
+            height:90px;
             display:flex;
             justify-content:center;
             align-items:center;
@@ -198,7 +198,7 @@ def mostrar_partido(partido, partidos_live):
     )
 
      if escudo_local is not None:
-        st.image(escudo_local, width=350)
+        st.image(escudo_local, width=420)
 
      st.markdown("</div>", unsafe_allow_html=True)
 
@@ -226,7 +226,7 @@ def mostrar_partido(partido, partidos_live):
      st.markdown(
         """
         <div style="
-            height:130px;
+            height:90px;
             display:flex;
             justify-content:center;
             align-items:center;
@@ -236,7 +236,7 @@ def mostrar_partido(partido, partidos_live):
     )
 
      if escudo_visitante is not None:
-        st.image(escudo_visitante, width=350)
+        st.image(escudo_visitante, width=420)
 
      st.markdown("</div>", unsafe_allow_html=True)
 
