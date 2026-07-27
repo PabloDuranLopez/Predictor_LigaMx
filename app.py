@@ -251,7 +251,67 @@ def mostrar_partido(partido, partidos_live):
         unsafe_allow_html=True
     )
     st.divider() 
-     
+    
+    if live is not None:
+
+     estado = {
+        "NS": "No iniciado",
+        "1H": "Primer tiempo",
+        "HT": "Descanso",
+        "2H": "Segundo tiempo",
+        "ET": "Tiempo extra",
+        "BT": "Descanso T.E.",
+        "P": "Penales",
+        "FT": "Finalizado"
+    }
+
+     st.markdown("""
+    <h2 style="
+        text-align:center;
+        color:#ff4b4b;
+        margin-top:25px;
+        margin-bottom:20px;">
+        🔴 EN VIVO
+    </h2>
+    """, unsafe_allow_html=True)
+
+     st.markdown(f"""
+    <div style="text-align:center">
+
+        <h1 style="
+            font-size:70px;
+            margin:0;
+            color:white;">
+
+            {live["goles_local"]} - {live["goles_visitante"]}
+
+        </h1>
+
+        <h3 style="
+            color:#BBBBBB;
+            margin-top:8px;">
+
+            {live["minuto"]}'
+
+        </h3>
+
+        <p style="
+            color:#999999;
+            font-size:18px;
+            margin-top:0;">
+
+            {estado.get(live["estado"], live["estado"])}
+
+        </p>
+
+    </div>
+    """, unsafe_allow_html=True)
+
+     st.divider()
+    
+    
+    
+    
     if stats is not None:
          local_stats = {}
          visitante_stats = {}
@@ -265,7 +325,7 @@ def mostrar_partido(partido, partidos_live):
 
 
 
-         st.markdown("### 📊 Estadísticas")
+         st.markdown("### Estadísticas")
 
          filas = [
         ("Ball Possession","Posesión"),
