@@ -129,7 +129,7 @@ El desarrollo fue realizado como proyecto personal con fin educativo para profun
 """)
 st.markdown("""
 ### Ya estan actualizados las predicciones de la J3!!!!
-Las estadisticas en vivo aparecen solo durante el partido una vez acaba el partido ya no se puedeen consultar
+## Las estadisticas en vivo aparecen solo durante el partido una vez acaba el partido ya no se puedeen consultar
 """)
 
 c1, c2, c3 = st.columns([1,2,1])
