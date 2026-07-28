@@ -9,6 +9,7 @@ from api_live import (
     buscar_partido,
     obtener_estadisticas
 )
+#xddddd
 def obtener_escudo(equipo):
 
     escudos = {
