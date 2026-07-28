@@ -114,7 +114,7 @@ st.set_page_config(
 )
 
 st.markdown("""
-### Acerca del proyecto
+# Acerca del proyecto
 Este proyecto implementa desde cero el modelo **Dixon-Coles con decaimiento temporal** para la predicción de partidos de la Liga MX.
 
 El desarrollo fue realizado como proyecto personal con fin educativo para profundizar en:
@@ -128,8 +128,8 @@ El desarrollo fue realizado como proyecto personal con fin educativo para profun
 **Las predicciones no constituyen recomendaciones de apuesta.**
 """)
 st.markdown("""
-### Ya estan actualizados las predicciones de la J3!!!!
-## Las estadisticas en vivo aparecen solo durante el partido una vez acaba el partido ya no se puedeen consultar
+## Ya estan actualizados las predicciones de la J3!!!!
+### Las estadisticas en vivo aparecen solo durante el partido una vez acaba el partido ya no se puedeen consultar
 """)
 
 c1, c2, c3 = st.columns([1,2,1])
