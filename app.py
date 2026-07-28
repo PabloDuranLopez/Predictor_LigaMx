@@ -127,7 +127,7 @@ El desarrollo fue realizado como proyecto personal con fin educativo para profun
 
 **Las predicciones no constituyen recomendaciones de apuesta.**
 """)
-sr.markdown("Ya estan actualizados las predicciones de la J3!!!!")
+st.markdown("Ya estan actualizados las predicciones de la J3!!!!")
 
 c1, c2, c3 = st.columns([1,2,1])
 
