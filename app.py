@@ -115,7 +115,7 @@ st.set_page_config(
 
 st.markdown("""
 # Acerca del proyecto
-Este proyecto implementa desde cero el modelo **Dixon-Coles con decaimiento temporal** para la predicción de partidos de la Liga MX.
+Este proyecto implementa desde cero modelos para la predicción de partidos de la Liga MX.
 
 El desarrollo fue realizado como proyecto personal con fin educativo para profundizar en:
 
@@ -138,7 +138,6 @@ with c2:
     st.image("escudos/ligamx.png", width=250)
 
 st.title("⚽ Predicción de partidos Liga MX")
-st.write("Modelo Dixon-Coles con Decaimiento Temporal")
 
 predicciones = pd.read_csv(
     "data/predicciones.csv"
