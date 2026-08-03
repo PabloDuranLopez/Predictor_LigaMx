@@ -9,7 +9,7 @@ from api_live import (
     buscar_partido,
     obtener_estadisticas
 )
-#xdddd
+#xddddd
 def obtener_escudo(equipo):
 
     escudos = {
@@ -114,7 +114,7 @@ st.set_page_config(
 )
 
 
-# =CSS 
+# ===== CSS PERSONALIZADO =====
 st.markdown("""
 <style>
     /* Fondo general */
@@ -196,6 +196,31 @@ st.markdown("""
 
     /* Tabla top 5 compacta */
     .top5-table { font-size: 0.95rem; }
+
+    /* Barra de probabilidad apilada (Local/Empate/Visitante) */
+    .barra-wrapper {
+        margin-top: 0.8rem;
+        margin-bottom: 0.4rem;
+    }
+    .barra-linea {
+        display: flex;
+        width: 100%;
+        height: 22px;
+        border-radius: 12px;
+        overflow: hidden;
+        background: rgba(255,255,255,0.06);
+    }
+    .barra-seg {
+        height: 100%;
+    }
+    .leyenda {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+    }
+    .leyenda span b { font-weight: 700; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -214,7 +239,7 @@ El desarrollo fue realizado como proyecto personal con fin educativo para profun
 **Las predicciones no constituyen recomendaciones de apuesta.**
 """)
 st.markdown("""
-## Ya estan actualizados las predicciones de la J4!!!!
+## Ya estan actualizados las predicciones de la J3!!!!
 ### Las estadisticas en vivo aparecen solo durante el partido una vez acaba el partido ya no se puedeen consultar
 """)
 
@@ -396,18 +421,25 @@ def mostrar_partido(partido, partidos_live):
     momio_empate = partido["momio_empate"]
     momio_visitante = partido["momio_visitante"]
 
-    #  TARJETA DEL PARTIDO 
+    # Matriz de probabilidades (se reutiliza en marcador, over/under y top5)
+    matriz = np.array(json.loads(partido["matriz"]))
+
+    # ===== TARJETA DEL PARTIDO =====
     st.markdown('<div class="partido-card">', unsafe_allow_html=True)
 
-    # Marcador esperado 
+    # --- Marcador más probable ---
+    _prob_marcador = matriz[marcador[0], marcador[1]]
     st.markdown(
+        f'<div class="seccion-titulo" style="text-align:center;">Marcador más probable</div>'
         f'<p class="marcador-grande">{nombre_equipo(local)} '
         f'<span style="color:#8b9ba8;">{marcador[0]} - {marcador[1]}</span> '
-        f'{nombre_equipo(visitante)}</p>',
+        f'{nombre_equipo(visitante)}</p>'
+        f'<div class="small-meta" style="text-align:center;margin-top:0.2rem;">'
+        f'Probabilidad <b style="color:#f7971e;">{_prob_marcador:.1%}</b></div>',
         unsafe_allow_html=True
     )
 
-    # Probabilidades y momios (al inicio) 
+    # --- Probabilidades y momios (al inicio) ---
     c1, c2, c3 = st.columns(3)
 
     for col, etiqueta, prob, momio in [
@@ -423,7 +455,27 @@ def mostrar_partido(partido, partidos_live):
                 unsafe_allow_html=True
             )
 
-    # Resultado final (si el partido ya terminó) 
+    # --- Barra de probabilidad apilada: Local / Empate / Visitante ---
+    _pl = float(prob_local)
+    _pe = float(prob_empate)
+    _pv = float(prob_visitante)
+    st.markdown(
+        f'<div class="barra-wrapper">'
+        f'<div class="barra-linea">'
+        f'<div class="barra-seg" style="width:{_pl*100:.1f}%;background:#4ade80;"></div>'
+        f'<div class="barra-seg" style="width:{_pe*100:.1f}%;background:#facc15;"></div>'
+        f'<div class="barra-seg" style="width:{_pv*100:.1f}%;background:#f87171;"></div>'
+        f'</div>'
+        f'<div class="leyenda">'
+        f'<span style="color:#4ade80;">Local <b>{_pl:.1%}</b></span>'
+        f'<span style="color:#facc15;">Empate <b>{_pe:.1%}</b></span>'
+        f'<span style="color:#f87171;">Visita <b>{_pv:.1%}</b></span>'
+        f'</div>'
+        f'</div>',
+        unsafe_allow_html=True
+    )
+
+    # --- Resultado final (si el partido ya terminó) ---
     if not pd.isna(partido["resultado_local"]):
         rl = int(partido["resultado_local"])
         rv = int(partido["resultado_visitante"])
@@ -447,8 +499,8 @@ def mostrar_partido(partido, partidos_live):
         else:
             st.error(f"❌ Predicción incorrecta | Final: {nombre_equipo(local)} {rl} - {rv} {nombre_equipo(visitante)}")
 
-    # OVER / UNDER 
-    matriz_ou = np.array(json.loads(partido["matriz"]))
+    # ===== OVER / UNDER =====
+    matriz_ou = matriz
     _it = np.nditer(matriz_ou, flags=["multi_index"])
     _tuplas = []
     for _val in _it:
@@ -481,15 +533,15 @@ def mostrar_partido(partido, partidos_live):
     with oc4:
         st.markdown(
             f'<div class="ou-caja">'
-            f'<div class="ou-lado" style="color:#8fd3f4;">Goles <span style="color:#eaf2f5;">{_total:.2f}</span></div>'
-            f'<div class="ou-lado" style="color:#8b9ba8;">esperados</div>'
+            f'<div class="ou-lado" style="color:#8fd3f4;">Goles esperados</div>'
+            f'<div class="ou-lado" style="color:#eaf2f5;">Local <b>{lam:.2f}</b> · Vis <b>{mu:.2f}</b></div>'
             f'</div>',
             unsafe_allow_html=True
         )
 
     st.divider()
 
-    #  TOP 5 MARCADORES 
+    # ===== TOP 5 MARCADORES =====
     st.markdown('<div class="seccion-titulo">Top 5 marcadores más probables</div>', unsafe_allow_html=True)
 
     _flat_idx = np.argsort(matriz_ou, axis=None)[::-1][:5]
