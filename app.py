@@ -114,7 +114,7 @@ st.set_page_config(
 )
 
 
-# ===== CSS PERSONALIZADO =====
+# =CSS 
 st.markdown("""
 <style>
     /* Fondo general */
@@ -396,10 +396,10 @@ def mostrar_partido(partido, partidos_live):
     momio_empate = partido["momio_empate"]
     momio_visitante = partido["momio_visitante"]
 
-    # ===== TARJETA DEL PARTIDO =====
+    #  TARJETA DEL PARTIDO 
     st.markdown('<div class="partido-card">', unsafe_allow_html=True)
 
-    # --- Marcador esperado ---
+    # Marcador esperado 
     st.markdown(
         f'<p class="marcador-grande">{nombre_equipo(local)} '
         f'<span style="color:#8b9ba8;">{marcador[0]} - {marcador[1]}</span> '
@@ -407,7 +407,7 @@ def mostrar_partido(partido, partidos_live):
         unsafe_allow_html=True
     )
 
-    # --- Probabilidades y momios (al inicio) ---
+    # Probabilidades y momios (al inicio) 
     c1, c2, c3 = st.columns(3)
 
     for col, etiqueta, prob, momio in [
@@ -423,7 +423,7 @@ def mostrar_partido(partido, partidos_live):
                 unsafe_allow_html=True
             )
 
-    # --- Resultado final (si el partido ya terminó) ---
+    # Resultado final (si el partido ya terminó) 
     if not pd.isna(partido["resultado_local"]):
         rl = int(partido["resultado_local"])
         rv = int(partido["resultado_visitante"])
@@ -447,7 +447,7 @@ def mostrar_partido(partido, partidos_live):
         else:
             st.error(f"❌ Predicción incorrecta | Final: {nombre_equipo(local)} {rl} - {rv} {nombre_equipo(visitante)}")
 
-    # ===== OVER / UNDER =====
+    # OVER / UNDER 
     matriz_ou = np.array(json.loads(partido["matriz"]))
     _it = np.nditer(matriz_ou, flags=["multi_index"])
     _tuplas = []
@@ -489,7 +489,7 @@ def mostrar_partido(partido, partidos_live):
 
     st.divider()
 
-    # ===== TOP 5 MARCADORES =====
+    #  TOP 5 MARCADORES 
     st.markdown('<div class="seccion-titulo">Top 5 marcadores más probables</div>', unsafe_allow_html=True)
 
     _flat_idx = np.argsort(matriz_ou, axis=None)[::-1][:5]
