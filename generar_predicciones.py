@@ -107,6 +107,27 @@ for _, partido in partidos.iterrows():
         goles_max=10
     )
 
+    # ---- CALCULOS ADICIONALES: Over/Under y Top 5 marcadores ----
+
+    mascara_over = np.fromfunction(lambda i, j: i + j > 2.5, matriz.shape)
+    prob_over25 = float(matriz[mascara_over].sum())
+    prob_under25 = 1 - prob_over25
+
+    prob_over15 = float(matriz[np.fromfunction(lambda i, j: i + j > 1.5, matriz.shape)].sum())
+    prob_under15 = 1 - prob_over15
+
+    prob_over05 = float(matriz[np.fromfunction(lambda i, j: i + j > 0.5, matriz.shape)].sum())
+    prob_under05 = 1 - prob_over05
+
+    total_goles = lam + mu
+
+    idx_flat = np.argsort(matriz, axis=None)[::-1][:5]
+    top5 = []
+    for k in idx_flat:
+        g_local, g_vis = np.unravel_index(k, matriz.shape)
+        top5.append(f"{int(g_local)}-{int(g_vis)}:{matriz[g_local, g_vis]:.3f}")
+    top5_str = "|".join(top5)
+
     nuevas_predicciones.append({
 
         "fecha":fecha,
@@ -126,6 +147,15 @@ for _, partido in partidos.iterrows():
         "xg_local":lam,
 
         "xg_visitante":mu,
+
+        "prob_over05": prob_over05,
+        "prob_under05": prob_under05,
+        "prob_over15": prob_over15,
+        "prob_under15": prob_under15,
+        "prob_over25": prob_over25,
+        "prob_under25": prob_under25,
+        "total_goles": total_goles,
+        "top5": top5_str,
 
         "prob_local":probs.iloc[0][local],
 

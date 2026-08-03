@@ -353,7 +353,57 @@ def mostrar_partido(partido, partidos_live):
     st.markdown("### Marcador esperado")
 
     st.success(f"{nombre_equipo(local)} {marcador[0]} - {marcador[1]} {nombre_equipo(visitante)}")
-    
+
+
+    # ---- OVER/UNDER y TOP 5 MARCAdORES ----
+    # Se calculan desde la matriz (robustos si vienen del CSV o no)
+    matriz_ou = np.array(json.loads(partido["matriz"]))
+
+    def _probacentajes_ou(m):
+        por_parte = {}
+        for umbral in [0.5, 1.5, 2.5]:
+            prob_over = m[np.fromfunction(lambda i, j: i + j > umbral, m.shape)].sum()
+            prob_under = 1 - prob_over
+            por_parte[umbral] = (prob_over, prob_under)
+        return por_parte
+
+    _ou = _probacentajes_ou(matriz_ou)
+
+    st.markdown("### Over / Under")
+
+    oc1, oc2, oc3, oc4 = st.columns(4)
+
+    oc1.metric("Over 2.5", f"{_ou[2.5][0]:.1%}")
+    oc1.caption(f"Under 2.5 {_ou[2.5][1]:.1%}")
+
+    oc2.metric("Over 1.5", f"{_ou[1.5][0]:.1%}")
+    oc2.caption(f"Under 1.5 {_ou[1.5][1]:.1%}")
+
+    oc3.metric("Over 0.5", f"{_ou[0.5][0]:.1%}")
+    oc3.caption(f"Under 0.5 {_ou[0.5][1]:.1%}")
+
+    # Goles totales esperados
+    _total = lam + mu
+    oc4.metric("Goles totales", f"{_total:.2f}")
+
+    st.divider()
+
+    # ---- TOP 5 MARCAdORES ----
+    st.markdown("### Top 5 marcadores más probables")
+
+    _flat_idx = np.argsort(matriz_ou, axis=None)[::-1][:5]
+    _top = []
+    for _k in _flat_idx:
+        _gl, _gv = np.unravel_index(_k, matriz_ou.shape)
+        _top.append({
+            "Marcador": f"{_gl} - {_gv}",
+            "Probabilidad": f"{matriz_ou[_gl, _gv]:.1%}"
+        })
+
+    st.dataframe(pd.DataFrame(_top), hide_index=True)
+
+    st.divider()
+
     prob_local = partido["prob_local"]
     prob_empate = partido["prob_empate"]
     prob_visitante = partido["prob_visitante"]
@@ -455,5 +505,6 @@ for _, partido in partidos.iterrows():
         partido,
         partidos_live
     )
+
 
 
