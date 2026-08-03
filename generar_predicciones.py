@@ -107,7 +107,7 @@ for _, partido in partidos.iterrows():
         goles_max=10
     )
 
-    # ---- CALCULOS ADICIONALES: Over/Under y Top 5 marcadores ----
+    #  Over/Under y Top 5 marcadores 
 
     mascara_over = np.fromfunction(lambda i, j: i + j > 2.5, matriz.shape)
     prob_over25 = float(matriz[mascara_over].sum())
