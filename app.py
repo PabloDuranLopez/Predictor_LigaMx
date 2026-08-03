@@ -3,7 +3,7 @@ import pandas as pd
 import os
 import json
 import numpy as np
-from clases_funciones import plot_score_matrix
+from clases_funciones import plot_score_matrix  # sin uso actual
 from api_live import (
     obtener_partidos_en_vivo,
     buscar_partido,
@@ -114,7 +114,7 @@ st.set_page_config(
 )
 
 
-
+# ===== CSS PERSONALIZADO =====
 st.markdown("""
 <style>
     /* Fondo general */
@@ -164,13 +164,19 @@ st.markdown("""
         margin-bottom: 0.6rem;
     }
 
-    /* Valor Over/Under */
-    .ou-valor {
-        font-size: 1.35rem;
+    /* Over/Under - ambos del mismo tamaño */
+    .ou-lado {
+        font-size: 1.0rem;
         font-weight: 700;
     }
     .ou-over { color: #4ade80; }
     .ou-under { color: #f87171; }
+    .ou-caja {
+        background: rgba(255,255,255,0.06);
+        border-radius: 10px;
+        padding: 0.5rem 0.3rem;
+        text-align: center;
+    }
 
     /* Probabilidades */
     .prob-valor { font-size: 2rem; font-weight: 800; }
@@ -188,12 +194,8 @@ st.markdown("""
     /* caption mas legible */
     .small-meta { color: #8b9ba8; font-size: 0.85rem; }
 
-    /* quitar recuadros por defecto de metric */
-    .stMetric {
-        background: rgba(255,255,255,0.05);
-        border-radius: 12px;
-        padding: 0.6rem;
-    }
+    /* Tabla top 5 compacta */
+    .top5-table { font-size: 0.95rem; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -261,7 +263,7 @@ def mostrar_partido(partido, partidos_live):
        
     fecha = partido["fecha"]
 
-    
+    # Metadatos del partido
     estado_txt = "Partido pendiente" if pd.isna(partido["resultado_local"]) else "Partido finalizado"
     st.markdown(
         f'<div class="small-meta" style="text-align:center;margin-top:1.5rem;">'
@@ -275,7 +277,7 @@ def mostrar_partido(partido, partidos_live):
         escudo_local = obtener_escudo(local)
         if escudo_local is not None:
             cola, colon, colb = st.columns([1, 2, 1])
-            colon.image(escudo_local, width=90)
+            colon.image(escudo_local, width=140)
         st.markdown(
             f'<div class="header-equipo">{nombre_equipo(local)}</div>',
             unsafe_allow_html=True
@@ -288,7 +290,7 @@ def mostrar_partido(partido, partidos_live):
         escudo_visitante = obtener_escudo(visitante)
         if escudo_visitante is not None:
             cola2, colon2, colb2 = st.columns([1, 2, 1])
-            colon2.image(escudo_visitante, width=90)
+            colon2.image(escudo_visitante, width=140)
         st.markdown(
             f'<div class="header-equipo">{nombre_equipo(visitante)}</div>',
             unsafe_allow_html=True
@@ -383,16 +385,21 @@ def mostrar_partido(partido, partidos_live):
      
      
     lam = partido["xg_local"]
-
     mu = partido["xg_visitante"]
-
     marcador = (int(partido["pred_local"]), int(partido["pred_visitante"]))
+    _total = lam + mu
 
-    
+    prob_local = partido["prob_local"]
+    prob_empate = partido["prob_empate"]
+    prob_visitante = partido["prob_visitante"]
+    momio_local = partido["momio_local"]
+    momio_empate = partido["momio_empate"]
+    momio_visitante = partido["momio_visitante"]
+
+    # ===== TARJETA DEL PARTIDO =====
     st.markdown('<div class="partido-card">', unsafe_allow_html=True)
 
-    
-    st.markdown('<div class="seccion-titulo">Marcador esperado</div>', unsafe_allow_html=True)
+    # --- Marcador esperado ---
     st.markdown(
         f'<p class="marcador-grande">{nombre_equipo(local)} '
         f'<span style="color:#8b9ba8;">{marcador[0]} - {marcador[1]}</span> '
@@ -400,121 +407,7 @@ def mostrar_partido(partido, partidos_live):
         unsafe_allow_html=True
     )
 
-    
-    matriz_ou = np.array(json.loads(partido["matriz"]))
-
-    _flat_idx_ou = np.argsort(matriz_ou, axis=None)[::-1]
-    _tuplas = [np.unravel_index(k, matriz_ou.shape) for k in _flat_idx_ou]
-
-    def _prob_over(umbral):
-        return sum(matriz_ou[i, j] for i, j in _tuplas if i + j > umbral)
-
-    st.markdown('<div class="seccion-titulo">Over / Under</div>', unsafe_allow_html=True)
-
-    _total = lam + mu
-    oc1, oc2, oc3, oc4 = st.columns(4)
-
-    filas_ou = [
-        ("2.5", _prob_over(2.5)),
-        ("1.5", _prob_over(1.5)),
-        ("0.5", _prob_over(0.5)),
-    ]
-
-    for col, (umbral, prob_over) in zip([oc1, oc2, oc3], filas_ou):
-        prob_over = min(prob_over, 1.0)
-        prob_under = max(1 - prob_over, 0.0)
-        with col:
-            st.markdown(
-                f'<div class="ou-valor"><span class="ou-over">Over {umbral}</span> '
-                f'<span style="color:#eaf2f5;">{prob_over:.1%}</span></div>',
-                unsafe_allow_html=True
-            )
-            st.markdown(
-                f'<div class="small-meta"><span class="ou-under">Under {umbral} {prob_under:.1%}</span></div>',
-                unsafe_allow_html=True
-            )
-            st.progress(float(prob_over))
-
-    with oc4:
-        st.markdown(
-            f'<div class="ou-valor"><span class="ou-over">Goles</span> '
-            f'<span style="color:#eaf2f5;">{_total:.2f}</span></div>',
-            unsafe_allow_html=True
-        )
-        st.markdown(
-            '<div class="small-meta">totales esperados</div>',
-            unsafe_allow_html=True
-        )
-
-    st.divider()
-
-  
-    st.markdown('<div class="seccion-titulo">Top 5 marcadores más probables</div>', unsafe_allow_html=True)
-
-    _top = []
-    for _k in _flat_idx_ou[:5]:
-        _gl, _gv = np.unravel_index(_k, matriz_ou.shape)
-        _top.append({
-            "Marcador": f"{nombre_equipo(local)} {_gl} - {_gv} {nombre_equipo(visitante)}",
-            "Probabilidad": f"{matriz_ou[_gl, _gv]:.1%}"
-        })
-
-    st.dataframe(
-        pd.DataFrame(_top),
-        hide_index=True,
-        use_container_width=True
-    )
-
-    st.divider()
-
-    prob_local = partido["prob_local"]
-    prob_empate = partido["prob_empate"]
-    prob_visitante = partido["prob_visitante"]
-    
-    momio_local = partido["momio_local"]
-
-    momio_empate = partido["momio_empate"]
-
-    momio_visitante = partido["momio_visitante"]
-    
-    if not pd.isna(partido["resultado_local"]):
-
-     rl = int(partido["resultado_local"])
-     rv = int(partido["resultado_visitante"])
-
-     st.markdown("### Resultado final")
-
-     st.info(
-        f"{nombre_equipo(local)} {rl} - {rv} {nombre_equipo(visitante)}")
-
-     pred_local = marcador[0]
-     pred_visitante = marcador[1]
-
-
-
-     if prob_local >= prob_empate and prob_local >= prob_visitante:
-        signo_pred = 1
-     elif prob_visitante >= prob_local and prob_visitante >= prob_empate:
-        signo_pred = -1
-     else:
-        signo_pred = 0
-
-     signo_real = np.sign(rl - rv)
-
-     if pred_local == rl and pred_visitante == rv:
-        st.success("✅ Marcador exacto")
-
-     elif signo_pred == signo_real:
-        st.warning("🟡 Se acertó el ganador")
-
-     else:
-        st.error("❌ Predicción incorrecta") 
-
-
-    
-    
-    st.markdown('<div class="seccion-titulo">Resultado del partido</div>', unsafe_allow_html=True)
-
+    # --- Probabilidades y momios (al inicio) ---
     c1, c2, c3 = st.columns(3)
 
     for col, etiqueta, prob, momio in [
@@ -530,22 +423,91 @@ def mostrar_partido(partido, partidos_live):
                 unsafe_allow_html=True
             )
 
+    # --- Resultado final (si el partido ya terminó) ---
+    if not pd.isna(partido["resultado_local"]):
+        rl = int(partido["resultado_local"])
+        rv = int(partido["resultado_visitante"])
+
+        pred_local = marcador[0]
+        pred_visitante = marcador[1]
+
+        if prob_local >= prob_empate and prob_local >= prob_visitante:
+            signo_pred = 1
+        elif prob_visitante >= prob_local and prob_visitante >= prob_empate:
+            signo_pred = -1
+        else:
+            signo_pred = 0
+
+        signo_real = np.sign(rl - rv)
+
+        if pred_local == rl and pred_visitante == rv:
+            st.success(f"✅ Marcador exacto | Final: {nombre_equipo(local)} {rl} - {rv} {nombre_equipo(visitante)}")
+        elif signo_pred == signo_real:
+            st.warning(f"🟡 Se acertó el ganador | Final: {nombre_equipo(local)} {rl} - {rv} {nombre_equipo(visitante)}")
+        else:
+            st.error(f"❌ Predicción incorrecta | Final: {nombre_equipo(local)} {rl} - {rv} {nombre_equipo(visitante)}")
+
+    # ===== OVER / UNDER =====
+    matriz_ou = np.array(json.loads(partido["matriz"]))
+    _it = np.nditer(matriz_ou, flags=["multi_index"])
+    _tuplas = []
+    for _val in _it:
+        _tuplas.append(_it.multi_index)
+
+    def _prob_over(umbral):
+        return sum(matriz_ou[i, j] for i, j in _tuplas if i + j > umbral)
+
+    st.markdown('<div class="seccion-titulo">Over / Under</div>', unsafe_allow_html=True)
+
+    oc1, oc2, oc3, oc4 = st.columns(4)
+    filas_ou = [
+        ("2.5", _prob_over(2.5)),
+        ("1.5", _prob_over(1.5)),
+        ("0.5", _prob_over(0.5)),
+    ]
+
+    for col, (umbral, prob_over) in zip([oc1, oc2, oc3], filas_ou):
+        prob_over = min(prob_over, 1.0)
+        prob_under = max(1 - prob_over, 0.0)
+        with col:
+            st.markdown(
+                f'<div class="ou-caja">'
+                f'<div class="ou-lado ou-over">Over {umbral} &nbsp; {prob_over:.0%}</div>'
+                f'<div class="ou-lado ou-under">Under {umbral} &nbsp; {prob_under:.0%}</div>'
+                f'</div>',
+                unsafe_allow_html=True
+            )
+
+    with oc4:
+        st.markdown(
+            f'<div class="ou-caja">'
+            f'<div class="ou-lado" style="color:#8fd3f4;">Goles <span style="color:#eaf2f5;">{_total:.2f}</span></div>'
+            f'<div class="ou-lado" style="color:#8b9ba8;">esperados</div>'
+            f'</div>',
+            unsafe_allow_html=True
+        )
+
     st.divider()
 
-    with st.expander("Ver detalles"):
+    # ===== TOP 5 MARCADORES =====
+    st.markdown('<div class="seccion-titulo">Top 5 marcadores más probables</div>', unsafe_allow_html=True)
 
-        c1, c2 = st.columns(2)
+    _flat_idx = np.argsort(matriz_ou, axis=None)[::-1][:5]
+    _top = []
+    for _k in _flat_idx:
+        _gl, _gv = np.unravel_index(_k, matriz_ou.shape)
+        _top.append({
+            "Marcador": f"{nombre_equipo(local)} {_gl} - {_gv} {nombre_equipo(visitante)}",
+            "Probabilidad": f"{matriz_ou[_gl, _gv]:.1%}"
+        })
 
-        c1.metric("Goles esperados local", f"{lam:.2f}")
-        c2.metric("Goles esperados visitante", f"{mu:.2f}")
-
-        matriz = np.array(json.loads(partido["matriz"]))
-        fig = plot_score_matrix(matriz, local, visitante)
-        st.pyplot(fig)
+    st.dataframe(
+        pd.DataFrame(_top),
+        hide_index=True,
+        use_container_width=True
+    )
 
     st.markdown("</div>", unsafe_allow_html=True)
-
-    st.divider()
 
 
 partidos_live = obtener_partidos_en_vivo()
