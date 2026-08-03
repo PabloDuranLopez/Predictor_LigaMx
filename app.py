@@ -214,7 +214,7 @@ El desarrollo fue realizado como proyecto personal con fin educativo para profun
 **Las predicciones no constituyen recomendaciones de apuesta.**
 """)
 st.markdown("""
-## Ya estan actualizados las predicciones de la J3!!!!
+## Ya estan actualizados las predicciones de la J4!!!!
 ### Las estadisticas en vivo aparecen solo durante el partido una vez acaba el partido ya no se puedeen consultar
 """)
 
