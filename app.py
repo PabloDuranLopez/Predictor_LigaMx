@@ -114,7 +114,7 @@ st.set_page_config(
 )
 
 
-# ===== CSS PERSONALIZADO =====
+
 st.markdown("""
 <style>
     /* Fondo general */
@@ -261,7 +261,7 @@ def mostrar_partido(partido, partidos_live):
        
     fecha = partido["fecha"]
 
-    # Metadatos del partido
+    
     estado_txt = "Partido pendiente" if pd.isna(partido["resultado_local"]) else "Partido finalizado"
     st.markdown(
         f'<div class="small-meta" style="text-align:center;margin-top:1.5rem;">'
@@ -388,10 +388,10 @@ def mostrar_partido(partido, partidos_live):
 
     marcador = (int(partido["pred_local"]), int(partido["pred_visitante"]))
 
-    # ===== TARJETA DEL PARTIDO =====
+    
     st.markdown('<div class="partido-card">', unsafe_allow_html=True)
 
-    # --- Marcador esperado ---
+    
     st.markdown('<div class="seccion-titulo">Marcador esperado</div>', unsafe_allow_html=True)
     st.markdown(
         f'<p class="marcador-grande">{nombre_equipo(local)} '
@@ -400,7 +400,7 @@ def mostrar_partido(partido, partidos_live):
         unsafe_allow_html=True
     )
 
-    # ===== OVER / UNDER =====
+    
     matriz_ou = np.array(json.loads(partido["matriz"]))
 
     _flat_idx_ou = np.argsort(matriz_ou, axis=None)[::-1]
@@ -448,7 +448,7 @@ def mostrar_partido(partido, partidos_live):
 
     st.divider()
 
-    # ===== TOP 5 MARCADORES =====
+  
     st.markdown('<div class="seccion-titulo">Top 5 marcadores más probables</div>', unsafe_allow_html=True)
 
     _top = []
@@ -512,7 +512,7 @@ def mostrar_partido(partido, partidos_live):
 
 
     
-    # ===== PROBABILIDADES Y MOMIOS =====
+    
     st.markdown('<div class="seccion-titulo">Resultado del partido</div>', unsafe_allow_html=True)
 
     c1, c2, c3 = st.columns(3)
