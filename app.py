@@ -114,7 +114,7 @@ st.set_page_config(
 )
 
 
-# ===== CSS PERSONALIZADO =====
+#  CSS PERSONALIZADO 
 st.markdown("""
 <style>
     /* Fondo general */
@@ -239,8 +239,7 @@ El desarrollo fue realizado como proyecto personal con fin educativo para profun
 **Las predicciones no constituyen recomendaciones de apuesta.**
 """)
 st.markdown("""
-## Ya estan actualizados las predicciones de la J3!!!!
-### Las estadisticas en vivo aparecen solo durante el partido una vez acaba el partido ya no se puedeen consultar
+## Ya estan actualizados las predicciones de la J4!!!!
 """)
 
 c1, c2, c3 = st.columns([1,2,1])
