@@ -2,13 +2,20 @@
 https://predictorligamx.streamlit.app
 Sistema de predicción de resultados de la Liga MX utilizando modelos estadísticos y aprendizaje automático.
 
+## imgs
+<p align="center">
+  <img src="imagen/appy.jpeg" width="700">
+</p>
+
+<p align="center">
+  <img src="imagen/matriz.jpeg" width="700">
+</p>
+
 ## Características
 
 - Modelo Poisson
-- Dixon-Coles
 - Dixon-Coles con decaimiento temporal
-- Predicciones en vivo
-- Actualización automática de resultados
+- Actualización automática
 - Interfaz en Streamlit
 
 ## Tecnologías
