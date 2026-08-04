@@ -1,5 +1,5 @@
 # Predictor Liga MX
-
+https://predictorligamx.streamlit.app
 Sistema de predicción de resultados de la Liga MX utilizando modelos estadísticos y aprendizaje automático.
 
 ## Características
@@ -25,14 +25,6 @@ Sistema de predicción de resultados de la Liga MX utilizando modelos estadísti
 pip install -r requirements.txt
 
 streamlit run app.py
-
-## Estructura
-
-...
-
-## Capturas
-
-(imágenes del sistema)
 
 ## Autor
 
