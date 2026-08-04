@@ -291,7 +291,7 @@ def mostrar_partido(partido, partidos_live):
     estado_txt = "Partido pendiente" if pd.isna(partido["resultado_local"]) else "Partido finalizado"
     st.markdown(
         f'<div class="small-meta" style="text-align:center;margin-top:1.5rem;">'
-        f'📅 {fecha.strftime("%d/%m/%Y")} &nbsp;·&nbsp; {estado_txt}</div>',
+        f'{fecha.strftime("%d/%m/%Y")} &nbsp;·&nbsp; {estado_txt}</div>',
         unsafe_allow_html=True
     )
 
