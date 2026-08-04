@@ -231,8 +231,9 @@ Este proyecto implementa desde cero modelos para la predicción de partidos de l
 El desarrollo fue realizado como proyecto personal con fin educativo para profundizar en:
 
 - Machine Learning
-- Modelos de Poisson
+- Modelos Lineales Generalizados
 - Inferencia Bayesiana
+- MCMC
 - Optimización Numérica
 - Modelado Estadístico Deportivo
 
