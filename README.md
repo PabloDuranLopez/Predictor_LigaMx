@@ -1,4 +1,4 @@
-# Predictor Liga MX
+# Sistema de Predicción de Resultados de la Liga MX
 https://predictorligamx.streamlit.app
 Sistema de predicción de resultados de la Liga MX utilizando modelos estadísticos y aprendizaje automático.
 ## Autor
