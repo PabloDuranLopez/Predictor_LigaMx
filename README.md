@@ -13,6 +13,7 @@ Pablo Durán
 - Dixon-Coles con decaimiento temporal
 - Actualización automática
 - Interfaz en Streamlit
+- Aun por implementar MCMC y ensamble
 
 ## Tecnologías
 
