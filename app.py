@@ -288,7 +288,6 @@ def mostrar_partido(partido, partidos_live):
        
     fecha = partido["fecha"]
 
-    # Metadatos del partido
     estado_txt = "Partido pendiente" if pd.isna(partido["resultado_local"]) else "Partido finalizado"
     st.markdown(
         f'<div class="small-meta" style="text-align:center;margin-top:1.5rem;">'
@@ -421,10 +420,10 @@ def mostrar_partido(partido, partidos_live):
     momio_empate = partido["momio_empate"]
     momio_visitante = partido["momio_visitante"]
 
-    # Matriz de probabilidades
+    # Matriz probas
     matriz = np.array(json.loads(partido["matriz"]))
 
-    # TARJETA DEL PARTIDO
+    # tarjeta partido
     st.markdown('<div class="partido-card">', unsafe_allow_html=True)
 
     #  Marcador más probable
@@ -439,7 +438,7 @@ def mostrar_partido(partido, partidos_live):
         unsafe_allow_html=True
     )
 
-    # Probabilidades y momios (al inicio)
+    # Proba y momoos 
     c1, c2, c3 = st.columns(3)
 
     for col, etiqueta, prob, momio in [
@@ -455,7 +454,7 @@ def mostrar_partido(partido, partidos_live):
                 unsafe_allow_html=True
             )
 
-    #  Barra de probabilidad apilada: Local / Empate / Visitante
+    #  Barra de proba
     _pl = float(prob_local)
     _pe = float(prob_empate)
     _pv = float(prob_visitante)
@@ -475,7 +474,7 @@ def mostrar_partido(partido, partidos_live):
         unsafe_allow_html=True
     )
 
-    # Resultado final (si el partido ya terminó) 
+    # Resultado final
     if not pd.isna(partido["resultado_local"]):
         rl = int(partido["resultado_local"])
         rv = int(partido["resultado_visitante"])
