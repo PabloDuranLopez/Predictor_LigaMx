@@ -240,7 +240,7 @@ El desarrollo fue realizado como proyecto personal con fin educativo para profun
 **Las predicciones no constituyen recomendaciones de apuesta.**
 """)
 st.markdown("""
-## Ya estan actualizados las predicciones de la J4!!!!
+## Ya estan actualizados las predicciones de la J5!!!!
 """)
 
 c1, c2, c3 = st.columns([1,2,1])
