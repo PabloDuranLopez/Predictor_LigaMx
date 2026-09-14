@@ -115,8 +115,8 @@ st.markdown("""
 <style>
     /* Fondo general */
     .stApp {
-        background: linear-gradient(180deg, #0f2027 0%, #203a43 55%, #2c5364 100%);
-        color: #eaf2f5;
+        background: linear-gradient(180deg, #0b1120 0%, #101a2e 55%, #13223a 100%);
+        color: #f8fafc;
         font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
     }
 
@@ -128,9 +128,9 @@ st.markdown("""
 
     /* Tarjeta del partido */
     .partido-card {
-        background: linear-gradient(135deg, rgba(28, 58, 70, 0.92) 0%, rgba(18, 38, 48, 0.95) 100%);
-        border: 1px solid rgba(255,255,255,0.12);
-        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(20, 34, 58, 0.88) 0%, rgba(13, 22, 40, 0.94) 100%);
+        border: 1px solid rgba(163, 230, 53, 0.18);
+        border-radius: 16px;
         padding: 1.4rem 1.6rem;
         margin-bottom: 1.6rem;
         box-shadow: 0 10px 30px rgba(0,0,0,0.45);
@@ -141,7 +141,7 @@ st.markdown("""
         text-align:center;
         font-size: 3.2rem;
         font-weight: 800;
-        background: linear-gradient(90deg, #f7971e, #ffd200);
+        background: linear-gradient(90deg, #a3e635, #f59e0b);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         margin: 0;
@@ -149,12 +149,12 @@ st.markdown("""
 
     /* Etiquetas de sección */
     .seccion-titulo {
-        color: #8fd3f4;
+        color: #a3e635;
         font-size: 1.05rem;
         font-weight: 700;
         letter-spacing: 0.5px;
         text-transform: uppercase;
-        border-left: 4px solid #f7971e;
+        border-left: 4px solid #f59e0b;
         padding-left: 10px;
         margin-top: 1.4rem;
         margin-bottom: 0.6rem;
@@ -165,8 +165,8 @@ st.markdown("""
         font-size: 1.0rem;
         font-weight: 700;
     }
-    .ou-over { color: #4ade80; }
-    .ou-under { color: #f87171; }
+    .ou-over { color: #a3e635; }
+    .ou-under { color: #fb7185; }
     .ou-caja {
         background: rgba(255,255,255,0.06);
         border-radius: 10px;
@@ -176,8 +176,8 @@ st.markdown("""
 
     /* Probabilidades */
     .prob-valor { font-size: 2rem; font-weight: 800; }
-    .prob-momio { font-size: 1.1rem; color: #a0aec0; }
-    .prob-etiqueta { color: #cbd5e0; font-weight: 600; }
+    .prob-momio { font-size: 1.1rem; color: #94a3b8; }
+    .prob-etiqueta { color: #e2e8f0; font-weight: 600; }
 
     /* Header partido */
     .header-equipo {
@@ -188,7 +188,7 @@ st.markdown("""
     }
 
     /* caption mas legible */
-    .small-meta { color: #8b9ba8; font-size: 0.85rem; }
+    .small-meta { color: #94a3b8; font-size: 0.85rem; }
 
     /* Tabla top 5 compacta */
     .top5-table { font-size: 0.95rem; }
@@ -304,7 +304,7 @@ def mostrar_partido(partido, partidos_live):
         )
 
     with col2:
-        st.markdown('<div style="text-align:center;font-size:1.6rem;font-weight:800;color:#f7971e;">VS</div>', unsafe_allow_html=True)
+        st.markdown('<div style="text-align:center;font-size:1.6rem;font-weight:800;color:#f59e0b;">VS</div>', unsafe_allow_html=True)
 
     with col3:
         escudo_visitante = obtener_escudo(visitante)
@@ -427,10 +427,10 @@ def mostrar_partido(partido, partidos_live):
     st.markdown(
         f'<div class="seccion-titulo" style="text-align:center;">Marcador más probable</div>'
         f'<p class="marcador-grande">{nombre_equipo(local)} '
-        f'<span style="color:#8b9ba8;">{marcador[0]} - {marcador[1]}</span> '
+        f'<span style="color:#94a3b8;">{marcador[0]} - {marcador[1]}</span> '
         f'{nombre_equipo(visitante)}</p>'
         f'<div class="small-meta" style="text-align:center;margin-top:0.2rem;">'
-        f'Probabilidad <b style="color:#f7971e;">{_prob_marcador:.1%}</b></div>',
+        f'Probabilidad <b style="color:#f59e0b;">{_prob_marcador:.1%}</b></div>',
         unsafe_allow_html=True
     )
 
@@ -457,14 +457,14 @@ def mostrar_partido(partido, partidos_live):
     st.markdown(
         f'<div class="barra-wrapper">'
         f'<div class="barra-linea">'
-        f'<div class="barra-seg" style="width:{_pl*100:.1f}%;background:#4ade80;"></div>'
-        f'<div class="barra-seg" style="width:{_pe*100:.1f}%;background:#facc15;"></div>'
-        f'<div class="barra-seg" style="width:{_pv*100:.1f}%;background:#f87171;"></div>'
+        f'<div class="barra-seg" style="width:{_pl*100:.1f}%;background:#a3e635;"></div>'
+        f'<div class="barra-seg" style="width:{_pe*100:.1f}%;background:#f59e0b;"></div>'
+        f'<div class="barra-seg" style="width:{_pv*100:.1f}%;background:#fb7185;"></div>'
         f'</div>'
         f'<div class="leyenda">'
-        f'<span style="color:#4ade80;">Local <b>{_pl:.1%}</b></span>'
-        f'<span style="color:#facc15;">Empate <b>{_pe:.1%}</b></span>'
-        f'<span style="color:#f87171;">Visita <b>{_pv:.1%}</b></span>'
+        f'<span style="color:#a3e635;">Local <b>{_pl:.1%}</b></span>'
+        f'<span style="color:#f59e0b;">Empate <b>{_pe:.1%}</b></span>'
+        f'<span style="color:#fb7185;">Visita <b>{_pv:.1%}</b></span>'
         f'</div>'
         f'</div>',
         unsafe_allow_html=True
@@ -528,8 +528,8 @@ def mostrar_partido(partido, partidos_live):
     with oc4:
         st.markdown(
             f'<div class="ou-caja">'
-            f'<div class="ou-lado" style="color:#8fd3f4;">Goles esperados</div>'
-            f'<div class="ou-lado" style="color:#eaf2f5;">Local <b>{lam:.2f}</b> · Vis <b>{mu:.2f}</b></div>'
+            f'<div class="ou-lado" style="color:#f59e0b;">Goles esperados</div>'
+            f'<div class="ou-lado" style="color:#f8fafc;">Local <b>{lam:.2f}</b> · Vis <b>{mu:.2f}</b></div>'
             f'</div>',
             unsafe_allow_html=True
         )
