@@ -124,6 +124,9 @@ st.markdown("""
     .block-container {
         padding-top: 2rem;
         padding-bottom: 3rem;
+        max-width: 960px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
     /* Tarjeta del partido */
@@ -217,6 +220,31 @@ st.markdown("""
         font-size: 0.9rem;
     }
     .leyenda span b { font-weight: 700; }
+
+    /* Fila de probabilidades */
+    .prob-row { display: flex; justify-content: space-around; gap: 1rem; margin-top: 1.2rem; }
+    .prob-col { text-align: center; flex: 1; }
+
+    /* Badge de resultado */
+    .result-badge {
+        margin: 1rem 0;
+        padding: 0.6rem 1rem;
+        border-radius: 10px;
+        text-align: center;
+        font-weight: 600;
+    }
+    .result-exacto { background: rgba(163,230,53,0.12); border: 1px solid rgba(163,230,53,0.4); color: #a3e635; }
+    .result-ganador { background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.4); color: #f59e0b; }
+    .result-fallo { background: rgba(251,113,133,0.12); border: 1px solid rgba(251,113,133,0.4); color: #fb7185; }
+
+    /* Grid over/under */
+    .ou-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; }
+
+    /* Tabla top 5 */
+    .top5-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    .top5-table th { text-align: left; color: #94a3b8; border-bottom: 1px solid rgba(163,230,53,0.18); padding: 0.4rem; }
+    .top5-table td { padding: 0.4rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .top5-table td:last-child { text-align: right; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -244,7 +272,14 @@ c1, c2, c3 = st.columns([1,2,1])
 with c2:
     st.image("escudos/ligamx.png", width=250)
 
-st.title("⚽ Predicción de partidos Liga MX")
+st.markdown(
+    '<h1 style="text-align:center;font-size:2.2rem;margin-bottom:0.25rem;">'
+    '⚽ Predicción de partidos '
+    '<span style="background:linear-gradient(90deg,#a3e635,#f59e0b);'
+    '-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Liga MX</span>'
+    '</h1>',
+    unsafe_allow_html=True
+)
 
 predicciones = pd.read_csv(
     "data/predicciones.csv"
@@ -419,58 +454,14 @@ def mostrar_partido(partido, partidos_live):
     # Matriz probas
     matriz = np.array(json.loads(partido["matriz"]))
 
-    # tarjeta partido
-    st.markdown('<div class="partido-card">', unsafe_allow_html=True)
-
-    #  Marcador más probable
+    # Tarjeta del partido (una sola pieza HTML para que el estilo aplique)
     _prob_marcador = matriz[marcador[0], marcador[1]]
-    st.markdown(
-        f'<div class="seccion-titulo" style="text-align:center;">Marcador más probable</div>'
-        f'<p class="marcador-grande">{nombre_equipo(local)} '
-        f'<span style="color:#94a3b8;">{marcador[0]} - {marcador[1]}</span> '
-        f'{nombre_equipo(visitante)}</p>'
-        f'<div class="small-meta" style="text-align:center;margin-top:0.2rem;">'
-        f'Probabilidad <b style="color:#f59e0b;">{_prob_marcador:.1%}</b></div>',
-        unsafe_allow_html=True
-    )
 
-    # Proba y momoos 
-    c1, c2, c3 = st.columns(3)
-
-    for col, etiqueta, prob, momio in [
-        (c1, nombre_equipo(local), prob_local, momio_local),
-        (c2, "Empate", prob_empate, momio_empate),
-        (c3, nombre_equipo(visitante), prob_visitante, momio_visitante)
-    ]:
-        with col:
-            st.markdown(
-                f'<div class="prob-etiqueta">{etiqueta}</div>'
-                f'<div class="prob-valor" style="text-align:center">{prob:.1%}</div>'
-                f'<div class="prob-momio" style="text-align:center">Momio {momio:+.0f}</div>',
-                unsafe_allow_html=True
-            )
-
-    #  Barra de proba
     _pl = float(prob_local)
     _pe = float(prob_empate)
     _pv = float(prob_visitante)
-    st.markdown(
-        f'<div class="barra-wrapper">'
-        f'<div class="barra-linea">'
-        f'<div class="barra-seg" style="width:{_pl*100:.1f}%;background:#a3e635;"></div>'
-        f'<div class="barra-seg" style="width:{_pe*100:.1f}%;background:#f59e0b;"></div>'
-        f'<div class="barra-seg" style="width:{_pv*100:.1f}%;background:#fb7185;"></div>'
-        f'</div>'
-        f'<div class="leyenda">'
-        f'<span style="color:#a3e635;">Local <b>{_pl:.1%}</b></span>'
-        f'<span style="color:#f59e0b;">Empate <b>{_pe:.1%}</b></span>'
-        f'<span style="color:#fb7185;">Visita <b>{_pv:.1%}</b></span>'
-        f'</div>'
-        f'</div>',
-        unsafe_allow_html=True
-    )
 
-    # Resultado final
+    result_html = ""
     if not pd.isna(partido["resultado_local"]):
         rl = int(partido["resultado_local"])
         rv = int(partido["resultado_visitante"])
@@ -488,73 +479,95 @@ def mostrar_partido(partido, partidos_live):
         signo_real = np.sign(rl - rv)
 
         if pred_local == rl and pred_visitante == rv:
-            st.success(f"✅ Marcador exacto | Final: {nombre_equipo(local)} {rl} - {rv} {nombre_equipo(visitante)}")
+            result_html = (
+                '<div class="result-badge result-exacto">✅ Marcador exacto | Final: '
+                f'{nombre_equipo(local)} {rl} - {rv} {nombre_equipo(visitante)}</div>'
+            )
         elif signo_pred == signo_real:
-            st.warning(f"🟡 Se acertó el ganador | Final: {nombre_equipo(local)} {rl} - {rv} {nombre_equipo(visitante)}")
+            result_html = (
+                '<div class="result-badge result-ganador">🟡 Se acertó el ganador | Final: '
+                f'{nombre_equipo(local)} {rl} - {rv} {nombre_equipo(visitante)}</div>'
+            )
         else:
-            st.error(f"❌ Predicción incorrecta | Final: {nombre_equipo(local)} {rl} - {rv} {nombre_equipo(visitante)}")
+            result_html = (
+                '<div class="result-badge result-fallo">❌ Predicción incorrecta | Final: '
+                f'{nombre_equipo(local)} {rl} - {rv} {nombre_equipo(visitante)}</div>'
+            )
 
-    # OVER / UNDER
-    matriz_ou = matriz
-    _it = np.nditer(matriz_ou, flags=["multi_index"])
+    _it = np.nditer(matriz, flags=["multi_index"])
     _tuplas = []
     for _val in _it:
         _tuplas.append(_it.multi_index)
 
     def _prob_over(umbral):
-        return sum(matriz_ou[i, j] for i, j in _tuplas if i + j > umbral)
+        return sum(matriz[i, j] for i, j in _tuplas if i + j > umbral)
 
-    st.markdown('<div class="seccion-titulo">Over / Under</div>', unsafe_allow_html=True)
-
-    oc1, oc2, oc3, oc4 = st.columns(4)
-    filas_ou = [
-        ("2.5", _prob_over(2.5)),
-        ("1.5", _prob_over(1.5)),
-        ("0.5", _prob_over(0.5)),
-    ]
-
-    for col, (umbral, prob_over) in zip([oc1, oc2, oc3], filas_ou):
-        prob_over = min(prob_over, 1.0)
-        prob_under = max(1 - prob_over, 0.0)
-        with col:
-            st.markdown(
-                f'<div class="ou-caja">'
-                f'<div class="ou-lado ou-over">Over {umbral} &nbsp; {prob_over:.0%}</div>'
-                f'<div class="ou-lado ou-under">Under {umbral} &nbsp; {prob_under:.0%}</div>'
-                f'</div>',
-                unsafe_allow_html=True
-            )
-
-    with oc4:
-        st.markdown(
+    ou_boxes = ""
+    for umbral in ("2.5", "1.5", "0.5"):
+        po = min(_prob_over(float(umbral)), 1.0)
+        pu = max(1 - po, 0.0)
+        ou_boxes += (
             f'<div class="ou-caja">'
-            f'<div class="ou-lado" style="color:#f59e0b;">Goles esperados</div>'
-            f'<div class="ou-lado" style="color:#f8fafc;">Local <b>{lam:.2f}</b> · Vis <b>{mu:.2f}</b></div>'
-            f'</div>',
-            unsafe_allow_html=True
+            f'<div class="ou-lado ou-over">Over {umbral} &nbsp; {po:.0%}</div>'
+            f'<div class="ou-lado ou-under">Under {umbral} &nbsp; {pu:.0%}</div>'
+            f'</div>'
         )
 
-    st.divider()
-
-    # TOP 5 MARCADORES
-    st.markdown('<div class="seccion-titulo">Top 5 marcadores más probables</div>', unsafe_allow_html=True)
-
-    _flat_idx = np.argsort(matriz_ou, axis=None)[::-1][:5]
-    _top = []
+    _flat_idx = np.argsort(matriz, axis=None)[::-1][:5]
+    top_rows = ""
     for _k in _flat_idx:
-        _gl, _gv = np.unravel_index(_k, matriz_ou.shape)
-        _top.append({
-            "Marcador": f"{nombre_equipo(local)} {_gl} - {_gv} {nombre_equipo(visitante)}",
-            "Probabilidad": f"{matriz_ou[_gl, _gv]:.1%}"
-        })
+        _gl, _gv = np.unravel_index(_k, matriz.shape)
+        top_rows += (
+            f'<tr><td>{nombre_equipo(local)} {_gl} - {_gv} {nombre_equipo(visitante)}</td>'
+            f'<td>{matriz[_gl, _gv]:.1%}</td></tr>'
+        )
 
-    st.dataframe(
-        pd.DataFrame(_top),
-        hide_index=True,
-        use_container_width=True
+    card_html = (
+        '<div class="partido-card">'
+        '<div class="seccion-titulo" style="text-align:center;border-left:none;">Marcador más probable</div>'
+        f'<p class="marcador-grande">{nombre_equipo(local)} '
+        f'<span style="color:#94a3b8;">{marcador[0]} - {marcador[1]}</span> '
+        f'{nombre_equipo(visitante)}</p>'
+        f'<div class="small-meta" style="text-align:center;margin-top:0.2rem;">'
+        f'Probabilidad <b style="color:#f59e0b;">{_prob_marcador:.1%}</b></div>'
+        f'<div class="prob-row">'
+        f'<div class="prob-col"><div class="prob-etiqueta">{nombre_equipo(local)}</div>'
+        f'<div class="prob-valor">{prob_local:.1%}</div>'
+        f'<div class="prob-momio">Momio {momio_local:+.0f}</div></div>'
+        f'<div class="prob-col"><div class="prob-etiqueta">Empate</div>'
+        f'<div class="prob-valor">{prob_empate:.1%}</div>'
+        f'<div class="prob-momio">Momio {momio_empate:+.0f}</div></div>'
+        f'<div class="prob-col"><div class="prob-etiqueta">{nombre_equipo(visitante)}</div>'
+        f'<div class="prob-valor">{prob_visitante:.1%}</div>'
+        f'<div class="prob-momio">Momio {momio_visitante:+.0f}</div></div>'
+        f'</div>'
+        f'<div class="barra-wrapper">'
+        f'<div class="barra-linea">'
+        f'<div class="barra-seg" style="width:{_pl*100:.1f}%;background:#a3e635;"></div>'
+        f'<div class="barra-seg" style="width:{_pe*100:.1f}%;background:#f59e0b;"></div>'
+        f'<div class="barra-seg" style="width:{_pv*100:.1f}%;background:#fb7185;"></div>'
+        f'</div>'
+        f'<div class="leyenda">'
+        f'<span style="color:#a3e635;">Local <b>{_pl:.1%}</b></span>'
+        f'<span style="color:#f59e0b;">Empate <b>{_pe:.1%}</b></span>'
+        f'<span style="color:#fb7185;">Visita <b>{_pv:.1%}</b></span>'
+        f'</div>'
+        f'</div>'
+        f'{result_html}'
+        f'<div class="seccion-titulo">Over / Under</div>'
+        f'<div class="ou-grid">{ou_boxes}'
+        f'<div class="ou-caja">'
+        f'<div class="ou-lado" style="color:#f59e0b;">Goles esperados</div>'
+        f'<div class="ou-lado" style="color:#f8fafc;">Local <b>{lam:.2f}</b> · Vis <b>{mu:.2f}</b></div>'
+        f'</div>'
+        f'</div>'
+        f'<div class="seccion-titulo">Top 5 marcadores más probables</div>'
+        f'<table class="top5-table"><thead><tr><th>Marcador</th><th>Probabilidad</th></tr></thead>'
+        f'<tbody>{top_rows}</tbody></table>'
+        f'</div>'
     )
 
-    st.markdown("</div>", unsafe_allow_html=True)
+    st.markdown(card_html, unsafe_allow_html=True)
 
 
 partidos_live = obtener_partidos_en_vivo()
