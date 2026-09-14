@@ -4,11 +4,7 @@ import os
 import json
 import numpy as np
 from clases_funciones import plot_score_matrix  # sin uso actual
-from api_live import (
-    obtener_partidos_en_vivo,
-    buscar_partido,
-    obtener_estadisticas
-)
+from api_live import (obtener_partidos_en_vivo,buscar_partido,obtener_estadisticas)
 #xddddd
 def obtener_escudo(equipo):
 
@@ -240,7 +236,7 @@ El desarrollo fue realizado como proyecto personal con fin educativo para profun
 **Las predicciones no constituyen recomendaciones de apuesta.**
 """)
 st.markdown("""
-## Ya estan actualizados las predicciones de la J5!!!!
+## Ya estan actualizados las predicciones de la J8!!!!
 """)
 
 c1, c2, c3 = st.columns([1,2,1])
