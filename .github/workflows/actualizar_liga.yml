@@ -1,0 +1,44 @@
+name: Actualizar Liga MX
+
+on:
+  schedule:
+    # 23:30 CDMX (UTC-6) = 05:30 UTC del dia siguiente
+    - cron: "30 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Instalar dependencias
+        run: pip install -r requirements-actions.txt
+
+      - name: Actualizar resultados y predicciones
+        run: python auto_actualizar.py
+        env:
+          MPLBACKEND: Agg
+
+      - name: Commit y push de los CSV
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ligamx.csv data/partidos_predecir.csv data/predicciones.csv
+          if git diff --cached --quiet; then
+            echo "Sin cambios que guardar."
+          else
+            git commit -m "Auto: resultados y predicciones Liga MX [skip ci]"
+            git push
+          fi
