@@ -365,16 +365,27 @@ st.markdown("""
     /* Marcador en vivo */
     .live-score { font-size: 70px; font-weight: 700; margin: 0; color: #fff5eb; }
 
+    /* Las imagenes nunca deben desbordar su columna */
+    [data-testid="stImage"] img { max-width: 100%; height: auto; }
+
     /* ============ VISTA MOVIL ============ */
     @media (max-width: 640px) {
-        .block-container { padding-left: 0.8rem !important; padding-right: 0.8rem !important; }
+        .stApp { overflow-x: hidden; }
+        .block-container {
+            padding-top: 1rem !important;
+            padding-bottom: 2rem !important;
+            padding-left: 0.8rem !important;
+            padding-right: 0.8rem !important;
+        }
         .titulo-app { font-size: 1.8rem; }
         .kicker { letter-spacing: 2px; font-size: 0.68rem; }
-        .partido-card { padding: 1.1rem 1rem; border-radius: 18px; }
+        .partido-card { padding: 1.1rem 1rem; border-radius: 18px; margin-bottom: 1.1rem; }
+        .titulo-sec { margin-top: 1rem; margin-bottom: 0.5rem; }
         .marcador-grande { font-size: 2rem; }
         .header-equipo { font-size: 0.95rem; }
         .vs-text { font-size: 1.3rem; }
         .live-score { font-size: 42px; }
+        .small-meta { font-size: 0.8rem; }
         .seccion-titulo { font-size: 0.66rem; letter-spacing: 1.4px; padding: 0.28rem 0.7rem; }
         .prob-row { flex-wrap: wrap; gap: 0.5rem; }
         .prob-col { flex: 1 1 45%; padding: 0.6rem 0.4rem; }
@@ -387,6 +398,14 @@ st.markdown("""
         .top5-table td { padding: 0.35rem 0.3rem; }
         .rank { width: 20px; height: 20px; font-size: 0.68rem; margin-right: 0.35rem; }
         .result-badge { font-size: 0.82rem; padding: 0.55rem 0.7rem; }
+        /* Encabezados de markdown (Acerca del proyecto, etc.) */
+        .block-container h1:not(.titulo-app) { font-size: 1.5rem; }
+        .block-container h2 { font-size: 1.2rem; }
+        .block-container h3 { font-size: 1.05rem; }
+        /* Escudos y logo: que no se salgan de la pantalla */
+        [data-testid="stImage"] img { max-width: 108px !important; height: auto !important; }
+        /* Selector de jornada: mas comodo al tacto */
+        [data-baseweb="select"] > div { min-height: 44px; font-size: 1rem; }
     }
 </style>
 """, unsafe_allow_html=True)
