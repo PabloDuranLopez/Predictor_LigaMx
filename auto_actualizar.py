@@ -36,7 +36,7 @@ LIGAMX = os.path.join(DATA, "ligamx.csv")
 PREDECIR = os.path.join(DATA, "partidos_predecir.csv")
 PREDICCIONES = os.path.join(DATA, "predicciones.csv")
 
-# --- Configuracion del torneo ---
+#  Configuracion del torneo 
 LEAGUE_URL = (
     "https://elpais.com/deportes/resultados/futbol/"
     "mexico_apertura/2026/jornada/regular-a-{n}/"
@@ -58,9 +58,8 @@ P_JORNADA, P_LOCAL, P_VISIT, P_RLOCAL, P_RVISIT = 1, 2, 3, 14, 15   # prediccion
 D_JORNADA, D_FECHA, D_HORA, D_LOCAL, D_VISIT = 0, 2, 3, 4, 6       # partidos_predecir.csv
 
 
-# --------------------------------------------------------------------------
+
 # Utilidades
-# --------------------------------------------------------------------------
 def norm(s):
     s = str(s).strip().lower()
     s = "".join(
@@ -127,9 +126,7 @@ def parse_utc(s):
     return None
 
 
-# --------------------------------------------------------------------------
 # Scraper El Pais
-# --------------------------------------------------------------------------
 def scrape_jornada(n):
     url = LEAGUE_URL.format(n=n)
     r = requests.get(url, headers=HEADERS, timeout=30)
@@ -158,9 +155,8 @@ def parse_score(txt):
     return (int(m.group(1)), int(m.group(2))) if m else None
 
 
-# --------------------------------------------------------------------------
+
 # Incorporar jornadas completas a ligamx y quitar de predecir
-# --------------------------------------------------------------------------
 def incorporar(completadas, jornadas, idx):
     lig = read_csv(LIGAMX)
     nxt = 0
@@ -207,9 +203,8 @@ def incorporar(completadas, jornadas, idx):
     print("[auto] generar_predicciones.py ejecutado.")
 
 
-# --------------------------------------------------------------------------
 # Main
-# --------------------------------------------------------------------------
+
 def main(dry_run=False):
     hoy = now_mx().date()
     print(f"[auto] Fecha Mexico: {hoy}  (dry_run={dry_run})")
