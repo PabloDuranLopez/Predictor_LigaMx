@@ -361,6 +361,33 @@ st.markdown("""
     @keyframes heatPulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 0.95; } }
     @keyframes emberRise { 0% { transform: translateY(0) scale(1); opacity: 0; } 12% { opacity: 0.95; } 100% { transform: translateY(-105vh) scale(0.3); opacity: 0; } }
     @keyframes flicker { 0%, 100% { filter: drop-shadow(0 4px 24px rgba(255,90,0,0.5)); } 45% { filter: drop-shadow(0 4px 34px rgba(255,140,0,0.85)); } 60% { filter: drop-shadow(0 3px 18px rgba(225,29,72,0.6)); } }
+
+    /* Marcador en vivo */
+    .live-score { font-size: 70px; font-weight: 700; margin: 0; color: #fff5eb; }
+
+    /* ============ VISTA MOVIL ============ */
+    @media (max-width: 640px) {
+        .block-container { padding-left: 0.8rem !important; padding-right: 0.8rem !important; }
+        .titulo-app { font-size: 1.8rem; }
+        .kicker { letter-spacing: 2px; font-size: 0.68rem; }
+        .partido-card { padding: 1.1rem 1rem; border-radius: 18px; }
+        .marcador-grande { font-size: 2rem; }
+        .header-equipo { font-size: 0.95rem; }
+        .vs-text { font-size: 1.3rem; }
+        .live-score { font-size: 42px; }
+        .seccion-titulo { font-size: 0.66rem; letter-spacing: 1.4px; padding: 0.28rem 0.7rem; }
+        .prob-row { flex-wrap: wrap; gap: 0.5rem; }
+        .prob-col { flex: 1 1 45%; padding: 0.6rem 0.4rem; }
+        .prob-valor { font-size: 1.5rem; }
+        .ou-grid { grid-template-columns: repeat(2, 1fr); }
+        .ou-lado { font-size: 0.85rem; }
+        .leyenda { flex-wrap: wrap; gap: 0.7rem; font-size: 0.75rem; }
+        .top5-table { font-size: 0.8rem; }
+        .top5-table th { font-size: 0.62rem; letter-spacing: 0.5px; }
+        .top5-table td { padding: 0.35rem 0.3rem; }
+        .rank { width: 20px; height: 20px; font-size: 0.68rem; margin-right: 0.35rem; }
+        .result-badge { font-size: 0.82rem; padding: 0.55rem 0.7rem; }
+    }
 </style>
 """, unsafe_allow_html=True)
 st.markdown(
@@ -505,7 +532,7 @@ def mostrar_partido(partido, partidos_live):
 )
 
      st.markdown(
-    f"""<div style="text-align:center;"><h1 style="font-size:70px; margin:0; color:#fff5eb;">{live['goles_local']} - {live['goles_visitante']}</h1><h3 style="color:#e8c9b5; margin-top:8px;">{live['minuto']}'</h3><p style="color:#c99a7a; font-size:18px; margin-top:0;">{estado.get(live['estado'], live['estado'])}</p></div>""",unsafe_allow_html=True)
+    f"""<div style="text-align:center;"><h1 class="live-score">{live['goles_local']} - {live['goles_visitante']}</h1><h3 style="color:#e8c9b5; margin-top:8px;">{live['minuto']}'</h3><p style="color:#c99a7a; font-size:18px; margin-top:0;">{estado.get(live['estado'], live['estado'])}</p></div>""",unsafe_allow_html=True)
      st.divider()
     
     
