@@ -181,10 +181,13 @@ def incorporar(completadas, jornadas, idx):
                 f"{r[D_LOCAL]},{r[D_VISIT]},{gl},{gv},FALSE,,,"
             )
 
-    b = open(LIGAMX, "rb").read()
-    assert not b.endswith(b"\r\n")
+    with open(LIGAMX, "rb") as fh:
+        b = fh.read()
+    prefix = b""
+    if b and not b.endswith(b"\r\n"):
+        prefix = b"\r\n"
     with open(LIGAMX, "ab") as fh:
-        fh.write(b"\r\n")
+        fh.write(prefix)
         fh.write("\r\n".join(lineas).encode("utf-8"))
     print(f"[auto] ligamx.csv: +{len(lineas)} filas.")
 
