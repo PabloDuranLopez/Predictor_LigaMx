@@ -20,6 +20,7 @@ Uso:
 
 import os
 import re
+import io
 import csv
 import sys
 import subprocess
@@ -101,9 +102,14 @@ def read_csv(path):
 
 
 def write_csv(path, rows, trailing_newline=False):
-    txt = "\r\n".join(",".join(r) for r in rows)
-    if trailing_newline:
-        txt += "\r\n"
+    # Se usa el modulo csv para citar correctamente campos con comas
+    # (por ejemplo la columna "matriz" de predicciones.csv).
+    buf = io.StringIO()
+    w = csv.writer(buf, lineterminator="\r\n")
+    w.writerows(rows)
+    txt = buf.getvalue()
+    if not trailing_newline and txt.endswith("\r\n"):
+        txt = txt[:-2]
     with open(path, "w", encoding="utf-8", newline="") as fh:
         fh.write(txt)
 
